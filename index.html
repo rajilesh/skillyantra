@@ -105,22 +105,27 @@
 </head>
 <body class="font-sans antialiased selection:bg-brand-blue selection:text-white">
 
-    <!-- Top Announcement Bar -->
+    <!-- Top Utility & Announcement Bar (Matched to skillyantra.com) -->
     <div class="bg-gradient-to-r from-brand-blue via-[#0074BD] to-brand-red text-white text-xs sm:text-sm py-2.5 px-4">
-        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
-            <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2 font-medium">
-                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-bold uppercase tracking-wider bg-white text-brand-red shadow-sm">
-                    AI-Powered Live Cohort
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-2 text-center lg:text-left">
+            <div class="flex flex-wrap items-center justify-center lg:justify-start gap-2 sm:gap-3 font-medium">
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-extrabold uppercase tracking-wider bg-white text-brand-red shadow-sm">
+                    October Career Upgrade Offer
                 </span>
-                <span>Practical Agile, Scrum &amp; Product Training with <strong>Jitendra</strong> — Next Batch Starts This Saturday!</span>
+                <span class="font-semibold">Get 10% OFF on Scrum Master Training
+                </span>
             </div>
-            <div class="flex items-center gap-4 shrink-0">
-                <a href="tel:+919611796309" class="hidden md:inline-flex items-center gap-1 font-semibold hover:underline">
+            <div class="flex flex-wrap items-center justify-center gap-4 shrink-0">
+                <a href="mailto:connect@skillyantra.com" class="hidden sm:inline-flex items-center gap-1.5 font-semibold hover:underline">
+                    <i class="ph-bold ph-envelope-simple"></i>
+                    <span>connect@skillyantra.com</span>
+                </a>
+                <a href="tel:+919611796309" class="inline-flex items-center gap-1.5 font-semibold hover:underline">
                     <i class="ph-bold ph-phone-call"></i>
                     <span>+91 9611796309</span>
                 </a>
-                <button onclick="openBookingModal('Free AI Career Strategy Call with Jitendra')" class="inline-flex items-center gap-1 font-bold underline decoration-white/70 hover:decoration-white underline-offset-4">
-                    <span>Book Free Demo</span>
+                <button onclick="openBookingModal('Book 1:1 Career Assessment Call with Jitendra')" class="inline-flex items-center gap-1 px-3 py-1 rounded-lg bg-white text-brand-dark hover:bg-brand-redLight hover:text-brand-red font-bold text-xs shadow-sm transition-colors">
+                    <span>Book 1:1 Career Assessment Call</span>
                     <i class="ph-bold ph-arrow-right"></i>
                 </button>
             </div>
@@ -134,7 +139,7 @@
                 <!-- Clean SkillYantra Logo (Strictly only the logo image/SVG, no subtitle text or LLP inside the logo) -->
                 <a href="#home" class="flex items-center focus:outline-none group shrink-0" aria-label="SkillYantra Home">
                     <img 
-                        src="cropped-c2aaa92a-0933-4b1a-9818-25ad3b0a82ae-removebg-preview.png" 
+                        src="./assets/logo.png" 
                         alt="SkillYantra" 
                         class="h-11 sm:h-12 md:h-14 w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02]"
                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
@@ -161,7 +166,10 @@
                     <a href="#blog" class="px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:text-brand-blue hover:bg-brand-blueLight transition-colors">Blog</a>
                     <a href="#contact" class="px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:text-brand-blue hover:bg-brand-blueLight transition-colors">Contact Us</a>
                     <a href="#services" class="px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:text-brand-blue hover:bg-brand-blueLight transition-colors">Services</a>
-                    <a href="#success-story" class="px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:text-brand-blue hover:bg-brand-blueLight transition-colors">Success Story</a>
+                    <a href="#success-story" class="px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:text-brand-blue hover:bg-brand-blueLight transition-colors flex items-center gap-1">
+                        <span>Success Story</span>
+                        <i class="ph-fill ph-youtube-logo text-brand-red text-base"></i>
+                    </a>
                 </nav>
 
                 <!-- Desktop CTA Buttons -->
@@ -170,9 +178,9 @@
                         <i class="ph-bold ph-chart-line-up text-brand-red"></i>
                         <span>Career Tool</span>
                     </a>
-                    <button onclick="openBookingModal('Enroll / Book Free Demo Session with Jitendra')" class="px-4 xl:px-5 py-2.5 rounded-xl text-xs xl:text-sm font-bold text-white bg-brand-red hover:bg-brand-redDark shadow-red-glow transition-all flex items-center gap-2">
+                    <button onclick="openBookingModal('Register Now — SkillYantra Live Training')" class="px-4 xl:px-5 py-2.5 rounded-xl text-xs xl:text-sm font-bold text-white bg-brand-red hover:bg-brand-redDark shadow-red-glow transition-all flex items-center gap-2">
                         <i class="ph-bold ph-calendar-check text-base"></i>
-                        <span>Enroll / Free Demo</span>
+                        <span>Register Now</span>
                     </button>
                 </div>
 
@@ -198,7 +206,10 @@
                 <a href="#blog" onclick="closeMobileMenu()" class="block px-4 py-3 rounded-xl text-base font-semibold text-slate-800 hover:bg-brand-blueLight hover:text-brand-blue transition-colors">Blog</a>
                 <a href="#contact" onclick="closeMobileMenu()" class="block px-4 py-3 rounded-xl text-base font-semibold text-slate-800 hover:bg-brand-blueLight hover:text-brand-blue transition-colors">Contact Us</a>
                 <a href="#services" onclick="closeMobileMenu()" class="block px-4 py-3 rounded-xl text-base font-semibold text-slate-800 hover:bg-brand-blueLight hover:text-brand-blue transition-colors">Services</a>
-                <a href="#success-story" onclick="closeMobileMenu()" class="block px-4 py-3 rounded-xl text-base font-semibold text-slate-800 hover:bg-brand-blueLight hover:text-brand-blue transition-colors">Success Story</a>
+                <a href="#success-story" onclick="closeMobileMenu()" class="flex items-center justify-between px-4 py-3 rounded-xl text-base font-semibold text-slate-800 hover:bg-brand-blueLight hover:text-brand-blue transition-colors">
+                    <span>Success Story (Video Testimonials)</span>
+                    <i class="ph-fill ph-youtube-logo text-brand-red text-xl"></i>
+                </a>
                 
                 <!-- Interactive Signature Tools Shortcuts -->
                 <div class="pt-2 pb-2 border-t border-slate-100">
@@ -227,9 +238,9 @@
                     <a href="#career-tool" onclick="closeMobileMenu()" class="w-full py-3 px-4 rounded-xl text-center text-sm font-bold text-brand-blue bg-brand-blueLight border border-brand-blue/20">
                         Project My Salary
                     </a>
-                    <button onclick="closeMobileMenu(); openBookingModal('Enroll / Book Free Demo with Jitendra');" class="w-full py-3 px-4 rounded-xl text-center text-sm font-bold text-white bg-brand-red hover:bg-brand-redDark shadow-md flex items-center justify-center gap-2">
+                    <button onclick="closeMobileMenu(); openBookingModal('Register Now — SkillYantra Live Training');" class="w-full py-3 px-4 rounded-xl text-center text-sm font-bold text-white bg-brand-red hover:bg-brand-redDark shadow-md flex items-center justify-center gap-2">
                         <i class="ph-bold ph-calendar-check"></i>
-                        <span>Book Free Demo</span>
+                        <span>Register Now</span>
                     </button>
                 </div>
             </div>
@@ -254,53 +265,50 @@
                             <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-brand-red"></span>
                         </span>
                         <span class="text-xs sm:text-sm font-extrabold tracking-wide uppercase text-brand-dark">
-                            <span class="text-brand-red">AI-POWERED</span> <span class="text-brand-blue">AGILE, SCRUM &amp; PRODUCT ACADEMY</span>
+                            <span class="text-brand-red">AI-POWERED</span> <span class="text-brand-blue">SCRUM MASTER &amp; PRODUCT ACADEMY</span>
                         </span>
                     </div>
 
                     <!-- Main Headline -->
                     <h1 class="font-display text-3xl sm:text-5xl lg:text-[50px] font-extrabold text-brand-dark tracking-tight leading-[1.15] mb-6">
-                        Practical <span class="text-brand-red">AI-Powered Agile</span>, <span class="text-brand-blue">Scrum &amp; Product</span> Training for Real Career Growth
+                        <span class="text-brand-red">AI-Powered Scrum Master</span> &amp; <span class="text-brand-blue">Product Management</span> Training for Real Career Growth
                     </h1>
 
                     <!-- Subtitle -->
                     <p class="text-base sm:text-lg lg:text-xl text-brand-slate leading-relaxed max-w-2xl mx-auto lg:mx-0 mb-8">
-                        Move beyond textbook theory. Master live enterprise simulations, <strong>GenAI workflows for Scrum Masters, Product Owners &amp; Business Analysts</strong>, SAFe® execution, and JIRA automation—mentored live by <strong class="text-brand-dark font-bold">Jitendra</strong> with end-to-end job transition support.
+                        Learn Scrum through live sessions, practical projects, and certification-focused training designed for career success—mentored live by <strong class="text-brand-dark font-bold">Jitendra Kumar</strong> with hands-on Jira, SAFe®, and GenAI workflows.
                     </p>
 
                     <!-- Dual Action Buttons -->
                     <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-4 mb-10">
-                        <a href="#career-tool" class="px-7 py-4 rounded-2xl text-base font-bold text-white bg-brand-red hover:bg-brand-redDark shadow-red-glow transition-all flex items-center justify-center gap-2.5 group">
-                            <i class="ph-bold ph-calculator text-xl"></i>
-                            <span>Launch Career Projection Tool</span>
+                        <button onclick="openBookingModal('Book 1:1 Career Assessment Call with Jitendra')" class="px-7 py-4 rounded-2xl text-base font-bold text-white bg-brand-red hover:bg-brand-redDark shadow-red-glow transition-all flex items-center justify-center gap-2.5 group">
+                            <i class="ph-bold ph-phone-call text-xl"></i>
+                            <span>Book 1:1 Career Assessment Call</span>
                             <i class="ph-bold ph-arrow-right text-lg transition-transform group-hover:translate-x-1"></i>
-                        </a>
-                        <a href="#courses" class="px-7 py-4 rounded-2xl text-base font-bold text-white bg-brand-blue hover:bg-brand-blueDark shadow-blue-glow transition-all flex items-center justify-center gap-2.5">
-                            <i class="ph-bold ph-books text-xl"></i>
-                            <span>Explore All 11 Courses</span>
+                        </button>
+                        <a href="#career-tool" class="px-7 py-4 rounded-2xl text-base font-bold text-white bg-brand-blue hover:bg-brand-blueDark shadow-blue-glow transition-all flex items-center justify-center gap-2.5">
+                            <i class="ph-bold ph-calculator text-xl"></i>
+                            <span>Interactive Career Projection Tool</span>
                         </a>
                     </div>
 
-                    <!-- Key Outcome Metrics Strip -->
+                    <!-- Official SkillYantra Key Impact Metrics Strip (1,421+ | 4+ | 32+ | 852+) -->
                     <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-5 pt-8 border-t border-slate-200/90">
                         <div class="text-center lg:text-left">
-                            <div class="font-display text-2xl sm:text-3xl font-extrabold text-brand-red">5,200+</div>
-                            <p class="text-xs sm:text-sm font-medium text-slate-600 mt-0.5">Careers Transformed</p>
+                            <div class="font-display text-2xl sm:text-3xl font-extrabold text-brand-red">1,421+</div>
+                            <p class="text-xs sm:text-sm font-semibold text-slate-600 mt-0.5">Professionals Trained</p>
                         </div>
                         <div class="text-center lg:text-left sm:border-l border-slate-200 sm:pl-4">
-                            <div class="font-display text-2xl sm:text-3xl font-extrabold text-brand-blue">145%</div>
-                            <p class="text-xs sm:text-sm font-medium text-slate-600 mt-0.5">Avg. Salary Hike</p>
+                            <div class="font-display text-2xl sm:text-3xl font-extrabold text-brand-blue">4+</div>
+                            <p class="text-xs sm:text-sm font-semibold text-slate-600 mt-0.5">Years of Excellence</p>
                         </div>
                         <div class="text-center lg:text-left sm:border-l border-slate-200 sm:pl-4">
-                            <div class="font-display text-2xl sm:text-3xl font-extrabold text-brand-red">98.6%</div>
-                            <p class="text-xs sm:text-sm font-medium text-slate-600 mt-0.5">Certification &amp; Transition</p>
+                            <div class="font-display text-2xl sm:text-3xl font-extrabold text-brand-red">32+</div>
+                            <p class="text-xs sm:text-sm font-semibold text-slate-600 mt-0.5">Corporate Trainings</p>
                         </div>
                         <div class="text-center lg:text-left sm:border-l border-slate-200 sm:pl-4">
-                            <div class="font-display text-2xl sm:text-3xl font-extrabold text-brand-dark flex items-center justify-center lg:justify-start gap-1">
-                                <span>4.9/5</span>
-                                <i class="ph-fill ph-star text-amber-400 text-xl"></i>
-                            </div>
-                            <p class="text-xs sm:text-sm font-medium text-slate-600 mt-0.5">Learner Rating</p>
+                            <div class="font-display text-2xl sm:text-3xl font-extrabold text-brand-blue">852+</div>
+                            <p class="text-xs sm:text-sm font-semibold text-slate-600 mt-0.5">Certifications Guided</p>
                         </div>
                     </div>
                 </div>
@@ -700,106 +708,148 @@
                     <div>
                         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-red text-white text-xs font-bold uppercase tracking-wider mb-2">
                             <span class="h-2 w-2 rounded-full bg-white animate-ping"></span>
-                            Live Interactive Cohorts Schedule
+                            Live Interactive Cohorts &amp; Upcoming Training Schedule
                         </div>
-                        <h3 class="font-display text-2xl font-extrabold">Upcoming Live Batches Led by Jitendra</h3>
-                        <p class="text-xs sm:text-sm text-slate-200 mt-1">Interactive weekend and weekday evening cohorts with live JIRA simulations, GenAI labs, and 1:1 mock interviews.</p>
+                        <h3 class="font-display text-2xl font-extrabold">Upcoming Live Batches &amp; Fee Structure</h3>
+                        <p class="text-xs sm:text-sm text-slate-200 mt-1">Interactive Weekend and Weekdays batches mentored by <strong>Jitendra Kumar</strong> &amp; Certified Trainers with live Jira projects and mock interviews.</p>
                     </div>
-                    <button onclick="openBookingModal('Custom Corporate or 1:1 Fast-Track Cohort Inquiry')" class="px-5 py-3 rounded-xl bg-white text-brand-dark hover:bg-brand-red hover:text-white font-bold text-xs sm:text-sm transition-colors shrink-0">
-                        Request 1:1 Fast-Track Batch
+                    <button onclick="openBookingModal('Get 10% OFF on Scrum Master Training — Batch Inquiry')" class="px-5 py-3 rounded-xl bg-white text-brand-dark hover:bg-brand-red hover:text-white font-bold text-xs sm:text-sm transition-colors shrink-0">
+                        Claim 10% Career Upgrade Offer
                     </button>
                 </div>
 
-                <div class="p-6 sm:p-8 divide-y divide-slate-200">
-                    <!-- Batch Row 1 -->
-                    <div class="py-4 first:pt-0 last:pb-0 grid grid-cols-1 lg:grid-cols-12 gap-4 items-center">
-                        <div class="lg:col-span-4">
-                            <span class="inline-block px-2.5 py-0.5 rounded-md bg-brand-redLight text-brand-red text-[11px] font-bold uppercase mb-1">Flagship AI Cohort</span>
-                            <h4 class="font-display font-extrabold text-base text-brand-dark">AI Scrum Master Training &amp; Job Oriented Bootcamp</h4>
-                            <p class="text-xs text-slate-500">Mentored Live by Jitendra • Includes PSM/CSM + JIRA AI Automation</p>
-                        </div>
-                        <div class="lg:col-span-3 flex items-center gap-3 text-xs sm:text-sm font-semibold text-slate-700">
-                            <i class="ph-duotone ph-calendar-blank text-brand-blue text-xl"></i>
-                            <div>
-                                <div>Starts: <strong class="text-brand-dark">This Saturday</strong></div>
-                                <div class="text-xs text-slate-500">Sat &amp; Sun • 10:00 AM – 1:00 PM IST</div>
-                            </div>
-                        </div>
-                        <div class="lg:col-span-3">
-                            <div class="flex justify-between text-xs font-bold mb-1">
-                                <span class="text-brand-red">Only 4 Seats Left</span>
-                                <span class="text-slate-500">85% Booked</span>
-                            </div>
-                            <div class="w-full h-2.5 bg-slate-100 rounded-full overflow-hidden">
-                                <div class="h-full bg-brand-red rounded-full" style="width: 85%;"></div>
-                            </div>
-                        </div>
-                        <div class="lg:col-span-2 text-right">
-                            <button onclick="openBookingModal('Reserve Seat: AI Scrum Master Training Cohort')" class="w-full lg:w-auto px-4 py-2.5 rounded-xl bg-brand-red hover:bg-brand-redDark text-white font-bold text-xs transition-all">
-                                Reserve Seat →
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Batch Row 2 -->
-                    <div class="py-4 first:pt-0 last:pb-0 grid grid-cols-1 lg:grid-cols-12 gap-4 items-center">
-                        <div class="lg:col-span-4">
-                            <span class="inline-block px-2.5 py-0.5 rounded-md bg-brand-blueLight text-brand-blue text-[11px] font-bold uppercase mb-1">Product Leadership Cohort</span>
-                            <h4 class="font-display font-extrabold text-base text-brand-dark">CSPO® / Professional Product Owner™ (PSPO™) &amp; SAFe POPM</h4>
-                            <p class="text-xs text-slate-500">Mentored Live by Jitendra • GenAI Backlog, PRDs &amp; Value Stream Labs</p>
-                        </div>
-                        <div class="lg:col-span-3 flex items-center gap-3 text-xs sm:text-sm font-semibold text-slate-700">
-                            <i class="ph-duotone ph-calendar-blank text-brand-blue text-xl"></i>
-                            <div>
-                                <div>Starts: <strong class="text-brand-dark">Next Saturday</strong></div>
-                                <div class="text-xs text-slate-500">Sat &amp; Sun • 2:30 PM – 5:30 PM IST</div>
-                            </div>
-                        </div>
-                        <div class="lg:col-span-3">
-                            <div class="flex justify-between text-xs font-bold mb-1">
-                                <span class="text-brand-blue">6 Seats Left</span>
-                                <span class="text-slate-500">76% Booked</span>
-                            </div>
-                            <div class="w-full h-2.5 bg-slate-100 rounded-full overflow-hidden">
-                                <div class="h-full bg-brand-blue rounded-full" style="width: 76%;"></div>
-                            </div>
-                        </div>
-                        <div class="lg:col-span-2 text-right">
-                            <button onclick="openBookingModal('Reserve Seat: CSPO / PSPO & SAFe POPM Cohort')" class="w-full lg:w-auto px-4 py-2.5 rounded-xl bg-brand-blue hover:bg-brand-blueDark text-white font-bold text-xs transition-all">
-                                Reserve Seat →
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Batch Row 3 -->
-                    <div class="py-4 first:pt-0 last:pb-0 grid grid-cols-1 lg:grid-cols-12 gap-4 items-center">
-                        <div class="lg:col-span-4">
-                            <span class="inline-block px-2.5 py-0.5 rounded-md bg-slate-100 text-slate-700 text-[11px] font-bold uppercase mb-1">Weekday Evening Batch</span>
-                            <h4 class="font-display font-extrabold text-base text-brand-dark">Business Analyst, Project Management &amp; JIRA Basics Lab</h4>
-                            <p class="text-xs text-slate-500">Mentored Live by Jitendra • End-to-End Enterprise Project Execution</p>
-                        </div>
-                        <div class="lg:col-span-3 flex items-center gap-3 text-xs sm:text-sm font-semibold text-slate-700">
-                            <i class="ph-duotone ph-calendar-blank text-brand-blue text-xl"></i>
-                            <div>
-                                <div>Starts: <strong class="text-brand-dark">Upcoming Tuesday</strong></div>
-                                <div class="text-xs text-slate-500">Tue &amp; Thu • 8:00 PM – 10:00 PM IST</div>
-                            </div>
-                        </div>
-                        <div class="lg:col-span-3">
-                            <div class="flex justify-between text-xs font-bold mb-1">
-                                <span class="text-brand-red">5 Seats Left</span>
-                                <span class="text-slate-500">80% Booked</span>
-                            </div>
-                            <div class="w-full h-2.5 bg-slate-100 rounded-full overflow-hidden">
-                                <div class="h-full bg-brand-red rounded-full" style="width: 80%;"></div>
-                            </div>
-                        </div>
-                        <div class="lg:col-span-2 text-right">
-                            <button onclick="openBookingModal('Reserve Seat: Business Analyst, Project Management & JIRA Cohort')" class="w-full lg:w-auto px-4 py-2.5 rounded-xl bg-brand-dark hover:bg-brand-blue text-white font-bold text-xs transition-all">
-                                Reserve Seat →
-                            </button>
-                        </div>
-                    </div>
+                <!-- Complete 12-Batch Upcoming Training Schedule Table from skillyantra.com -->
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-slate-50 border-b border-slate-200 text-[11px] sm:text-xs font-extrabold uppercase tracking-wider text-slate-600">
+                                <th class="py-4 px-5 sm:px-6">Course</th>
+                                <th class="py-4 px-4">Trainer</th>
+                                <th class="py-4 px-4">Batch</th>
+                                <th class="py-4 px-4">Price</th>
+                                <th class="py-4 px-5 sm:px-6 text-right">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200 text-xs sm:text-sm">
+                            <tr class="hover:bg-brand-blueLight/40 transition-colors">
+                                <td class="py-4 px-5 sm:px-6 font-display font-bold text-brand-dark">Certified Scrum Master (CSM)</td>
+                                <td class="py-4 px-4 text-slate-700 font-medium">Certified Trainer</td>
+                                <td class="py-4 px-4"><span class="px-2.5 py-1 rounded-full bg-brand-blueLight text-brand-blue text-xs font-bold">Weekend Batch</span></td>
+                                <td class="py-4 px-4 font-display font-extrabold text-brand-dark">₹19,000 + GST</td>
+                                <td class="py-4 px-5 sm:px-6 text-right">
+                                    <button onclick="openBookingModal('Enroll Now: Certified Scrum Master (CSM) — ₹19,000 + GST')" class="px-4 py-2 rounded-xl bg-brand-red hover:bg-brand-redDark text-white font-bold text-xs transition-all">Enroll Now</button>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-brand-blueLight/40 transition-colors">
+                                <td class="py-4 px-5 sm:px-6 font-display font-bold text-brand-dark">SAFe Certification</td>
+                                <td class="py-4 px-4 text-brand-blue font-bold">Jitendra Kumar</td>
+                                <td class="py-4 px-4"><span class="px-2.5 py-1 rounded-full bg-brand-blueLight text-brand-blue text-xs font-bold">Weekend Batch</span></td>
+                                <td class="py-4 px-4 font-display font-extrabold text-brand-dark">₹30,000 + GST</td>
+                                <td class="py-4 px-5 sm:px-6 text-right">
+                                    <button onclick="openBookingModal('Enroll Now: SAFe Certification — ₹30,000 + GST')" class="px-4 py-2 rounded-xl bg-brand-red hover:bg-brand-redDark text-white font-bold text-xs transition-all">Enroll Now</button>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-brand-blueLight/40 transition-colors">
+                                <td class="py-4 px-5 sm:px-6 font-display font-bold text-brand-dark">JIRA Basics</td>
+                                <td class="py-4 px-4 text-brand-blue font-bold">Jitendra Kumar</td>
+                                <td class="py-4 px-4"><span class="px-2.5 py-1 rounded-full bg-brand-blueLight text-brand-blue text-xs font-bold">Weekend Batch</span></td>
+                                <td class="py-4 px-4 font-display font-extrabold text-brand-dark">₹10,000 + GST</td>
+                                <td class="py-4 px-5 sm:px-6 text-right">
+                                    <button onclick="openBookingModal('Enroll Now: JIRA Basics — ₹10,000 + GST')" class="px-4 py-2 rounded-xl bg-brand-red hover:bg-brand-redDark text-white font-bold text-xs transition-all">Enroll Now</button>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-brand-blueLight/40 transition-colors bg-brand-redLight/20">
+                                <td class="py-4 px-5 sm:px-6 font-display font-bold text-brand-dark">
+                                    Job Assistance Program
+                                    <span class="ml-1.5 px-2 py-0.5 rounded bg-brand-red text-white text-[10px] font-bold uppercase">100% Career Support</span>
+                                </td>
+                                <td class="py-4 px-4 text-brand-blue font-bold">Jitendra Kumar</td>
+                                <td class="py-4 px-4"><span class="px-2.5 py-1 rounded-full bg-brand-redLight text-brand-red text-xs font-bold">Weekdays Batch</span></td>
+                                <td class="py-4 px-4 font-display font-extrabold text-brand-red">₹1,50,000</td>
+                                <td class="py-4 px-5 sm:px-6 text-right">
+                                    <button onclick="openBookingModal('Enroll Now: Job Assistance Program with Jitendra Kumar — ₹1,50,000')" class="px-4 py-2 rounded-xl bg-brand-red hover:bg-brand-redDark text-white font-bold text-xs transition-all">Enroll Now</button>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-brand-blueLight/40 transition-colors">
+                                <td class="py-4 px-5 sm:px-6 font-display font-bold text-brand-dark">Business Analyst Job Oriented Training Program</td>
+                                <td class="py-4 px-4 text-brand-blue font-bold">Jitendra Kumar</td>
+                                <td class="py-4 px-4"><span class="px-2.5 py-1 rounded-full bg-brand-redLight text-brand-red text-xs font-bold">Weekdays Batch</span></td>
+                                <td class="py-4 px-4 font-display font-extrabold text-brand-dark">₹35,000 + GST</td>
+                                <td class="py-4 px-5 sm:px-6 text-right">
+                                    <button onclick="openBookingModal('Enroll Now: Business Analyst Job Oriented Training Program — ₹35,000 + GST')" class="px-4 py-2 rounded-xl bg-brand-red hover:bg-brand-redDark text-white font-bold text-xs transition-all">Enroll Now</button>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-brand-blueLight/40 transition-colors">
+                                <td class="py-4 px-5 sm:px-6 font-display font-bold text-brand-dark">Product Owner Job Training Programme</td>
+                                <td class="py-4 px-4 text-brand-blue font-bold">Jitendra Kumar</td>
+                                <td class="py-4 px-4"><span class="px-2.5 py-1 rounded-full bg-brand-redLight text-brand-red text-xs font-bold">Weekdays Batch</span></td>
+                                <td class="py-4 px-4 font-display font-extrabold text-brand-dark">₹35,999 + GST</td>
+                                <td class="py-4 px-5 sm:px-6 text-right">
+                                    <button onclick="openBookingModal('Enroll Now: Product Owner Job Training Programme — ₹35,999 + GST')" class="px-4 py-2 rounded-xl bg-brand-red hover:bg-brand-redDark text-white font-bold text-xs transition-all">Enroll Now</button>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-brand-blueLight/40 transition-colors bg-brand-blueLight/30">
+                                <td class="py-4 px-5 sm:px-6 font-display font-bold text-brand-dark">
+                                    AI Scrum Master
+                                    <span class="ml-1.5 px-2 py-0.5 rounded bg-brand-blue text-white text-[10px] font-bold uppercase">Bestseller</span>
+                                </td>
+                                <td class="py-4 px-4 text-brand-blue font-bold">Jitendra Kumar</td>
+                                <td class="py-4 px-4"><span class="px-2.5 py-1 rounded-full bg-brand-blueLight text-brand-blue text-xs font-bold">Weekend Batch</span></td>
+                                <td class="py-4 px-4 font-display font-extrabold text-brand-blue">₹10,000 + GST</td>
+                                <td class="py-4 px-5 sm:px-6 text-right">
+                                    <button onclick="openBookingModal('Enroll Now: AI Scrum Master — ₹10,000 + GST')" class="px-4 py-2 rounded-xl bg-brand-blue hover:bg-brand-blueDark text-white font-bold text-xs transition-all">Enroll Now</button>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-brand-blueLight/40 transition-colors">
+                                <td class="py-4 px-5 sm:px-6 font-display font-bold text-brand-dark">Professional Scrum Master (PSM II)</td>
+                                <td class="py-4 px-4 text-slate-700 font-medium">Certified Trainer</td>
+                                <td class="py-4 px-4"><span class="px-2.5 py-1 rounded-full bg-brand-blueLight text-brand-blue text-xs font-bold">Weekend Batch</span></td>
+                                <td class="py-4 px-4 font-display font-extrabold text-brand-dark">₹21,000 + GST</td>
+                                <td class="py-4 px-5 sm:px-6 text-right">
+                                    <button onclick="openBookingModal('Enroll Now: Professional Scrum Master (PSM II) — ₹21,000 + GST')" class="px-4 py-2 rounded-xl bg-brand-red hover:bg-brand-redDark text-white font-bold text-xs transition-all">Enroll Now</button>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-brand-blueLight/40 transition-colors">
+                                <td class="py-4 px-5 sm:px-6 font-display font-bold text-brand-dark">Professional Scrum Master (PSM I)</td>
+                                <td class="py-4 px-4 text-slate-700 font-medium">Certified Trainer</td>
+                                <td class="py-4 px-4"><span class="px-2.5 py-1 rounded-full bg-brand-blueLight text-brand-blue text-xs font-bold">Weekend Batch</span></td>
+                                <td class="py-4 px-4 font-display font-extrabold text-brand-dark">₹20,000 + GST</td>
+                                <td class="py-4 px-5 sm:px-6 text-right">
+                                    <button onclick="openBookingModal('Enroll Now: Professional Scrum Master (PSM I) — ₹20,000 + GST')" class="px-4 py-2 rounded-xl bg-brand-red hover:bg-brand-redDark text-white font-bold text-xs transition-all">Enroll Now</button>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-brand-blueLight/40 transition-colors">
+                                <td class="py-4 px-5 sm:px-6 font-display font-bold text-brand-dark">Certified Scrum Product Owner (CSPO)</td>
+                                <td class="py-4 px-4 text-slate-700 font-medium">Certified Trainer</td>
+                                <td class="py-4 px-4"><span class="px-2.5 py-1 rounded-full bg-brand-blueLight text-brand-blue text-xs font-bold">Weekend Batch</span></td>
+                                <td class="py-4 px-4 font-display font-extrabold text-brand-dark">₹21,000 + GST</td>
+                                <td class="py-4 px-5 sm:px-6 text-right">
+                                    <button onclick="openBookingModal('Enroll Now: Certified Scrum Product Owner (CSPO) — ₹21,000 + GST')" class="px-4 py-2 rounded-xl bg-brand-red hover:bg-brand-redDark text-white font-bold text-xs transition-all">Enroll Now</button>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-brand-blueLight/40 transition-colors bg-brand-redLight/20">
+                                <td class="py-4 px-5 sm:px-6 font-display font-bold text-brand-dark">
+                                    AI-Driven Scrum Master Job Oriented Training Program
+                                    <span class="ml-1.5 px-2 py-0.5 rounded bg-brand-red text-white text-[10px] font-bold uppercase">Flagship</span>
+                                </td>
+                                <td class="py-4 px-4 text-brand-blue font-bold">Jitendra Kumar</td>
+                                <td class="py-4 px-4"><span class="px-2.5 py-1 rounded-full bg-brand-redLight text-brand-red text-xs font-bold">Weekdays Batch</span></td>
+                                <td class="py-4 px-4 font-display font-extrabold text-brand-red">₹29,999 + GST</td>
+                                <td class="py-4 px-5 sm:px-6 text-right">
+                                    <button onclick="openBookingModal('Enroll Now: AI-Driven Scrum Master Job Oriented Training Program — ₹29,999 + GST')" class="px-4 py-2 rounded-xl bg-brand-red hover:bg-brand-redDark text-white font-bold text-xs transition-all">Enroll Now</button>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-brand-blueLight/40 transition-colors">
+                                <td class="py-4 px-5 sm:px-6 font-display font-bold text-brand-dark">Professional Scrum Product Owner (PSPO)</td>
+                                <td class="py-4 px-4 text-slate-700 font-medium">Certified Trainer</td>
+                                <td class="py-4 px-4"><span class="px-2.5 py-1 rounded-full bg-brand-blueLight text-brand-blue text-xs font-bold">Weekend Batch</span></td>
+                                <td class="py-4 px-4 font-display font-extrabold text-brand-dark">₹21,000 + GST</td>
+                                <td class="py-4 px-5 sm:px-6 text-right">
+                                    <button onclick="openBookingModal('Enroll Now: Professional Scrum Product Owner (PSPO) — ₹21,000 + GST')" class="px-4 py-2 rounded-xl bg-brand-red hover:bg-brand-redDark text-white font-bold text-xs transition-all">Enroll Now</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
 
@@ -982,161 +1032,189 @@
                     </button>
                 </div>
             </div>
+
+            <!-- Why Choose Skill Yantra & Benefits of Learning (Exact 6 Pillars from skillyantra.com) -->
+            <div class="mt-16 pt-14 border-t border-slate-200/90">
+                <div class="text-center max-w-3xl mx-auto mb-10">
+                    <span class="inline-block px-3.5 py-1 rounded-full bg-brand-redLight text-brand-red text-xs font-bold uppercase tracking-wider mb-2">
+                        Why Choose Skill Yantra?
+                    </span>
+                    <h3 class="font-display text-2xl sm:text-3xl font-extrabold text-brand-dark">
+                        Benefits of Learning with <span class="text-brand-red">Skill</span><span class="text-brand-blue">Yantra</span>
+                    </h3>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="p-6 rounded-2xl bg-white border border-slate-200/80 shadow-sm">
+                        <div class="w-11 h-11 rounded-xl bg-brand-redLight text-brand-red flex items-center justify-center mb-4">
+                            <i class="ph-duotone ph-robot text-2xl"></i>
+                        </div>
+                        <h4 class="font-display font-bold text-base text-brand-dark mb-1.5">AI-Powered Agile Learning</h4>
+                        <p class="text-xs sm:text-sm text-brand-slate">Learn Scrum with AI tools to improve planning, documentation, and team productivity.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-white border border-slate-200/80 shadow-sm">
+                        <div class="w-11 h-11 rounded-xl bg-brand-blueLight text-brand-blue flex items-center justify-center mb-4">
+                            <i class="ph-duotone ph-chalkboard-teacher text-2xl"></i>
+                        </div>
+                        <h4 class="font-display font-bold text-base text-brand-dark mb-1.5">Expert-Led Live Training</h4>
+                        <p class="text-xs sm:text-sm text-brand-slate">Learn from experienced Agile coaches through interactive, hands-on sessions led by Jitendra Kumar.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-white border border-slate-200/80 shadow-sm">
+                        <div class="w-11 h-11 rounded-xl bg-brand-redLight text-brand-red flex items-center justify-center mb-4">
+                            <i class="ph-duotone ph-kanban text-2xl"></i>
+                        </div>
+                        <h4 class="font-display font-bold text-base text-brand-dark mb-1.5">Real-World Projects</h4>
+                        <p class="text-xs sm:text-sm text-brand-slate">Gain practical experience with live case studies, Scrum simulations, and Agile workflows.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-white border border-slate-200/80 shadow-sm">
+                        <div class="w-11 h-11 rounded-xl bg-brand-blueLight text-brand-blue flex items-center justify-center mb-4">
+                            <i class="ph-duotone ph-wrench text-2xl"></i>
+                        </div>
+                        <h4 class="font-display font-bold text-base text-brand-dark mb-1.5">Industry-Standard Tools</h4>
+                        <p class="text-xs sm:text-sm text-brand-slate">Build practical skills using Jira, Confluence, Miro, and modern AI productivity tools.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-white border border-slate-200/80 shadow-sm">
+                        <div class="w-11 h-11 rounded-xl bg-brand-redLight text-brand-red flex items-center justify-center mb-4">
+                            <i class="ph-duotone ph-briefcase text-2xl"></i>
+                        </div>
+                        <h4 class="font-display font-bold text-base text-brand-dark mb-1.5">Career-Focused Support &amp; Job Assistance</h4>
+                        <p class="text-xs sm:text-sm text-brand-slate">Get resume building, mock interviews, LinkedIn optimization, and personalized placement assistance.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-white border border-slate-200/80 shadow-sm">
+                        <div class="w-11 h-11 rounded-xl bg-brand-blueLight text-brand-blue flex items-center justify-center mb-4">
+                            <i class="ph-duotone ph-users-three text-2xl"></i>
+                        </div>
+                        <h4 class="font-display font-bold text-base text-brand-dark mb-1.5">Certification Support &amp; Study Community</h4>
+                        <p class="text-xs sm:text-sm text-brand-slate">Combine Scrum, Agile, Jira, and AI expertise with an active learning community to grow together.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- F. ABOUT US & MEET YOUR MENTOR — JITENDRA (#about) -->
+    <!-- F. ABOUT ME FOUNDER SECTION — JITENDRA KUMAR (#about) (Exact match to skillyantra.com + Founder Image) -->
     <section id="about" class="py-16 sm:py-24 bg-[#F0F7FF] border-y border-brand-blue/15 relative overflow-hidden">
+        <!-- Subtle decorative accents -->
+        <div class="pointer-events-none absolute -top-20 -left-20 w-80 h-80 rounded-full bg-brand-red/10 blur-3xl"></div>
+        <div class="pointer-events-none absolute -bottom-20 -right-20 w-80 h-80 rounded-full bg-brand-blue/10 blur-3xl"></div>
+
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
                 
-                <!-- Left Column: Mentor Profile Card -->
+                <!-- Left Column: Official Founder Image Card (https://skillyantra.com/wp-content/uploads/Untitled-design-71-1.png) -->
                 <div class="lg:col-span-5">
-                    <div class="bg-white rounded-3xl border border-slate-200/90 shadow-soft overflow-hidden">
-                        <div class="h-28 bg-gradient-to-r from-brand-blue via-[#0074BD] to-brand-red relative">
-                            <div class="absolute right-4 top-4 bg-white/20 backdrop-blur-md text-white px-3 py-1 rounded-full text-xs font-bold">
-                                Principal Mentor &amp; Founder
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <!-- Red & Blue Brand Frame Glow -->
+                        <div class="absolute -inset-2 bg-gradient-to-tr from-brand-red via-brand-blue to-brand-swooshBlue rounded-3xl opacity-25 blur-lg"></div>
+                        
+                        <div class="relative bg-white rounded-3xl border-2 border-white shadow-soft overflow-hidden">
+                            <!-- Top Accent Banner -->
+                            <div class="bg-gradient-to-r from-brand-blue via-[#0074BD] to-brand-red px-5 py-3 flex items-center justify-between text-white">
+                                <span class="text-xs font-extrabold uppercase tracking-wider flex items-center gap-1.5">
+                                    <i class="ph-fill ph-seal-check text-base"></i>
+                                    Founder &amp; Principal Mentor
+                                </span>
+                                <span class="text-[11px] font-bold bg-white/20 px-2.5 py-0.5 rounded-full">15+ Yrs IT Leadership</span>
                             </div>
-                        </div>
 
-                        <div class="px-6 sm:px-8 pb-8 relative">
-                            <div class="-mt-14 mb-4 flex items-end justify-between">
-                                <div class="w-28 h-28 rounded-3xl bg-white p-1.5 shadow-lg border border-slate-100">
-                                    <div class="w-full h-full rounded-2xl bg-gradient-to-br from-brand-blue to-brand-dark text-white flex flex-col items-center justify-center">
-                                        <span class="font-display text-3xl font-extrabold tracking-tight">J</span>
-                                        <span class="text-[10px] uppercase tracking-widest text-sky-200 font-bold">Mentor</span>
+                            <!-- Founder Image Container with Official URL + Styled Fallback -->
+                            <div class="relative bg-gradient-to-b from-brand-blueLight/60 to-white pt-4 px-4 sm:px-6 flex justify-center items-end min-h-[340px] sm:min-h-[390px]">
+                                <img 
+                                    src="https://skillyantra.com/wp-content/uploads/Untitled-design-71-1.png" 
+                                    alt="Jitendra Kumar — Founder of Skill Yantra, Product Leader, Agile Coach, and Corporate Trainer" 
+                                    class="w-full max-w-[360px] h-auto object-contain object-bottom drop-shadow-xl transition-transform duration-300 hover:scale-[1.02]"
+                                    onerror="this.style.display='none'; document.getElementById('founder-img-fallback').classList.remove('hidden'); document.getElementById('founder-img-fallback').classList.add('flex');"
+                                />
+                                <!-- High-Contrast Fallback Portrait Card if offline -->
+                                <div id="founder-img-fallback" class="hidden flex-col items-center justify-center text-center py-10 px-6">
+                                    <div class="w-28 h-28 rounded-3xl bg-gradient-to-br from-brand-blue to-brand-red text-white font-display text-4xl font-extrabold flex items-center justify-center shadow-lg mb-4">
+                                        JK
+                                    </div>
+                                    <h4 class="font-display text-2xl font-extrabold text-brand-dark">Jitendra Kumar</h4>
+                                    <p class="text-xs font-bold text-brand-blue uppercase tracking-wider mt-1">Founder • Product Leader • Agile Coach</p>
+                                </div>
+                            </div>
+
+                            <!-- Founder Caption Footer -->
+                            <div class="p-6 bg-white border-t border-slate-100">
+                                <div class="flex items-center justify-between gap-3">
+                                    <div>
+                                        <h3 class="font-display text-2xl font-extrabold text-brand-dark">Jitendra Kumar</h3>
+                                        <p class="text-xs sm:text-sm font-bold text-brand-blue mt-0.5">
+                                            Founder of Skill Yantra • Product Leader, Agile Coach &amp; Corporate Trainer
+                                        </p>
+                                    </div>
+                                    <a href="https://skillyantra.com/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-brand-blueLight text-brand-blue hover:bg-brand-blue hover:text-white flex items-center justify-center shrink-0 transition-colors" aria-label="Skill Yantra Official Website">
+                                        <i class="ph-fill ph-linkedin-logo text-xl"></i>
+                                    </a>
+                                </div>
+
+                                <div class="grid grid-cols-3 gap-2 mt-4 pt-4 border-t border-slate-100 text-center">
+                                    <div class="p-2 rounded-xl bg-brand-redLight/60">
+                                        <div class="font-display font-extrabold text-sm sm:text-base text-brand-red">15+ Yrs</div>
+                                        <div class="text-[10px] font-semibold text-slate-600">IT Experience</div>
+                                    </div>
+                                    <div class="p-2 rounded-xl bg-brand-blueLight/70">
+                                        <div class="font-display font-extrabold text-sm sm:text-base text-brand-blue">1,421+</div>
+                                        <div class="text-[10px] font-semibold text-slate-600">Learners Coached</div>
+                                    </div>
+                                    <div class="p-2 rounded-xl bg-slate-100">
+                                        <div class="font-display font-extrabold text-sm sm:text-base text-brand-dark">32+</div>
+                                        <div class="text-[10px] font-semibold text-slate-600">Corporate Batches</div>
                                     </div>
                                 </div>
-                                <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-bold bg-brand-redLight text-brand-red">
-                                    <i class="ph-fill ph-seal-check"></i> Enterprise Agile Coach
-                                </span>
-                            </div>
-
-                            <h3 class="font-display text-2xl sm:text-3xl font-extrabold text-brand-dark">Jitendra</h3>
-                            <p class="text-sm font-semibold text-brand-blue mt-1">
-                                Founder &amp; Lead AI-Powered Agile, Scrum &amp; Product Mentor at SkillYantra
-                            </p>
-
-                            <p class="text-sm text-brand-slate leading-relaxed mt-4">
-                                With 18+ years of real-world IT leadership driving enterprise Agile transformations, scaled Scrum execution, and AI-powered product delivery, <strong>Jitendra</strong> built SkillYantra around a simple mission: <em>"Practical Agile and Scrum training for real career growth."</em>
-                            </p>
-
-                            <!-- Credentials Badges -->
-                            <div class="mt-6 pt-6 border-t border-slate-100">
-                                <div class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Specializations &amp; Coaching Domains</div>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="px-3 py-1 rounded-lg bg-slate-100 text-slate-700 text-xs font-semibold">AI Scrum Master</span>
-                                    <span class="px-3 py-1 rounded-lg bg-slate-100 text-slate-700 text-xs font-semibold">PSM™ / CSM® / CSPO® / PSPO™</span>
-                                    <span class="px-3 py-1 rounded-lg bg-slate-100 text-slate-700 text-xs font-semibold">SAFe® 6.0 POPM &amp; Agilist</span>
-                                    <span class="px-3 py-1 rounded-lg bg-slate-100 text-slate-700 text-xs font-semibold">JIRA &amp; Business Analysis</span>
-                                </div>
-                            </div>
-
-                            <div class="mt-6">
-                                <button onclick="openBookingModal('1-on-1 Mentorship Discovery with Jitendra')" class="w-full py-3.5 px-5 rounded-xl bg-brand-blue hover:bg-brand-blueDark text-white font-bold text-sm shadow-blue-glow transition-all flex items-center justify-center gap-2">
-                                    <i class="ph-bold ph-calendar-plus text-lg"></i>
-                                    <span>Book a 1-on-1 Session with Jitendra</span>
-                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Right Column: About SkillYantra & Interactive Mentor Tabs -->
+                <!-- Right Column: Exact "About Me Founder" Bio & Consultation CTA from skillyantra.com -->
                 <div class="lg:col-span-7">
-                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-brand-blue/20 text-brand-blue text-xs font-bold uppercase tracking-wider mb-4 shadow-sm">
-                        <i class="ph-bold ph-buildings text-sm"></i>
-                        <span>About SkillYantra &amp; Jitendra</span>
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-brand-red/25 text-brand-red text-xs font-extrabold uppercase tracking-wider mb-4 shadow-sm">
+                        <i class="ph-fill ph-user-circle-check text-base"></i>
+                        <span>About Me Founder</span>
                     </div>
 
-                    <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-brand-dark tracking-tight leading-tight mb-4">
-                        Practical Agile and Scrum Training for Real Career Growth
+                    <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-brand-dark tracking-tight leading-tight mb-6">
+                        Meet <span class="text-brand-red">Jitendra Kumar</span> — Passionate Product Leader, <span class="text-brand-blue">Agile Coach</span> &amp; Corporate Trainer
                     </h2>
 
-                    <p class="text-base sm:text-lg text-brand-slate leading-relaxed mb-6">
-                        At <strong>SkillYantra</strong>, we bridge the gap between theoretical certifications and day-one workplace readiness. Across Bengaluru, Pune, Hyderabad, Mumbai, Chennai, Delhi, and globally, thousands of professionals have transformed their careers through <strong>Jitendra's</strong> live, scenario-driven coaching.
-                    </p>
+                    <!-- Exact 3 Paragraphs from skillyantra.com -->
+                    <div class="bg-white rounded-3xl border border-slate-200/90 p-6 sm:p-8 shadow-soft space-y-4 text-sm sm:text-base text-slate-700 leading-relaxed mb-6">
+                        <p>
+                            <strong class="text-brand-dark font-bold">Jitendra Kumar</strong> is the Founder of <strong class="text-brand-red font-bold">Skill Yantra</strong> and a passionate Product Leader, Agile Coach, and Corporate Trainer with over <strong>15 years of experience in the IT industry</strong>. He has helped hundreds of professionals build successful careers in Product Management, Scrum, Business Analysis, and Agile Coaching.
+                        </p>
+                        <p>
+                            With expertise in <strong class="text-brand-blue font-semibold">Scrum, Kanban, SAFe, Jira, and AI-powered Agile practices</strong>, Jitendra focuses on delivering practical, industry-relevant training that prepares learners for real-world challenges. His hands-on approach, career mentoring, and interview guidance enable professionals to confidently transition into high-demand roles.
+                        </p>
+                        <p>
+                            Through Skill Yantra, his mission is to bridge the gap between learning and industry expectations by providing high-quality training, personalized mentorship, and career-focused programs. He is committed to empowering individuals with the knowledge, confidence, and skills needed to grow, lead, and succeed in today's fast-evolving digital world.
+                        </p>
 
-                    <!-- Interactive Mentor Tabs -->
-                    <div class="bg-white rounded-3xl border border-slate-200/90 p-5 sm:p-7 shadow-soft">
-                        <div class="flex flex-wrap gap-2 border-b border-slate-100 pb-4 mb-5">
-                            <button onclick="switchMentorTab('philosophy')" id="mentor-tab-btn-philosophy" class="mentor-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-brand-red text-white transition-all">
-                                Jitendra's Philosophy
-                            </button>
-                            <button onclick="switchMentorTab('experience')" id="mentor-tab-btn-experience" class="mentor-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-slate-100 text-slate-700 hover:bg-brand-blueLight hover:text-brand-blue transition-all">
-                                Hands-On Lab Methodology
-                            </button>
-                            <button onclick="switchMentorTab('impact')" id="mentor-tab-btn-impact" class="mentor-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-slate-100 text-slate-700 hover:bg-brand-blueLight hover:text-brand-blue transition-all">
-                                Pan-India &amp; Global Impact
-                            </button>
-                        </div>
-
-                        <!-- Tab Content 1: Philosophy -->
-                        <div id="mentor-tab-philosophy" class="mentor-tab-content space-y-4">
-                            <blockquote class="p-4 rounded-2xl bg-brand-redLight/60 border-l-4 border-brand-red text-sm sm:text-base font-medium text-brand-dark italic">
-                                "A certificate gets your resume shortlisted, but practical command over JIRA, AI-assisted sprint execution, and stakeholder management is what wins high-paying offers. At SkillYantra, we train you for the actual job."
-                                <footer class="mt-2 font-bold not-italic text-brand-red text-xs uppercase tracking-wider">— Jitendra</footer>
-                            </blockquote>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                                <div class="flex items-start gap-3">
-                                    <i class="ph-fill ph-check-square-offset text-brand-blue text-xl shrink-0 mt-0.5"></i>
-                                    <div>
-                                        <h4 class="text-sm font-bold text-brand-dark">Real Project Simulations</h4>
-                                        <p class="text-xs text-slate-600 mt-0.5">Practice Sprint Planning, PI Planning, Backlog Refinement, and Retrospectives live.</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-start gap-3">
-                                    <i class="ph-fill ph-check-square-offset text-brand-red text-xl shrink-0 mt-0.5"></i>
-                                    <div>
-                                        <h4 class="text-sm font-bold text-brand-dark">Direct 1:1 Feedback</h4>
-                                        <p class="text-xs text-slate-600 mt-0.5">Jitendra personally evaluates your resume, JIRA boards, and mock interviews.</p>
-                                    </div>
-                                </div>
+                        <!-- Core Expertise Badges -->
+                        <div class="pt-4 border-t border-slate-100">
+                            <div class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Core Coaching &amp; Transformation Expertise</div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1.5 rounded-xl bg-brand-redLight text-brand-red text-xs font-bold">AI-Powered Agile Practices</span>
+                                <span class="px-3 py-1.5 rounded-xl bg-brand-blueLight text-brand-blue text-xs font-bold">Scrum, Kanban &amp; SAFe®</span>
+                                <span class="px-3 py-1.5 rounded-xl bg-slate-100 text-slate-700 text-xs font-bold">Jira &amp; Confluence Mastery</span>
+                                <span class="px-3 py-1.5 rounded-xl bg-slate-100 text-slate-700 text-xs font-bold">Product Management &amp; BA</span>
+                                <span class="px-3 py-1.5 rounded-xl bg-brand-blueLight text-brand-blue text-xs font-bold">1:1 Career Mentoring &amp; Interview Guidance</span>
                             </div>
                         </div>
+                    </div>
 
-                        <!-- Tab Content 2: Practical Methodology -->
-                        <div id="mentor-tab-experience" class="mentor-tab-content hidden space-y-4">
-                            <p class="text-sm sm:text-base text-slate-700 leading-relaxed">
-                                Every cohort combines Agile/Scrum mastery with modern AI productivity tools so you can outperform traditional candidates:
-                            </p>
-                            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm font-medium text-slate-700">
-                                <li class="flex items-center gap-2.5 p-3 rounded-xl bg-slate-50">
-                                    <i class="ph-bold ph-kanban text-brand-blue text-lg"></i>
-                                    <span>JIRA Administration, Dashboards &amp; JQL</span>
-                                </li>
-                                <li class="flex items-center gap-2.5 p-3 rounded-xl bg-slate-50">
-                                    <i class="ph-bold ph-robot text-brand-red text-lg"></i>
-                                    <span>AI Prompting for User Stories &amp; Acceptance Criteria</span>
-                                </li>
-                                <li class="flex items-center gap-2.5 p-3 rounded-xl bg-slate-50">
-                                    <i class="ph-bold ph-chart-line-up text-brand-blue text-lg"></i>
-                                    <span>Velocity, Capacity, DOR/DOD &amp; Flow Metrics</span>
-                                </li>
-                                <li class="flex items-center gap-2.5 p-3 rounded-xl bg-slate-50">
-                                    <i class="ph-bold ph-target text-brand-red text-lg"></i>
-                                    <span>SAFe® PI Planning, BRD/FRD &amp; Roadmapping</span>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <!-- Tab Content 3: Mentorship Impact -->
-                        <div id="mentor-tab-impact" class="mentor-tab-content hidden space-y-4">
-                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                                <div class="p-4 rounded-2xl bg-brand-blueLight border border-brand-blue/15 text-center">
-                                    <div class="font-display text-2xl font-extrabold text-brand-blue">5,200+</div>
-                                    <div class="text-xs font-semibold text-slate-700 mt-1">Professionals Mentored by Jitendra</div>
-                                </div>
-                                <div class="p-4 rounded-2xl bg-brand-redLight border border-brand-red/15 text-center">
-                                    <div class="font-display text-2xl font-extrabold text-brand-red">Top 10 Cities</div>
-                                    <div class="text-xs font-semibold text-slate-700 mt-1">Pune, Bengaluru, Hyderabad, Mumbai, Delhi &amp; More</div>
-                                </div>
-                                <div class="p-4 rounded-2xl bg-slate-100 border border-slate-200 text-center">
-                                    <div class="font-display text-2xl font-extrabold text-brand-dark">98.6%</div>
-                                    <div class="text-xs font-semibold text-slate-700 mt-1">First-Attempt Certification &amp; Job Success</div>
-                                </div>
-                            </div>
-                        </div>
+                    <!-- Schedule a Consultation CTA & Interactive Mentor Tabs -->
+                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+                        <button onclick="openBookingModal('Schedule a Consultation with Jitendra Kumar')" class="px-8 py-4 rounded-2xl bg-brand-red hover:bg-brand-redDark text-white font-bold text-sm sm:text-base shadow-red-glow transition-all flex items-center justify-center gap-2.5 group">
+                            <i class="ph-bold ph-calendar-check text-xl"></i>
+                            <span>Schedule a Consultation</span>
+                            <i class="ph-bold ph-arrow-right transition-transform group-hover:translate-x-1"></i>
+                        </button>
+                        <a href="#success-story" class="px-6 py-4 rounded-2xl bg-white hover:bg-brand-blueLight text-brand-blue border-2 border-brand-blue/25 font-bold text-sm sm:text-base transition-all flex items-center justify-center gap-2">
+                            <i class="ph-fill ph-youtube-logo text-brand-red text-xl"></i>
+                            <span>Watch Success Stories</span>
+                        </a>
                     </div>
                 </div>
 
@@ -1144,37 +1222,225 @@
         </div>
     </section>
 
-    <!-- G. SUCCESS STORY SECTION (#success-story) -->
+    <!-- G. CORPORATE SCRUM MASTER TRAINING SUCCESS STORIES (Real YouTube Video Testimonials + Google Reviews) (#success-story) -->
     <section id="success-story" class="py-16 sm:py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-                <div class="max-w-2xl">
-                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-redLight text-brand-red text-xs font-bold uppercase tracking-wider mb-3">
-                        <i class="ph-bold ph-quotes text-sm"></i>
-                        <span>Verified Success Stories</span>
+            
+            <!-- Part 1: Real YouTube Video Testimonials ("Corporate Scrum Master Training Success Stories") -->
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-redLight text-brand-red text-xs font-extrabold uppercase tracking-wider mb-3">
+                    <i class="ph-fill ph-youtube-logo text-base"></i>
+                    <span>Skill Yantra Corporate Training &amp; Video Testimonials</span>
+                </div>
+                <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-brand-dark tracking-tight mb-4">
+                    Corporate Scrum Master Training <span class="text-brand-red">Success</span> <span class="text-brand-blue">Stories</span>
+                </h2>
+                <p class="text-base sm:text-lg text-brand-slate">
+                    Watch real video testimonials, corporate Scrum Master training sessions, and 200% salary hike career transitions mentored by <strong>Jitendra Kumar</strong> on the official <strong>Skill Yantra</strong> YouTube channel.
+                </p>
+            </div>
+
+            <!-- Featured Main YouTube Video Stage + Playlist Selector -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-12">
+                <!-- Left 7 Cols: Active Embedded YouTube Player -->
+                <div class="lg:col-span-7 bg-brand-dark rounded-3xl overflow-hidden shadow-soft border-2 border-slate-900">
+                    <div class="relative w-full aspect-video bg-black">
+                        <iframe 
+                            id="main-yt-iframe"
+                            class="w-full h-full"
+                            src="https://www.youtube.com/embed/M7Rw689uCCc?rel=0" 
+                            title="Skill Yantra Corporate Scrum Master Training Success Story"
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen>
+                        </iframe>
                     </div>
-                    <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-brand-dark tracking-tight">
-                        Real Career Transformations Mentored by <span class="text-brand-blue">Jitendra</span>
-                    </h2>
+                    <div class="p-5 sm:p-6 bg-gradient-to-r from-brand-dark via-[#112240] to-brand-dark text-white flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                        <div>
+                            <span id="main-yt-badge" class="inline-block px-2.5 py-0.5 rounded bg-brand-red text-white text-[11px] font-bold uppercase tracking-wider mb-1">
+                                200% Salary Hike Success Story
+                            </span>
+                            <h3 id="main-yt-title" class="font-display text-lg sm:text-xl font-extrabold">
+                                Mithilesh Transitioned from Non-IT to an AVP–Scrum Role with 200% Hike — SkillYantra
+                            </h3>
+                        </div>
+                        <a id="main-yt-external" href="https://www.youtube.com/watch?v=M7Rw689uCCc" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded-xl bg-white/15 hover:bg-brand-red text-white text-xs font-bold transition-colors shrink-0 inline-flex items-center gap-1.5 self-start sm:self-center">
+                            <i class="ph-fill ph-youtube-logo text-base"></i>
+                            <span>Watch on YouTube</span>
+                        </a>
+                    </div>
                 </div>
 
-                <!-- Role Filter Buttons for Testimonials -->
-                <div class="flex flex-wrap gap-2">
-                    <button onclick="filterTestimonials('all')" data-tfilter="all" class="testi-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-brand-dark text-white transition-all">
-                        All Stories (6)
+                <!-- Right 5 Cols: Interactive Video Playlist Cards from SKILL YANTRA YouTube Channel -->
+                <div class="lg:col-span-5 space-y-3.5">
+                    <div class="flex items-center justify-between px-1 mb-1">
+                        <span class="text-xs font-extrabold uppercase tracking-wider text-brand-dark flex items-center gap-1.5">
+                            <i class="ph-fill ph-play-circle text-brand-red text-base"></i>
+                            Select Video Testimonial to Play
+                        </span>
+                        <span class="text-xs font-semibold text-brand-blue">4 Featured Videos</span>
+                    </div>
+
+                    <!-- Video Card 1 -->
+                    <button type="button" onclick="loadYouTubeStory('M7Rw689uCCc', 'Mithilesh Transitioned from Non-IT to an AVP–Scrum Role with 200% Hike — SkillYantra', '200% Salary Hike Success Story', 0)" data-yt-idx="0" class="yt-playlist-card w-full p-3.5 rounded-2xl border-2 border-brand-red bg-brand-redLight/40 text-left transition-all flex items-center gap-3.5 group">
+                        <div class="relative w-28 sm:w-32 aspect-video rounded-xl overflow-hidden bg-slate-900 shrink-0">
+                            <img src="https://img.youtube.com/vi/M7Rw689uCCc/hqdefault.jpg" alt="Mithilesh Success Story" class="w-full h-full object-cover group-hover:scale-105 transition-transform" onerror="this.src='https://placehold.co/320x180/0F172A/FFFFFF?text=Skill+Yantra'"/>
+                            <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+                                <span class="w-8 h-8 rounded-full bg-brand-red text-white flex items-center justify-center shadow">
+                                    <i class="ph-fill ph-play text-sm"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="min-w-0 flex-1">
+                            <span class="inline-block text-[10px] font-extrabold uppercase tracking-wider text-brand-red bg-white px-2 py-0.5 rounded border border-brand-red/20 mb-1">
+                                Non-IT to AVP Scrum • 200% Hike
+                            </span>
+                            <h4 class="font-display font-bold text-xs sm:text-sm text-brand-dark line-clamp-2">
+                                Mithilesh Transitioned from Non-IT to an AVP–Scrum Role with 200% Hike
+                            </h4>
+                            <p class="text-[11px] text-slate-500 mt-0.5">Skill Yantra Corporate Training</p>
+                        </div>
                     </button>
-                    <button onclick="filterTestimonials('Scrum Master')" data-tfilter="Scrum Master" class="testi-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-slate-100 text-slate-700 hover:border-brand-blue transition-all">
-                        AI &amp; Scrum Masters
+
+                    <!-- Video Card 2 -->
+                    <button type="button" onclick="loadYouTubeStory('3wIeL67uX-U', 'Scrum Master Training by SKILL YANTRA | Live Student Feedback & Career Transformation', 'Student Feedback & Review', 1)" data-yt-idx="1" class="yt-playlist-card w-full p-3.5 rounded-2xl border-2 border-slate-200 bg-white hover:border-brand-blue text-left transition-all flex items-center gap-3.5 group">
+                        <div class="relative w-28 sm:w-32 aspect-video rounded-xl overflow-hidden bg-slate-900 shrink-0">
+                            <img src="https://img.youtube.com/vi/3wIeL67uX-U/hqdefault.jpg" alt="Scrum Master Training Student Feedback" class="w-full h-full object-cover group-hover:scale-105 transition-transform" onerror="this.src='https://placehold.co/320x180/0086D9/FFFFFF?text=Student+Feedback'"/>
+                            <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+                                <span class="w-8 h-8 rounded-full bg-brand-blue text-white flex items-center justify-center shadow">
+                                    <i class="ph-fill ph-play text-sm"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="min-w-0 flex-1">
+                            <span class="inline-block text-[10px] font-extrabold uppercase tracking-wider text-brand-blue bg-brand-blueLight px-2 py-0.5 rounded mb-1">
+                                Live Batch Feedback
+                            </span>
+                            <h4 class="font-display font-bold text-xs sm:text-sm text-brand-dark line-clamp-2">
+                                Scrum Master Training by SKILL YANTRA | Student's Feedback
+                            </h4>
+                            <p class="text-[11px] text-slate-500 mt-0.5">Skill Yantra Corporate Training</p>
+                        </div>
                     </button>
-                    <button onclick="filterTestimonials('Product')" data-tfilter="Product" class="testi-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-slate-100 text-slate-700 hover:border-brand-blue transition-all">
-                        Product Owners &amp; BA
+
+                    <!-- Video Card 3 -->
+                    <button type="button" onclick="loadYouTubeStory('mbvftWgtFyk', 'Scrum Master Job Oriented Training Live Session by Skill Yantra with Jitendra', 'Job-Oriented Training Session', 2)" data-yt-idx="2" class="yt-playlist-card w-full p-3.5 rounded-2xl border-2 border-slate-200 bg-white hover:border-brand-blue text-left transition-all flex items-center gap-3.5 group">
+                        <div class="relative w-28 sm:w-32 aspect-video rounded-xl overflow-hidden bg-slate-900 shrink-0">
+                            <img src="https://img.youtube.com/vi/mbvftWgtFyk/hqdefault.jpg" alt="Scrum Master Job Oriented Training" class="w-full h-full object-cover group-hover:scale-105 transition-transform" onerror="this.src='https://placehold.co/320x180/EC2610/FFFFFF?text=Job+Training'"/>
+                            <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+                                <span class="w-8 h-8 rounded-full bg-brand-red text-white flex items-center justify-center shadow">
+                                    <i class="ph-fill ph-play text-sm"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="min-w-0 flex-1">
+                            <span class="inline-block text-[10px] font-extrabold uppercase tracking-wider text-brand-red bg-brand-redLight px-2 py-0.5 rounded mb-1">
+                                Corporate &amp; Job Bootcamp
+                            </span>
+                            <h4 class="font-display font-bold text-xs sm:text-sm text-brand-dark line-clamp-2">
+                                Scrum Master Job Oriented Training Live Workshop by Skill Yantra
+                            </h4>
+                            <p class="text-[11px] text-slate-500 mt-0.5">Skill Yantra Corporate Training</p>
+                        </div>
+                    </button>
+
+                    <!-- Video Card 4 -->
+                    <button type="button" onclick="loadYouTubeStory('Vi0qp1AKlag', 'Practical JIRA User Training & Agile Workflow Mastery by Skill Yantra', 'Hands-On JIRA Training', 3)" data-yt-idx="3" class="yt-playlist-card w-full p-3.5 rounded-2xl border-2 border-slate-200 bg-white hover:border-brand-blue text-left transition-all flex items-center gap-3.5 group">
+                        <div class="relative w-28 sm:w-32 aspect-video rounded-xl overflow-hidden bg-slate-900 shrink-0">
+                            <img src="https://img.youtube.com/vi/Vi0qp1AKlag/hqdefault.jpg" alt="JIRA User Training Demo" class="w-full h-full object-cover group-hover:scale-105 transition-transform" onerror="this.src='https://placehold.co/320x180/0086D9/FFFFFF?text=JIRA+Training'"/>
+                            <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+                                <span class="w-8 h-8 rounded-full bg-brand-blue text-white flex items-center justify-center shadow">
+                                    <i class="ph-fill ph-play text-sm"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="min-w-0 flex-1">
+                            <span class="inline-block text-[10px] font-extrabold uppercase tracking-wider text-brand-blue bg-brand-blueLight px-2 py-0.5 rounded mb-1">
+                                Hands-On Jira Workflow
+                            </span>
+                            <h4 class="font-display font-bold text-xs sm:text-sm text-brand-dark line-clamp-2">
+                                Practical JIRA User Training &amp; Agile Workflow Demo by Skill Yantra
+                            </h4>
+                            <p class="text-[11px] text-slate-500 mt-0.5">Skill Yantra Corporate Training</p>
+                        </div>
                     </button>
                 </div>
             </div>
 
-            <!-- Testimonials Grid -->
-            <div id="testimonials-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-                <!-- Populated by JS -->
+            <!-- 4-Card Embedded YouTube Grid ("Skill Yantra Corporate Training" Quick-Watch Grid) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+                <div class="bg-[#F8FAFC] rounded-2xl border border-slate-200/90 overflow-hidden shadow-sm flex flex-col justify-between">
+                    <div class="aspect-video w-full bg-slate-900">
+                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/M7Rw689uCCc?rel=0" title="Skill Yantra Corporate Training 1" frameborder="0" loading="lazy" allowfullscreen></iframe>
+                    </div>
+                    <div class="p-4">
+                        <div class="text-[11px] font-extrabold uppercase text-brand-red">Skill Yantra Corporate Training</div>
+                        <div class="font-display font-bold text-sm text-brand-dark mt-0.5">Non-IT to AVP–Scrum Role (200% Hike)</div>
+                    </div>
+                </div>
+
+                <div class="bg-[#F8FAFC] rounded-2xl border border-slate-200/90 overflow-hidden shadow-sm flex flex-col justify-between">
+                    <div class="aspect-video w-full bg-slate-900">
+                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/3wIeL67uX-U?rel=0" title="Skill Yantra Corporate Training 2" frameborder="0" loading="lazy" allowfullscreen></iframe>
+                    </div>
+                    <div class="p-4">
+                        <div class="text-[11px] font-extrabold uppercase text-brand-blue">Skill Yantra Corporate Training</div>
+                        <div class="font-display font-bold text-sm text-brand-dark mt-0.5">Scrum Master Batch — Student's Feedback</div>
+                    </div>
+                </div>
+
+                <div class="bg-[#F8FAFC] rounded-2xl border border-slate-200/90 overflow-hidden shadow-sm flex flex-col justify-between">
+                    <div class="aspect-video w-full bg-slate-900">
+                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/kF2vd0-1ePo?rel=0" title="Skill Yantra Corporate Training 3" frameborder="0" loading="lazy" allowfullscreen></iframe>
+                    </div>
+                    <div class="p-4">
+                        <div class="text-[11px] font-extrabold uppercase text-brand-red">Skill Yantra Corporate Training</div>
+                        <div class="font-display font-bold text-sm text-brand-dark mt-0.5">Product Owner Job Oriented Training</div>
+                    </div>
+                </div>
+
+                <div class="bg-[#F8FAFC] rounded-2xl border border-slate-200/90 overflow-hidden shadow-sm flex flex-col justify-between">
+                    <div class="aspect-video w-full bg-slate-900">
+                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/5dipudcERcM?rel=0" title="Skill Yantra Corporate Training 4" frameborder="0" loading="lazy" allowfullscreen></iframe>
+                    </div>
+                    <div class="p-4">
+                        <div class="text-[11px] font-extrabold uppercase text-brand-blue">Skill Yantra Corporate Training</div>
+                        <div class="font-display font-bold text-sm text-brand-dark mt-0.5">Overcoming Career Gap in Interviews</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Part 2: "What Our Clients Say About Us" — Verified Google Reviews from skillyantra.com -->
+            <div class="pt-12 border-t border-slate-200/80">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
+                    <div class="max-w-2xl">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-blueLight text-brand-blue text-xs font-bold uppercase tracking-wider mb-3">
+                            <i class="ph-fill ph-google-logo text-brand-red text-sm"></i>
+                            <span>Verified Google Reviews • Trustindex Verified</span>
+                        </div>
+                        <h3 class="font-display text-2xl sm:text-3xl font-extrabold text-brand-dark tracking-tight">
+                            What Our Clients Say About Us
+                        </h3>
+                    </div>
+
+                    <!-- Role Filter Buttons for Reviews -->
+                    <div class="flex flex-wrap gap-2">
+                        <button onclick="filterTestimonials('all')" data-tfilter="all" class="testi-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-brand-dark text-white transition-all">
+                            All Google Reviews (8)
+                        </button>
+                        <button onclick="filterTestimonials('Scrum Master')" data-tfilter="Scrum Master" class="testi-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-slate-100 text-slate-700 hover:border-brand-blue transition-all">
+                            Scrum &amp; Roadmap
+                        </button>
+                        <button onclick="filterTestimonials('Product')" data-tfilter="Product" class="testi-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-slate-100 text-slate-700 hover:border-brand-blue transition-all">
+                            Jira &amp; Hands-On Practice
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Verified Google Reviews Grid -->
+                <div id="testimonials-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Populated by JS -->
+                </div>
             </div>
         </div>
     </section>
@@ -2255,77 +2521,87 @@
                     </div>
                 </div>
             `;
-        }
+        // 6. YouTube Video Story Switcher ("Corporate Scrum Master Training Success Stories")
+        function loadYouTubeStory(videoId, title, badgeText, activeIdx) {
+            const iframe = document.getElementById('main-yt-iframe');
+            const titleEl = document.getElementById('main-yt-title');
+            const badgeEl = document.getElementById('main-yt-badge');
+            const extLink = document.getElementById('main-yt-external');
 
-        // 6. Mentor Spotlight Tabs
-        function switchMentorTab(tabName) {
-            const contents = document.querySelectorAll('.mentor-tab-content');
-            contents.forEach(c => c.classList.add('hidden'));
-            document.getElementById(`mentor-tab-${tabName}`).classList.remove('hidden');
+            if (iframe) {
+                iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+            }
+            if (titleEl) titleEl.textContent = title;
+            if (badgeEl) badgeEl.textContent = badgeText;
+            if (extLink) extLink.href = `https://www.youtube.com/watch?v=${videoId}`;
 
-            const btns = document.querySelectorAll('.mentor-tab-btn');
-            btns.forEach(b => {
-                b.className = 'mentor-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-slate-100 text-slate-700 hover:bg-brand-blueLight hover:text-brand-blue transition-all';
+            const cards = document.querySelectorAll('.yt-playlist-card');
+            cards.forEach((card, idx) => {
+                if (idx === activeIdx) {
+                    card.className = 'yt-playlist-card w-full p-3.5 rounded-2xl border-2 border-brand-red bg-brand-redLight/40 text-left transition-all flex items-center gap-3.5 group';
+                } else {
+                    card.className = 'yt-playlist-card w-full p-3.5 rounded-2xl border-2 border-slate-200 bg-white hover:border-brand-blue text-left transition-all flex items-center gap-3.5 group';
+                }
             });
-            const activeBtn = document.getElementById(`mentor-tab-btn-${tabName}`);
-            activeBtn.className = 'mentor-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-brand-red text-white transition-all';
         }
 
-        // 7. Verified Success Stories Data & Filter
+        // 7. Verified Google Reviews Data from skillyantra.com ("What Our Clients Say About Us" — "Sir" removed per user instruction)
         const testimonialsData = [
             {
-                name: 'Vikramaditya Kulkarni',
-                city: 'Pune',
-                prevRole: 'Senior QA Engineer',
-                newRole: 'AI Scrum Master',
-                hike: '140% Salary Hike',
-                category: 'Scrum Master',
-                quote: 'Jitendra completely transformed my approach to Agile. Instead of memorizing definitions, I built live JIRA dashboards and practiced AI sprint workflows. Cleared PSM I and landed 3 Scrum Master offers in Pune!'
-            },
-            {
-                name: 'Ananya Deshmukh',
-                city: 'Bengaluru',
-                prevRole: 'Business Analyst',
-                newRole: 'Senior Product Owner (PSPO™)',
-                hike: '155% Salary Hike',
+                name: 'Shreya Katti',
+                date: 'Posted on Google • Verified',
+                tag: 'Hands-On Jira Mastery',
                 category: 'Product',
-                quote: 'The Certified Scrum Product Owner and PSPO training with Jitendra gave me hands-on confidence in backlog prioritization, GenAI PRD writing, and stakeholder management. Best career investment I have made.'
+                quote: "My first experience with Jira has been really good and informative. Initially, the tool and its functionalities felt a little new and different, but with hands-on practice, I started understanding the workflow better. I'm looking forward to practicing more and exploring advanced Jira features."
             },
             {
-                name: 'Sandeep Reddy',
-                city: 'Hyderabad',
-                prevRole: 'Project Coordinator',
-                newRole: 'Scrum Master & Delivery Lead',
-                hike: '130% Salary Hike',
+                name: 'Manpreet Kaur',
+                date: 'Posted on Google • Verified',
+                tag: 'Clear Career Roadmap',
                 category: 'Scrum Master',
-                quote: 'I was struggling to clear scenario-based interview rounds. Jitendra conducted 1-on-1 mock interviews with me, refined my resume, and helped me master JIRA JQL and sprint metrics.'
+                quote: 'Very helpful in terms of a clear roadmap and training sessions are very interactive.'
             },
             {
-                name: 'Priya Nair',
-                city: 'Chennai',
-                prevRole: 'Application Support Lead',
-                newRole: 'SAFe® POPM / Product Manager',
-                hike: '160% Salary Hike',
-                category: 'Product',
-                quote: 'Transitioning from support to a SAFe Product Owner role seemed tough until I joined SkillYantra. Jitendra broke down PI Planning, WSJF, and Agile Release Trains with real enterprise simulations.'
-            },
-            {
-                name: 'Rohan Malhotra',
-                city: 'Delhi NCR',
-                prevRole: 'Manual Tester',
-                newRole: 'Scrum Master (CSM® & PSM™)',
-                hike: '135% Salary Hike',
+                name: 'Lippon Choudhury',
+                date: 'Posted on Google • Verified',
+                tag: 'Mentored by Jitendra',
                 category: 'Scrum Master',
-                quote: 'The Scrum Master Job Oriented Training at SkillYantra is 100% practical. Every weekend session with Jitendra felt like working inside a real Agile project team.'
+                quote: 'Jitendra you are covering all the options and explanations in very simple words. Thanks a lot!'
             },
             {
-                name: 'Meera Joshi',
-                city: 'Mumbai',
-                prevRole: 'Operations Executive',
-                newRole: 'Senior Business Analyst',
-                hike: '125% Salary Hike',
+                name: 'Ramya C',
+                date: 'Posted on Google • Verified',
+                tag: 'Interactive Q&A Support',
                 category: 'Product',
-                quote: 'Even coming from a non-coding background, Jitendra guided me step-by-step through BRD/FRD documentation, user stories, JIRA basics, and Agile BA interviews.'
+                quote: 'Able to understand well, trainer resolved our questions and made us comfortable to understand.'
+            },
+            {
+                name: 'Anta Rout',
+                date: 'Posted on Google • Verified',
+                tag: 'Mentored by Jitendra',
+                category: 'Scrum Master',
+                quote: 'Jitendra is superb.. It is a good place for learning & exploring..'
+            },
+            {
+                name: 'Jagbir Singh',
+                date: 'Posted on Google • Verified',
+                tag: 'Practical Agile Learning',
+                category: 'Scrum Master',
+                quote: 'A great learning and had amazing understanding.'
+            },
+            {
+                name: 'Mirza Aniruddin',
+                date: 'Posted on Google • Verified',
+                tag: 'SkillYantra Cohort',
+                category: 'Product',
+                quote: 'It was great learning with SkillYantra.'
+            },
+            {
+                name: 'Abhirup Majumder',
+                date: 'Posted on Google • Verified',
+                tag: '5-Star Rating',
+                category: 'Scrum Master',
+                quote: 'Excellent training experience and practical guidance for Agile career growth.'
             }
         ];
 
@@ -2334,43 +2610,33 @@
             const list = filter === 'all' ? testimonialsData : testimonialsData.filter(t => t.category === filter);
 
             grid.innerHTML = list.map(item => `
-                <div class="bg-[#F8FAFC] rounded-3xl border border-slate-200/90 p-6 sm:p-7 flex flex-col justify-between shadow-soft">
+                <div class="bg-[#F8FAFC] rounded-3xl border border-slate-200/90 p-6 flex flex-col justify-between shadow-soft hover:border-brand-blue/40 transition-all">
                     <div>
-                        <div class="flex items-center justify-between gap-2 mb-4">
-                            <span class="px-3 py-1 rounded-full bg-brand-redLight text-brand-red text-xs font-extrabold">
-                                ${item.hike}
+                        <div class="flex items-center justify-between gap-2 mb-3">
+                            <span class="px-2.5 py-1 rounded-full bg-white border border-slate-200 text-brand-blue text-[11px] font-extrabold">
+                                ${item.tag}
                             </span>
-                            <span class="text-xs font-bold text-slate-500 flex items-center gap-1">
-                                <i class="ph-fill ph-map-pin text-brand-blue"></i> ${item.city}
+                            <span class="inline-flex items-center gap-1 text-[11px] font-bold text-emerald-600">
+                                <i class="ph-fill ph-seal-check"></i> Google
                             </span>
                         </div>
 
-                        <div class="p-3.5 rounded-2xl bg-white border border-slate-200/80 mb-4">
-                            <div class="text-[11px] font-bold uppercase text-slate-400">Career Transition</div>
-                            <div class="text-xs sm:text-sm font-extrabold text-brand-dark mt-0.5 flex items-center gap-1.5 flex-wrap">
-                                <span class="text-slate-600">${item.prevRole}</span>
-                                <i class="ph-bold ph-arrow-right text-brand-red"></i>
-                                <span class="text-brand-blue">${item.newRole}</span>
-                            </div>
+                        <div class="flex text-amber-400 text-sm mb-3">
+                            <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
                         </div>
 
-                        <p class="text-sm text-brand-slate italic leading-relaxed mb-6">
+                        <p class="text-xs sm:text-sm text-brand-slate leading-relaxed mb-5">
                             "${item.quote}"
                         </p>
                     </div>
 
-                    <div class="flex items-center justify-between pt-4 border-t border-slate-200/70">
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-full bg-brand-blue text-white font-display font-bold text-sm flex items-center justify-center">
-                                ${item.name.charAt(0)}
-                            </div>
-                            <div>
-                                <div class="text-sm font-extrabold text-brand-dark">${item.name}</div>
-                                <div class="text-xs text-slate-500">Mentored by Jitendra</div>
-                            </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-slate-200/70">
+                        <div class="w-9 h-9 rounded-full bg-brand-blue text-white font-display font-bold text-xs flex items-center justify-center shrink-0">
+                            ${item.name.charAt(0)}
                         </div>
-                        <div class="flex text-amber-400 text-sm">
-                            <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                        <div class="min-w-0">
+                            <div class="text-xs sm:text-sm font-extrabold text-brand-dark truncate">${item.name}</div>
+                            <div class="text-[11px] text-slate-500">${item.date}</div>
                         </div>
                     </div>
                 </div>
@@ -2448,55 +2714,55 @@
                             ${b.title}
                         </h3>
                         <p class="text-xs sm:text-sm text-brand-slate leading-relaxed mb-5">
-                            ${b.excerpt}
-                        </p>
-                    </div>
-                    <button onclick="openBlogModal('${b.id}')" class="inline-flex items-center gap-1.5 text-xs sm:text-sm font-extrabold text-brand-red hover:text-brand-blue transition-colors">
-                        <span>Read Full Article</span>
-                        <i class="ph-bold ph-arrow-right"></i>
-                    </button>
-                </article>
-            `).join('');
-        }
-
-        function openBlogModal(blogId) {
-            const blog = blogsData.find(b => b.id === blogId);
-            if (!blog) return;
-            document.getElementById('info-modal-badge').textContent = `${blog.tag} • By Jitendra`;
-            document.getElementById('info-modal-title').textContent = blog.title;
-            document.getElementById('info-modal-body').innerHTML = blog.content + `
-                <div class="pt-4 border-t border-slate-100 flex justify-end">
-                    <button onclick="closeInfoModal(); openBookingModal('Free Career Discussion with Jitendra');" class="px-5 py-2.5 rounded-xl bg-brand-red text-white text-xs font-bold">
-                        Book Free 1:1 Session with Jitendra →
-                    </button>
-                </div>
-            `;
-            const modal = document.getElementById('info-modal');
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-        }
-
-        // 9. FAQ Accordion Data & Logic
+        // 9. FAQ Accordion Data & Logic (All 12 Official FAQs from skillyantra.com)
         const faqItems = [
             {
-                q: 'How is SkillYantra different from other certification training portals?',
-                a: 'At SkillYantra, we focus on "Practical Agile and Scrum training for real career growth." Beyond helping you pass global certifications (PSM, CSM, CSPO, PSPO, SAFe), Jitendra trains you on live JIRA setups, GenAI Agile workflows, real sprint ceremonies, ATS resume branding, and 1-on-1 mock interviews.'
+                q: 'What is Scrum Master Training?',
+                a: 'Scrum Master Training helps professionals learn Agile Scrum principles, Scrum events, roles, and responsibilities to lead high-performing Agile teams.'
             },
             {
-                q: 'Can I transition to Scrum Master, Product Owner, or Business Analyst from a QA, Developer, or Non-Tech role?',
-                a: 'Yes! Over 70% of our successful alumni transitioned from QA, Development, Support, Operations, or Coordinator backgrounds. Jitendra conducts a 1:1 diagnostic to reframe your past project experience into high-impact Agile/Product achievements.'
+                q: 'Which is the best Scrum Master training institute in India?',
+                a: 'The best institute offers certified trainers, hands-on projects, flexible learning options, mock interviews, and career support to help learners succeed. Skill Yantra combines all of these with AI-powered Agile workflows mentored by Jitendra Kumar.'
             },
             {
-                q: 'Are all sessions live and interactive with Jitendra?',
-                a: 'Yes, all cohorts are 100% live and interactive led by Jitendra. You also receive lifetime access to session recordings, JIRA/Confluence templates, AI prompt libraries, and mock exam simulators.'
+                q: 'What is the duration of Scrum Master Training?',
+                a: 'Most Scrum Master certification training programs are completed in 2 to 4 days, while comprehensive job-oriented programs last 4 to 8 weeks with live Jira simulations.'
             },
             {
-                q: 'What if I miss a live class due to office work or travel?',
-                a: 'Every live session is recorded and uploaded to your learner portal immediately. In addition, you can attend the missed module in the upcoming batch at no extra cost and clarify doubts directly with Jitendra.'
+                q: 'What is the fee for Scrum Master Training in India?',
+                a: 'The training fee generally ranges from ₹10,000 to ₹35,000 (plus specialized Job Assistance Programs), depending on the certification, trainer, and learning format.'
             },
             {
-                q: 'How can I contact SkillYantra for course counseling or corporate training?',
-                a: 'You can call or WhatsApp us directly at +91 9611796309, email connect@skillyantra.com, or submit the consultation form on this page to book your free 1:1 session with Jitendra.'
+                q: 'Is Scrum Master Certification worth it?',
+                a: 'Yes, Scrum Master Certification is worth it. It helps you learn Scrum, improve your practical skills, and explore better high-paying career opportunities.'
+            },
+            {
+                q: 'Can I learn Scrum Master online?',
+                a: 'Yes. Skill Yantra offers live online Scrum Master training with interactive sessions, recorded classes, and practical hands-on exercises.'
+            },
+            {
+                q: 'Is there any free Scrum Master Certification?',
+                a: 'There are free Scrum learning resources available online, but globally recognized Scrum certifications usually require a paid exam.'
+            },
+            {
+                q: 'Do I need coding knowledge to become a Scrum Master?',
+                a: 'No. Coding is not mandatory. Scrum Masters focus on Agile processes, team facilitation, and project delivery.'
+            },
+            {
+                q: 'What career opportunities are available after Scrum Master Training?',
+                a: 'After completing Scrum Master Training, you can apply for roles such as Scrum Master, Agile Coach, Project Manager, Delivery Manager, Product Owner, or Agile Consultant.'
+            },
+            {
+                q: 'Is Scrum Master Training suitable for freshers?',
+                a: 'Yes. Freshers can build a strong foundation in Agile and Scrum, and gaining practical project experience through our hands-on labs will significantly improve job opportunities.'
+            },
+            {
+                q: 'What skills will I learn in Scrum Master Training?',
+                a: 'You will learn Scrum Framework, Sprint Planning, Daily Scrum, Sprint Review, Retrospectives, Agile principles, Jira basics, AI-powered Agile workflows, stakeholder management, and team facilitation.'
+            },
+            {
+                q: 'Why choose Skill Yantra for Scrum Master Training?',
+                a: 'Skill Yantra offers expert trainers led by Jitendra Kumar, live online classes, hands-on learning, certification guidance, career mentoring, and placement assistance to help learners build successful Agile careers.'
             }
         ];
 
