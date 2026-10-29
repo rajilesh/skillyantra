@@ -75,31 +75,64 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #0086D9;
         }
-        /* Custom Range Slider Styling */
-        input[type=range] {
+
+        /* Enhanced Interactive Range Slider UI with Dynamic Progress Track */
+        .custom-range-slider {
             -webkit-appearance: none;
             appearance: none;
-            background: transparent;
-            cursor: pointer;
-        }
-        input[type=range]::-webkit-slider-runnable-track {
-            height: 8px;
+            width: 100%;
+            height: 10px;
             border-radius: 999px;
+            background: linear-gradient(90deg, #0086D9 0%, #EC2610 30%, #E2E8F0 30%, #E2E8F0 100%);
+            outline: none;
+            cursor: pointer;
+            transition: box-shadow 0.2s ease;
         }
-        input[type=range]::-webkit-slider-thumb {
+        .custom-range-slider:focus {
+            box-shadow: 0 0 0 4px rgba(0, 134, 217, 0.18);
+        }
+        .custom-range-slider::-webkit-slider-runnable-track {
+            height: 10px;
+            border-radius: 999px;
+            background: transparent;
+        }
+        .custom-range-slider::-webkit-slider-thumb {
             -webkit-appearance: none;
             appearance: none;
-            height: 22px;
-            width: 22px;
+            height: 24px;
+            width: 24px;
             border-radius: 50%;
             background: #EC2610;
-            border: 3px solid #FFFFFF;
-            box-shadow: 0 2px 8px rgba(236, 38, 16, 0.45);
+            border: 3.5px solid #FFFFFF;
+            box-shadow: 0 3px 10px rgba(236, 38, 16, 0.45), 0 0 0 1.5px rgba(236, 38, 16, 0.25);
             margin-top: -7px;
-            transition: transform 0.15s ease;
+            transition: transform 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
         }
-        input[type=range]::-webkit-slider-thumb:hover {
-            transform: scale(1.12);
+        .custom-range-slider::-webkit-slider-thumb:hover,
+        .custom-range-slider::-webkit-slider-thumb:active {
+            transform: scale(1.16);
+            background: #0086D9;
+            box-shadow: 0 4px 14px rgba(0, 134, 217, 0.55), 0 0 0 2px rgba(0, 134, 217, 0.3);
+        }
+        .custom-range-slider::-moz-range-track {
+            height: 10px;
+            border-radius: 999px;
+            background: transparent;
+        }
+        .custom-range-slider::-moz-range-thumb {
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            background: #EC2610;
+            border: 3.5px solid #FFFFFF;
+            box-shadow: 0 3px 10px rgba(236, 38, 16, 0.45);
+            cursor: pointer;
+            transition: transform 0.15s ease, background-color 0.15s ease;
+        }
+        .custom-range-slider::-moz-range-thumb:hover,
+        .custom-range-slider::-moz-range-thumb:active {
+            transform: scale(1.16);
+            background: #0086D9;
         }
     </style>
 </head>
@@ -112,7 +145,10 @@
                 <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-extrabold uppercase tracking-wider bg-white text-brand-red shadow-sm">
                     October Career Upgrade Offer
                 </span>
-                <span class="font-semibold">Get 10% OFF on Scrum Master Training — Practical Agile &amp; Product Mentorship with <strong>Jitendra Kumar</strong></span>
+                <span class="font-semibold">Get 10% OFF on Scrum Master Training
+                     <!-- — Practical Agile &amp; Product Mentorship with  -->
+                    <!-- <strong>Jitendra Kumar</strong> -->
+                </span>
             </div>
             <div class="flex flex-wrap items-center justify-center gap-4 shrink-0">
                 <a href="mailto:connect@skillyantra.com" class="hidden sm:inline-flex items-center gap-1.5 font-semibold hover:underline">
@@ -138,7 +174,7 @@
                 <!-- Clean SkillYantra Logo (Strictly only the logo image/SVG, no subtitle text or LLP inside the logo) -->
                 <a href="#home" class="flex items-center focus:outline-none group shrink-0" aria-label="SkillYantra Home">
                     <img 
-                        src="./assets/logo.png" 
+                        src="cropped-c2aaa92a-0933-4b1a-9818-25ad3b0a82ae-removebg-preview.png" 
                         alt="SkillYantra" 
                         class="h-11 sm:h-12 md:h-14 w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02]"
                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
@@ -367,6 +403,7 @@
                                         <option value="dev">Software Engineer / QA / Tech Lead</option>
                                         <option value="ba">Business Analyst / Functional Consultant</option>
                                         <option value="pm">Product Owner / Associate PM</option>
+                                        <option value="nonit">Non-IT / BPO / Operations Lead</option>
                                     </select>
                                 </div>
 
@@ -434,7 +471,7 @@
         </div>
     </section>
 
-    <!-- B. INTERACTIVE CAREER PROJECTION TOOL (#career-tool) -->
+    <!-- B. INTERACTIVE CAREER PROJECTION TOOL (#career-tool) (FIXED RANGE SLIDER UI + DYNAMIC CONTROLS) -->
     <section id="career-tool" class="py-16 sm:py-24 bg-white relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Section Header -->
@@ -447,7 +484,7 @@
                     Simulate Your <span class="text-brand-red">AI-Powered</span> Agile &amp; Product <span class="text-brand-blue">Salary Hike</span>
                 </h2>
                 <p class="text-base sm:text-lg text-brand-slate">
-                    Adjust your current role, experience, and annual CTC below to see how practical AI-Powered Agile, Scrum, and Product training with <strong>Jitendra</strong> accelerates your 3-year compensation trajectory.
+                    Drag the interactive range sliders or use the quick step controls below to see how practical AI-Powered Agile, Scrum, and Product training with <strong>Jitendra</strong> accelerates your compensation trajectory.
                 </p>
             </div>
 
@@ -462,8 +499,9 @@
                                 <i class="ph-duotone ph-sliders-horizontal text-brand-blue text-2xl"></i>
                                 <span>Your Career Inputs</span>
                             </h3>
-                            <button onclick="resetCalculator()" class="text-xs font-bold text-brand-red hover:underline">
-                                Reset Defaults
+                            <button type="button" onclick="resetCalculator()" class="inline-flex items-center gap-1 text-xs font-bold text-brand-red hover:underline">
+                                <i class="ph-bold ph-arrow-counter-clockwise"></i>
+                                <span>Reset Defaults</span>
                             </button>
                         </div>
 
@@ -472,53 +510,65 @@
                             <label for="calc-current-role" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
                                 1. Current Role / Background
                             </label>
-                            <select id="calc-current-role" onchange="calculateCareerProjection()" class="w-full px-4 py-3 rounded-xl border border-slate-300 bg-white text-sm font-semibold text-brand-dark focus:border-brand-blue focus:ring-3 focus:ring-brand-blue/15 outline-none transition-all">
+                            <select id="calc-current-role" onchange="calculateCareerProjection()" class="w-full px-4 py-3 rounded-xl border border-slate-300 bg-white text-sm font-semibold text-brand-dark focus:border-brand-blue focus:ring-3 focus:ring-brand-blue/15 outline-none transition-all cursor-pointer">
                                 <option value="Software Engineer / QA">Software Engineer / QA / Tech Lead</option>
                                 <option value="Scrum Master" selected>Scrum Master / Agile Delivery Coordinator</option>
                                 <option value="Project Manager">Project Manager / Delivery Manager</option>
                                 <option value="Business Analyst">Business Analyst / Functional Consultant</option>
                                 <option value="Product Owner / Associate PM">Product Owner / Associate PM</option>
-                                <option value="Non-Tech / Operations">Non-Tech / Operations / Support Lead</option>
+                                <option value="Non-Tech / Operations">Non-Tech / BPO / Operations / Support Lead</option>
                             </select>
                         </div>
 
-                        <!-- 2. Years of Experience Slider -->
-                        <div>
-                            <div class="flex items-center justify-between mb-2">
+                        <!-- 2. Years of Experience Range Slider (Enhanced UI with Dynamic Fill + Stepper Buttons) -->
+                        <div class="p-4 rounded-2xl bg-white border border-slate-200/90 shadow-sm">
+                            <div class="flex items-center justify-between mb-3">
                                 <label for="calc-exp-slider" class="text-xs font-bold uppercase tracking-wider text-slate-700">
                                     2. Years of Experience
                                 </label>
-                                <span id="calc-exp-display" class="px-3 py-1 rounded-lg bg-brand-blueLight text-brand-blue font-display font-extrabold text-sm">
-                                    6 Years
-                                </span>
+                                <div class="flex items-center gap-1.5">
+                                    <button type="button" onclick="stepSliderValue('calc-exp-slider', -1)" class="w-7 h-7 rounded-lg bg-slate-100 hover:bg-brand-blue hover:text-white text-slate-700 font-bold text-sm flex items-center justify-center transition-colors" aria-label="Decrease Experience">−</button>
+                                    <span id="calc-exp-display" class="px-3 py-1 rounded-lg bg-brand-blueLight text-brand-blue font-display font-extrabold text-sm min-w-[78px] text-center border border-brand-blue/20">
+                                        6 Years
+                                    </span>
+                                    <button type="button" onclick="stepSliderValue('calc-exp-slider', 1)" class="w-7 h-7 rounded-lg bg-slate-100 hover:bg-brand-blue hover:text-white text-slate-700 font-bold text-sm flex items-center justify-center transition-colors" aria-label="Increase Experience">+</button>
+                                </div>
                             </div>
-                            <input type="range" id="calc-exp-slider" min="1" max="20" step="1" value="6" oninput="calculateCareerProjection()" class="w-full bg-slate-200 rounded-lg">
-                            <div class="flex justify-between text-[11px] font-medium text-slate-400 mt-1">
-                                <span>1 Yr</span>
-                                <span>5 Yrs</span>
-                                <span>10 Yrs</span>
-                                <span>15 Yrs</span>
-                                <span>20 Yrs</span>
+                            <div class="px-1 py-1">
+                                <input type="range" id="calc-exp-slider" min="1" max="20" step="1" value="6" oninput="calculateCareerProjection()" class="custom-range-slider">
+                            </div>
+                            <div class="flex justify-between text-[11px] font-semibold text-slate-400 mt-2 px-0.5">
+                                <button type="button" onclick="setSliderDirect('calc-exp-slider', 1)" class="hover:text-brand-blue">1 Yr</button>
+                                <button type="button" onclick="setSliderDirect('calc-exp-slider', 5)" class="hover:text-brand-blue">5 Yrs</button>
+                                <button type="button" onclick="setSliderDirect('calc-exp-slider', 10)" class="hover:text-brand-blue">10 Yrs</button>
+                                <button type="button" onclick="setSliderDirect('calc-exp-slider', 15)" class="hover:text-brand-blue">15 Yrs</button>
+                                <button type="button" onclick="setSliderDirect('calc-exp-slider', 20)" class="hover:text-brand-blue">20 Yrs</button>
                             </div>
                         </div>
 
-                        <!-- 3. Current Annual CTC Slider -->
-                        <div>
-                            <div class="flex items-center justify-between mb-2">
+                        <!-- 3. Current Annual CTC Range Slider (Enhanced UI with Dynamic Fill + Stepper Buttons) -->
+                        <div class="p-4 rounded-2xl bg-white border border-slate-200/90 shadow-sm">
+                            <div class="flex items-center justify-between mb-3">
                                 <label for="calc-ctc-slider" class="text-xs font-bold uppercase tracking-wider text-slate-700">
                                     3. Current Annual CTC (₹ LPA)
                                 </label>
-                                <span id="calc-ctc-display" class="px-3 py-1 rounded-lg bg-brand-redLight text-brand-red font-display font-extrabold text-sm">
-                                    ₹12 LPA
-                                </span>
+                                <div class="flex items-center gap-1.5">
+                                    <button type="button" onclick="stepSliderValue('calc-ctc-slider', -1)" class="w-7 h-7 rounded-lg bg-slate-100 hover:bg-brand-red hover:text-white text-slate-700 font-bold text-sm flex items-center justify-center transition-colors" aria-label="Decrease CTC">−</button>
+                                    <span id="calc-ctc-display" class="px-3 py-1 rounded-lg bg-brand-redLight text-brand-red font-display font-extrabold text-sm min-w-[84px] text-center border border-brand-red/20">
+                                        ₹12 LPA
+                                    </span>
+                                    <button type="button" onclick="stepSliderValue('calc-ctc-slider', 1)" class="w-7 h-7 rounded-lg bg-slate-100 hover:bg-brand-red hover:text-white text-slate-700 font-bold text-sm flex items-center justify-center transition-colors" aria-label="Increase CTC">+</button>
+                                </div>
                             </div>
-                            <input type="range" id="calc-ctc-slider" min="4" max="45" step="1" value="12" oninput="calculateCareerProjection()" class="w-full bg-slate-200 rounded-lg">
-                            <div class="flex justify-between text-[11px] font-medium text-slate-400 mt-1">
-                                <span>₹4 LPA</span>
-                                <span>₹15 LPA</span>
-                                <span>₹25 LPA</span>
-                                <span>₹35 LPA</span>
-                                <span>₹45 LPA</span>
+                            <div class="px-1 py-1">
+                                <input type="range" id="calc-ctc-slider" min="4" max="45" step="1" value="12" oninput="calculateCareerProjection()" class="custom-range-slider">
+                            </div>
+                            <div class="flex justify-between text-[11px] font-semibold text-slate-400 mt-2 px-0.5">
+                                <button type="button" onclick="setSliderDirect('calc-ctc-slider', 4)" class="hover:text-brand-red">₹4 LPA</button>
+                                <button type="button" onclick="setSliderDirect('calc-ctc-slider', 15)" class="hover:text-brand-red">₹15 LPA</button>
+                                <button type="button" onclick="setSliderDirect('calc-ctc-slider', 25)" class="hover:text-brand-red">₹25 LPA</button>
+                                <button type="button" onclick="setSliderDirect('calc-ctc-slider', 35)" class="hover:text-brand-red">₹35 LPA</button>
+                                <button type="button" onclick="setSliderDirect('calc-ctc-slider', 45)" class="hover:text-brand-red">₹45 LPA</button>
                             </div>
                         </div>
 
@@ -557,9 +607,11 @@
                 <!-- Right Panel: Real-Time Projection Dashboard (7 Columns) -->
                 <div class="lg:col-span-7 bg-white rounded-3xl border-2 border-brand-blue/20 p-6 sm:p-8 shadow-soft flex flex-col justify-between relative overflow-hidden">
                     <!-- Top Ribbon -->
-                    <div class="flex flex-wrap items-center justify-between gap-3 pb-6 border-b border-slate-100">
+                    <div class="flex flex-wrap items-center justify-between gap-3 pb-5 border-b border-slate-100">
                         <div>
-                            <div class="text-xs font-bold uppercase tracking-wider text-brand-blue">Projected Career Destination</div>
+                            <div id="proj-transition-from" class="text-xs font-bold uppercase tracking-wider text-brand-blue">
+                                Transitioning from Scrum Master (6 Years Exp)
+                            </div>
                             <h3 id="proj-role-title" class="font-display text-2xl sm:text-3xl font-extrabold text-brand-dark mt-0.5">
                                 Senior AI Scrum Master &amp; Delivery Lead
                             </h3>
@@ -639,6 +691,12 @@
                                 </div>
                             </div>
                         </div>
+
+                        <!-- Personalized Role Transition Note -->
+                        <div id="proj-role-note" class="mt-4 pt-3.5 border-t border-slate-200/80 text-xs text-slate-600 font-medium flex items-center gap-2">
+                            <i class="ph-fill ph-sparkle text-brand-red text-base shrink-0"></i>
+                            <span>Jitendra's Roadmap maps your Scrum Master experience into enterprise AI sprint automation &amp; multi-team delivery leadership.</span>
+                        </div>
                     </div>
 
                     <!-- Unlocked AI Capabilities & Direct CTA -->
@@ -649,7 +707,7 @@
                                 <!-- Populated dynamically -->
                             </div>
                         </div>
-                        <button onclick="openCalculatorBooking()" class="px-6 py-3.5 rounded-xl bg-brand-red hover:bg-brand-redDark text-white font-bold text-xs sm:text-sm shadow-red-glow transition-all shrink-0 flex items-center justify-center gap-2">
+                        <button type="button" onclick="openCalculatorBooking()" class="px-6 py-3.5 rounded-xl bg-brand-red hover:bg-brand-redDark text-white font-bold text-xs sm:text-sm shadow-red-glow transition-all shrink-0 flex items-center justify-center gap-2">
                             <i class="ph-bold ph-calendar-check text-lg"></i>
                             <span>Book 1:1 Roadmap with Jitendra</span>
                         </button>
@@ -679,19 +737,19 @@
 
             <!-- Interactive Category Filter Tabs -->
             <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 mb-10" id="program-tabs">
-                <button onclick="filterPrograms('all')" data-filter="all" class="program-tab px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-brand-blue text-white shadow-blue-glow">
+                <button type="button" onclick="filterPrograms('all')" data-filter="all" class="program-tab px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-brand-blue text-white shadow-blue-glow">
                     All Courses (11)
                 </button>
-                <button onclick="filterPrograms('scrum')" data-filter="scrum" class="program-tab px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-white border border-slate-200 text-slate-700 hover:bg-brand-blueLight hover:text-brand-blue">
+                <button type="button" onclick="filterPrograms('scrum')" data-filter="scrum" class="program-tab px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-white border border-slate-200 text-slate-700 hover:bg-brand-blueLight hover:text-brand-blue">
                     AI &amp; Scrum Master (4)
                 </button>
-                <button onclick="filterPrograms('product')" data-filter="product" class="program-tab px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-white border border-slate-200 text-slate-700 hover:bg-brand-blueLight hover:text-brand-blue">
+                <button type="button" onclick="filterPrograms('product')" data-filter="product" class="program-tab px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-white border border-slate-200 text-slate-700 hover:bg-brand-blueLight hover:text-brand-blue">
                     Product Owner &amp; SAFe® (4)
                 </button>
-                <button onclick="filterPrograms('ba-pm')" data-filter="ba-pm" class="program-tab px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-white border border-slate-200 text-slate-700 hover:bg-brand-blueLight hover:text-brand-blue">
+                <button type="button" onclick="filterPrograms('ba-pm')" data-filter="ba-pm" class="program-tab px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-white border border-slate-200 text-slate-700 hover:bg-brand-blueLight hover:text-brand-blue">
                     Business Analyst &amp; PM (2)
                 </button>
-                <button onclick="filterPrograms('tools')" data-filter="tools" class="program-tab px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-white border border-slate-200 text-slate-700 hover:bg-brand-blueLight hover:text-brand-blue">
+                <button type="button" onclick="filterPrograms('tools')" data-filter="tools" class="program-tab px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-white border border-slate-200 text-slate-700 hover:bg-brand-blueLight hover:text-brand-blue">
                     Tools &amp; JIRA (1)
                 </button>
             </div>
@@ -712,7 +770,7 @@
                         <h3 class="font-display text-2xl font-extrabold">Upcoming Live Batches &amp; Fee Structure</h3>
                         <p class="text-xs sm:text-sm text-slate-200 mt-1">Interactive Weekend and Weekdays batches mentored by <strong>Jitendra Kumar</strong> &amp; Certified Trainers with live Jira projects and mock interviews.</p>
                     </div>
-                    <button onclick="openBookingModal('Get 10% OFF on Scrum Master Training — Batch Inquiry')" class="px-5 py-3 rounded-xl bg-white text-brand-dark hover:bg-brand-red hover:text-white font-bold text-xs sm:text-sm transition-colors shrink-0">
+                    <button type="button" onclick="openBookingModal('Get 10% OFF on Scrum Master Training — Batch Inquiry')" class="px-5 py-3 rounded-xl bg-white text-brand-dark hover:bg-brand-red hover:text-white font-bold text-xs sm:text-sm transition-colors shrink-0">
                         Claim 10% Career Upgrade Offer
                     </button>
                 </div>
@@ -736,7 +794,7 @@
                                 <td class="py-4 px-4"><span class="px-2.5 py-1 rounded-full bg-brand-blueLight text-brand-blue text-xs font-bold">Weekend Batch</span></td>
                                 <td class="py-4 px-4 font-display font-extrabold text-brand-dark">₹19,000 + GST</td>
                                 <td class="py-4 px-5 sm:px-6 text-right">
-                                    <button onclick="openBookingModal('Enroll Now: Certified Scrum Master (CSM) — ₹19,000 + GST')" class="px-4 py-2 rounded-xl bg-brand-red hover:bg-brand-redDark text-white font-bold text-xs transition-all">Enroll Now</button>
+                                    <button type="button" onclick="openBookingModal('Enroll Now: Certified Scrum Master (CSM) — ₹19,000 + GST')" class="px-4 py-2 rounded-xl bg-brand-red hover:bg-brand-redDark text-white font-bold text-xs transition-all">Enroll Now</button>
                                 </td>
                             </tr>
                             <tr class="hover:bg-brand-blueLight/40 transition-colors">
@@ -745,7 +803,7 @@
                                 <td class="py-4 px-4"><span class="px-2.5 py-1 rounded-full bg-brand-blueLight text-brand-blue text-xs font-bold">Weekend Batch</span></td>
                                 <td class="py-4 px-4 font-display font-extrabold text-brand-dark">₹30,000 + GST</td>
                                 <td class="py-4 px-5 sm:px-6 text-right">
-                                    <button onclick="openBookingModal('Enroll Now: SAFe Certification — ₹30,000 + GST')" class="px-4 py-2 rounded-xl bg-brand-red hover:bg-brand-redDark text-white font-bold text-xs transition-all">Enroll Now</button>
+                                    <button type="button" onclick="openBookingModal('Enroll Now: SAFe Certification — ₹30,000 + GST')" class="px-4 py-2 rounded-xl bg-brand-red hover:bg-brand-redDark text-white font-bold text-xs transition-all">Enroll Now</button>
                                 </td>
                             </tr>
                             <tr class="hover:bg-brand-blueLight/40 transition-colors">
@@ -754,7 +812,7 @@
                                 <td class="py-4 px-4"><span class="px-2.5 py-1 rounded-full bg-brand-blueLight text-brand-blue text-xs font-bold">Weekend Batch</span></td>
                                 <td class="py-4 px-4 font-display font-extrabold text-brand-dark">₹10,000 + GST</td>
                                 <td class="py-4 px-5 sm:px-6 text-right">
-                                    <button onclick="openBookingModal('Enroll Now: JIRA Basics — ₹10,000 + GST')" class="px-4 py-2 rounded-xl bg-brand-red hover:bg-brand-redDark text-white font-bold text-xs transition-all">Enroll Now</button>
+                                    <button type="button" onclick="openBookingModal('Enroll Now: JIRA Basics — ₹10,000 + GST')" class="px-4 py-2 rounded-xl bg-brand-red hover:bg-brand-redDark text-white font-bold text-xs transition-all">Enroll Now</button>
                                 </td>
                             </tr>
                             <tr class="hover:bg-brand-blueLight/40 transition-colors bg-brand-redLight/20">
@@ -766,7 +824,7 @@
                                 <td class="py-4 px-4"><span class="px-2.5 py-1 rounded-full bg-brand-redLight text-brand-red text-xs font-bold">Weekdays Batch</span></td>
                                 <td class="py-4 px-4 font-display font-extrabold text-brand-red">₹1,50,000</td>
                                 <td class="py-4 px-5 sm:px-6 text-right">
-                                    <button onclick="openBookingModal('Enroll Now: Job Assistance Program with Jitendra Kumar — ₹1,50,000')" class="px-4 py-2 rounded-xl bg-brand-red hover:bg-brand-redDark text-white font-bold text-xs transition-all">Enroll Now</button>
+                                    <button type="button" onclick="openBookingModal('Enroll Now: Job Assistance Program with Jitendra Kumar — ₹1,50,000')" class="px-4 py-2 rounded-xl bg-brand-red hover:bg-brand-redDark text-white font-bold text-xs transition-all">Enroll Now</button>
                                 </td>
                             </tr>
                             <tr class="hover:bg-brand-blueLight/40 transition-colors">
@@ -775,7 +833,7 @@
                                 <td class="py-4 px-4"><span class="px-2.5 py-1 rounded-full bg-brand-redLight text-brand-red text-xs font-bold">Weekdays Batch</span></td>
                                 <td class="py-4 px-4 font-display font-extrabold text-brand-dark">₹35,000 + GST</td>
                                 <td class="py-4 px-5 sm:px-6 text-right">
-                                    <button onclick="openBookingModal('Enroll Now: Business Analyst Job Oriented Training Program — ₹35,000 + GST')" class="px-4 py-2 rounded-xl bg-brand-red hover:bg-brand-redDark text-white font-bold text-xs transition-all">Enroll Now</button>
+                                    <button type="button" onclick="openBookingModal('Enroll Now: Business Analyst Job Oriented Training Program — ₹35,000 + GST')" class="px-4 py-2 rounded-xl bg-brand-red hover:bg-brand-redDark text-white font-bold text-xs transition-all">Enroll Now</button>
                                 </td>
                             </tr>
                             <tr class="hover:bg-brand-blueLight/40 transition-colors">
@@ -784,7 +842,7 @@
                                 <td class="py-4 px-4"><span class="px-2.5 py-1 rounded-full bg-brand-redLight text-brand-red text-xs font-bold">Weekdays Batch</span></td>
                                 <td class="py-4 px-4 font-display font-extrabold text-brand-dark">₹35,999 + GST</td>
                                 <td class="py-4 px-5 sm:px-6 text-right">
-                                    <button onclick="openBookingModal('Enroll Now: Product Owner Job Training Programme — ₹35,999 + GST')" class="px-4 py-2 rounded-xl bg-brand-red hover:bg-brand-redDark text-white font-bold text-xs transition-all">Enroll Now</button>
+                                    <button type="button" onclick="openBookingModal('Enroll Now: Product Owner Job Training Programme — ₹35,999 + GST')" class="px-4 py-2 rounded-xl bg-brand-red hover:bg-brand-redDark text-white font-bold text-xs transition-all">Enroll Now</button>
                                 </td>
                             </tr>
                             <tr class="hover:bg-brand-blueLight/40 transition-colors bg-brand-blueLight/30">
@@ -796,7 +854,7 @@
                                 <td class="py-4 px-4"><span class="px-2.5 py-1 rounded-full bg-brand-blueLight text-brand-blue text-xs font-bold">Weekend Batch</span></td>
                                 <td class="py-4 px-4 font-display font-extrabold text-brand-blue">₹10,000 + GST</td>
                                 <td class="py-4 px-5 sm:px-6 text-right">
-                                    <button onclick="openBookingModal('Enroll Now: AI Scrum Master — ₹10,000 + GST')" class="px-4 py-2 rounded-xl bg-brand-blue hover:bg-brand-blueDark text-white font-bold text-xs transition-all">Enroll Now</button>
+                                    <button type="button" onclick="openBookingModal('Enroll Now: AI Scrum Master — ₹10,000 + GST')" class="px-4 py-2 rounded-xl bg-brand-blue hover:bg-brand-blueDark text-white font-bold text-xs transition-all">Enroll Now</button>
                                 </td>
                             </tr>
                             <tr class="hover:bg-brand-blueLight/40 transition-colors">
@@ -805,7 +863,7 @@
                                 <td class="py-4 px-4"><span class="px-2.5 py-1 rounded-full bg-brand-blueLight text-brand-blue text-xs font-bold">Weekend Batch</span></td>
                                 <td class="py-4 px-4 font-display font-extrabold text-brand-dark">₹21,000 + GST</td>
                                 <td class="py-4 px-5 sm:px-6 text-right">
-                                    <button onclick="openBookingModal('Enroll Now: Professional Scrum Master (PSM II) — ₹21,000 + GST')" class="px-4 py-2 rounded-xl bg-brand-red hover:bg-brand-redDark text-white font-bold text-xs transition-all">Enroll Now</button>
+                                    <button type="button" onclick="openBookingModal('Enroll Now: Professional Scrum Master (PSM II) — ₹21,000 + GST')" class="px-4 py-2 rounded-xl bg-brand-red hover:bg-brand-redDark text-white font-bold text-xs transition-all">Enroll Now</button>
                                 </td>
                             </tr>
                             <tr class="hover:bg-brand-blueLight/40 transition-colors">
@@ -814,7 +872,7 @@
                                 <td class="py-4 px-4"><span class="px-2.5 py-1 rounded-full bg-brand-blueLight text-brand-blue text-xs font-bold">Weekend Batch</span></td>
                                 <td class="py-4 px-4 font-display font-extrabold text-brand-dark">₹20,000 + GST</td>
                                 <td class="py-4 px-5 sm:px-6 text-right">
-                                    <button onclick="openBookingModal('Enroll Now: Professional Scrum Master (PSM I) — ₹20,000 + GST')" class="px-4 py-2 rounded-xl bg-brand-red hover:bg-brand-redDark text-white font-bold text-xs transition-all">Enroll Now</button>
+                                    <button type="button" onclick="openBookingModal('Enroll Now: Professional Scrum Master (PSM I) — ₹20,000 + GST')" class="px-4 py-2 rounded-xl bg-brand-red hover:bg-brand-redDark text-white font-bold text-xs transition-all">Enroll Now</button>
                                 </td>
                             </tr>
                             <tr class="hover:bg-brand-blueLight/40 transition-colors">
@@ -823,7 +881,7 @@
                                 <td class="py-4 px-4"><span class="px-2.5 py-1 rounded-full bg-brand-blueLight text-brand-blue text-xs font-bold">Weekend Batch</span></td>
                                 <td class="py-4 px-4 font-display font-extrabold text-brand-dark">₹21,000 + GST</td>
                                 <td class="py-4 px-5 sm:px-6 text-right">
-                                    <button onclick="openBookingModal('Enroll Now: Certified Scrum Product Owner (CSPO) — ₹21,000 + GST')" class="px-4 py-2 rounded-xl bg-brand-red hover:bg-brand-redDark text-white font-bold text-xs transition-all">Enroll Now</button>
+                                    <button type="button" onclick="openBookingModal('Enroll Now: Certified Scrum Product Owner (CSPO) — ₹21,000 + GST')" class="px-4 py-2 rounded-xl bg-brand-red hover:bg-brand-redDark text-white font-bold text-xs transition-all">Enroll Now</button>
                                 </td>
                             </tr>
                             <tr class="hover:bg-brand-blueLight/40 transition-colors bg-brand-redLight/20">
@@ -835,7 +893,7 @@
                                 <td class="py-4 px-4"><span class="px-2.5 py-1 rounded-full bg-brand-redLight text-brand-red text-xs font-bold">Weekdays Batch</span></td>
                                 <td class="py-4 px-4 font-display font-extrabold text-brand-red">₹29,999 + GST</td>
                                 <td class="py-4 px-5 sm:px-6 text-right">
-                                    <button onclick="openBookingModal('Enroll Now: AI-Driven Scrum Master Job Oriented Training Program — ₹29,999 + GST')" class="px-4 py-2 rounded-xl bg-brand-red hover:bg-brand-redDark text-white font-bold text-xs transition-all">Enroll Now</button>
+                                    <button type="button" onclick="openBookingModal('Enroll Now: AI-Driven Scrum Master Job Oriented Training Program — ₹29,999 + GST')" class="px-4 py-2 rounded-xl bg-brand-red hover:bg-brand-redDark text-white font-bold text-xs transition-all">Enroll Now</button>
                                 </td>
                             </tr>
                             <tr class="hover:bg-brand-blueLight/40 transition-colors">
@@ -844,7 +902,7 @@
                                 <td class="py-4 px-4"><span class="px-2.5 py-1 rounded-full bg-brand-blueLight text-brand-blue text-xs font-bold">Weekend Batch</span></td>
                                 <td class="py-4 px-4 font-display font-extrabold text-brand-dark">₹21,000 + GST</td>
                                 <td class="py-4 px-5 sm:px-6 text-right">
-                                    <button onclick="openBookingModal('Enroll Now: Professional Scrum Product Owner (PSPO) — ₹21,000 + GST')" class="px-4 py-2 rounded-xl bg-brand-red hover:bg-brand-redDark text-white font-bold text-xs transition-all">Enroll Now</button>
+                                    <button type="button" onclick="openBookingModal('Enroll Now: Professional Scrum Product Owner (PSPO) — ₹21,000 + GST')" class="px-4 py-2 rounded-xl bg-brand-red hover:bg-brand-redDark text-white font-bold text-xs transition-all">Enroll Now</button>
                                 </td>
                             </tr>
                         </tbody>
@@ -874,32 +932,32 @@
 
             <!-- Interactive Blueprint Phase Selector Tabs -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-8" id="blueprint-tabs">
-                <button onclick="selectBlueprintPhase(0)" data-bphase="0" class="blueprint-tab p-4 rounded-2xl border-2 border-brand-red bg-brand-red text-white text-left transition-all shadow-red-glow">
-                    <div class="flex items-center justify-between text-xs font-bold uppercase opacity-90 mb-1">
+                <button type="button" onclick="selectBlueprintPhase(0)" data-bphase="0" class="blueprint-tab p-4 rounded-2xl border-2 border-brand-red bg-brand-red text-white text-left transition-all shadow-red-glow">
+                    <div class="bphase-sub flex items-center justify-between text-xs font-bold uppercase text-white/90 mb-1">
                         <span>Step 01 • Weeks 1–2</span>
                         <i class="ph-bold ph-compass text-lg"></i>
                     </div>
                     <div class="font-display font-extrabold text-base">1:1 Career Diagnostic &amp; Agile Foundations</div>
                 </button>
 
-                <button onclick="selectBlueprintPhase(1)" data-bphase="1" class="blueprint-tab p-4 rounded-2xl border-2 border-slate-200 bg-[#F8FAFC] hover:border-brand-blue text-brand-dark text-left transition-all">
-                    <div class="flex items-center justify-between text-xs font-bold uppercase text-brand-blue mb-1">
+                <button type="button" onclick="selectBlueprintPhase(1)" data-bphase="1" class="blueprint-tab p-4 rounded-2xl border-2 border-slate-200 bg-[#F8FAFC] hover:border-brand-blue text-brand-dark text-left transition-all">
+                    <div class="bphase-sub flex items-center justify-between text-xs font-bold uppercase text-brand-blue mb-1">
                         <span>Step 02 • Weeks 3–5</span>
                         <i class="ph-bold ph-cpu text-lg"></i>
                     </div>
                     <div class="font-display font-extrabold text-base">AI-Powered Agile &amp; Product Workflows</div>
                 </button>
 
-                <button onclick="selectBlueprintPhase(2)" data-bphase="2" class="blueprint-tab p-4 rounded-2xl border-2 border-slate-200 bg-[#F8FAFC] hover:border-brand-blue text-brand-dark text-left transition-all">
-                    <div class="flex items-center justify-between text-xs font-bold uppercase text-brand-red mb-1">
+                <button type="button" onclick="selectBlueprintPhase(2)" data-bphase="2" class="blueprint-tab p-4 rounded-2xl border-2 border-slate-200 bg-[#F8FAFC] hover:border-brand-blue text-brand-dark text-left transition-all">
+                    <div class="bphase-sub flex items-center justify-between text-xs font-bold uppercase text-brand-red mb-1">
                         <span>Step 03 • Weeks 6–8</span>
                         <i class="ph-bold ph-briefcase text-lg"></i>
                     </div>
                     <div class="font-display font-extrabold text-base">Real-World Enterprise Capstone Projects</div>
                 </button>
 
-                <button onclick="selectBlueprintPhase(3)" data-bphase="3" class="blueprint-tab p-4 rounded-2xl border-2 border-slate-200 bg-[#F8FAFC] hover:border-brand-blue text-brand-dark text-left transition-all">
-                    <div class="flex items-center justify-between text-xs font-bold uppercase text-brand-blue mb-1">
+                <button type="button" onclick="selectBlueprintPhase(3)" data-bphase="3" class="blueprint-tab p-4 rounded-2xl border-2 border-slate-200 bg-[#F8FAFC] hover:border-brand-blue text-brand-dark text-left transition-all">
+                    <div class="bphase-sub flex items-center justify-between text-xs font-bold uppercase text-brand-blue mb-1">
                         <span>Step 04 • Weeks 9–12</span>
                         <i class="ph-bold ph-trophy text-lg"></i>
                     </div>
@@ -951,7 +1009,7 @@
                             <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-brand-red"></i> Weekend &amp; weekday evening live interactive classes</li>
                         </ul>
                     </div>
-                    <button onclick="openBookingModal('Service Inquiry: Live Interactive Certification Cohorts')" class="w-full sm:w-auto self-start px-5 py-2.5 rounded-xl bg-brand-redLight text-brand-red hover:bg-brand-red hover:text-white font-bold text-xs sm:text-sm transition-colors">
+                    <button type="button" onclick="openBookingModal('Service Inquiry: Live Interactive Certification Cohorts')" class="w-full sm:w-auto self-start px-5 py-2.5 rounded-xl bg-brand-redLight text-brand-red hover:bg-brand-red hover:text-white font-bold text-xs sm:text-sm transition-colors">
                         Explore Certification Batches →
                     </button>
                 </div>
@@ -976,7 +1034,7 @@
                             <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-brand-blue"></i> First-90-days on-the-job survival toolkit &amp; templates</li>
                         </ul>
                     </div>
-                    <button onclick="openBookingModal('Service Inquiry: Job-Oriented Career Transition Bootcamp')" class="w-full sm:w-auto self-start px-5 py-2.5 rounded-xl bg-brand-blueLight text-brand-blue hover:bg-brand-blue hover:text-white font-bold text-xs sm:text-sm transition-colors">
+                    <button type="button" onclick="openBookingModal('Service Inquiry: Job-Oriented Career Transition Bootcamp')" class="w-full sm:w-auto self-start px-5 py-2.5 rounded-xl bg-brand-blueLight text-brand-blue hover:bg-brand-blue hover:text-white font-bold text-xs sm:text-sm transition-colors">
                         Join Job Bootcamp →
                     </button>
                 </div>
@@ -1001,7 +1059,7 @@
                             <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-brand-blue"></i> Detailed feedback on tough behavioral &amp; situational questions</li>
                         </ul>
                     </div>
-                    <button onclick="openBookingModal('Service Inquiry: 1:1 Executive Mentorship & Mock Interviews with Jitendra')" class="w-full sm:w-auto self-start px-5 py-2.5 rounded-xl bg-brand-blueLight text-brand-blue hover:bg-brand-blue hover:text-white font-bold text-xs sm:text-sm transition-colors">
+                    <button type="button" onclick="openBookingModal('Service Inquiry: 1:1 Executive Mentorship & Mock Interviews with Jitendra')" class="w-full sm:w-auto self-start px-5 py-2.5 rounded-xl bg-brand-blueLight text-brand-blue hover:bg-brand-blue hover:text-white font-bold text-xs sm:text-sm transition-colors">
                         Book 1:1 Mentorship →
                     </button>
                 </div>
@@ -1026,7 +1084,7 @@
                             <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-brand-red"></i> Measurable sprint predictability &amp; value delivery KPIs</li>
                         </ul>
                     </div>
-                    <button onclick="openBookingModal('Service Inquiry: Corporate Agile & AI Transformation Consulting')" class="w-full sm:w-auto self-start px-5 py-2.5 rounded-xl bg-brand-redLight text-brand-red hover:bg-brand-red hover:text-white font-bold text-xs sm:text-sm transition-colors">
+                    <button type="button" onclick="openBookingModal('Service Inquiry: Corporate Agile & AI Transformation Consulting')" class="w-full sm:w-auto self-start px-5 py-2.5 rounded-xl bg-brand-redLight text-brand-red hover:bg-brand-red hover:text-white font-bold text-xs sm:text-sm transition-colors">
                         Request Corporate Proposal →
                     </button>
                 </div>
@@ -1119,7 +1177,7 @@
                             <!-- Founder Image Container with Official URL + Styled Fallback -->
                             <div class="relative bg-gradient-to-b from-brand-blueLight/60 to-white pt-4 px-4 sm:px-6 flex justify-center items-end min-h-[340px] sm:min-h-[390px]">
                                 <img 
-                                    src="https://skillyantra.com/wp-content/uploads/Untitled-design-71-1.png" 
+                                    src="./assets/jitendra.png" 
                                     alt="Jitendra Kumar — Founder of Skill Yantra, Product Leader, Agile Coach, and Corporate Trainer" 
                                     class="w-full max-w-[360px] h-auto object-contain object-bottom drop-shadow-xl transition-transform duration-300 hover:scale-[1.02]"
                                     onerror="this.style.display='none'; document.getElementById('founder-img-fallback').classList.remove('hidden'); document.getElementById('founder-img-fallback').classList.add('flex');"
@@ -1205,7 +1263,7 @@
 
                     <!-- Schedule a Consultation CTA & Interactive Mentor Tabs -->
                     <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-                        <button onclick="openBookingModal('Schedule a Consultation with Jitendra Kumar')" class="px-8 py-4 rounded-2xl bg-brand-red hover:bg-brand-redDark text-white font-bold text-sm sm:text-base shadow-red-glow transition-all flex items-center justify-center gap-2.5 group">
+                        <button type="button" onclick="openBookingModal('Schedule a Consultation with Jitendra Kumar')" class="px-8 py-4 rounded-2xl bg-brand-red hover:bg-brand-redDark text-white font-bold text-sm sm:text-base shadow-red-glow transition-all flex items-center justify-center gap-2.5 group">
                             <i class="ph-bold ph-calendar-check text-xl"></i>
                             <span>Schedule a Consultation</span>
                             <i class="ph-bold ph-arrow-right transition-transform group-hover:translate-x-1"></i>
@@ -1221,7 +1279,7 @@
         </div>
     </section>
 
-    <!-- G. CORPORATE SCRUM MASTER TRAINING SUCCESS STORIES (Real YouTube Video Testimonials + Google Reviews) (#success-story) -->
+    <!-- G. CORPORATE SCRUM MASTER TRAINING SUCCESS STORIES (Real YouTube Video Testimonials + Interactive Popup Lightbox + Google Reviews) (#success-story) -->
     <section id="success-story" class="py-16 sm:py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
@@ -1235,7 +1293,7 @@
                     Corporate Scrum Master Training <span class="text-brand-red">Success</span> <span class="text-brand-blue">Stories</span>
                 </h2>
                 <p class="text-base sm:text-lg text-brand-slate">
-                    Watch real video testimonials, corporate Scrum Master training sessions, and 200% salary hike career transitions mentored by <strong>Jitendra Kumar</strong> on the official <strong>Skill Yantra</strong> YouTube channel.
+                    Watch real video testimonials, corporate Scrum Master training sessions, and 200% salary hike career transitions mentored by <strong>Jitendra Kumar</strong>. Click any video below to play inline or open in our <strong>Full-Screen Video Popup Player</strong>.
                 </p>
             </div>
 
@@ -1263,10 +1321,16 @@
                                 Mithilesh Transitioned from Non-IT to an AVP–Scrum Role with 200% Hike — SkillYantra
                             </h3>
                         </div>
-                        <a id="main-yt-external" href="https://www.youtube.com/watch?v=M7Rw689uCCc" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded-xl bg-white/15 hover:bg-brand-red text-white text-xs font-bold transition-colors shrink-0 inline-flex items-center gap-1.5 self-start sm:self-center">
-                            <i class="ph-fill ph-youtube-logo text-base"></i>
-                            <span>Watch on YouTube</span>
-                        </a>
+                        <div class="flex flex-wrap items-center gap-2 shrink-0 self-start sm:self-center">
+                            <button type="button" onclick="openCurrentStageInPopup()" class="px-3.5 py-2.5 rounded-xl bg-brand-red hover:bg-brand-redDark text-white text-xs font-bold transition-colors inline-flex items-center gap-1.5">
+                                <i class="ph-bold ph-corners-out text-sm"></i>
+                                <span>Open Video Popup</span>
+                            </button>
+                            <a id="main-yt-external" href="https://www.youtube.com/watch?v=M7Rw689uCCc" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2.5 rounded-xl bg-white/15 hover:bg-brand-blue text-white text-xs font-bold transition-colors inline-flex items-center gap-1.5">
+                                <i class="ph-fill ph-youtube-logo text-base"></i>
+                                <span>YouTube</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -1366,45 +1430,139 @@
                 </div>
             </div>
 
-            <!-- 4-Card Embedded YouTube Grid ("Skill Yantra Corporate Training" Quick-Watch Grid) -->
+            <!-- 4-Card Interactive YouTube Popup Grid ("Skill Yantra Corporate Training" Quick-Watch Popup Cards) -->
+            <div class="mb-6 flex items-center justify-between">
+                <div>
+                    <h3 class="font-display text-xl sm:text-2xl font-extrabold text-brand-dark">
+                        Featured Corporate Scrum Master Training Video Highlights
+                    </h3>
+                    <p class="text-xs sm:text-sm text-brand-slate mt-0.5">
+                        Click any video card below to launch the <strong>YouTube Video Popup Player</strong>
+                    </p>
+                </div>
+                <span class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-redLight text-brand-red text-xs font-bold">
+                    <i class="ph-fill ph-youtube-logo"></i> Click Card for Popup Player
+                </span>
+            </div>
+
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
-                <div class="bg-[#F8FAFC] rounded-2xl border border-slate-200/90 overflow-hidden shadow-sm flex flex-col justify-between">
-                    <div class="aspect-video w-full bg-slate-900">
-                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/M7Rw689uCCc?rel=0" title="Skill Yantra Corporate Training 1" frameborder="0" loading="lazy" allowfullscreen></iframe>
+                <!-- Bottom Video 1 (Opens YouTube Popup Modal) -->
+                <div onclick="openYouTubePopupModal('M7Rw689uCCc', 'Mithilesh Transitioned from Non-IT to an AVP–Scrum Role with 200% Hike', 'Skill Yantra Corporate Training • 200% Salary Hike')" class="group cursor-pointer bg-[#F8FAFC] rounded-2xl border-2 border-slate-200/90 hover:border-brand-red overflow-hidden shadow-soft hover:-translate-y-1 transition-all flex flex-col justify-between">
+                    <div class="relative aspect-video w-full bg-slate-900 overflow-hidden">
+                        <img src="https://img.youtube.com/vi/M7Rw689uCCc/hqdefault.jpg" alt="Non-IT to AVP–Scrum Role (200% Hike)" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='https://placehold.co/480x270/0F172A/FFFFFF?text=200%25+Hike+Story'"/>
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/30 to-transparent flex items-center justify-center">
+                            <div class="w-14 h-14 rounded-full bg-brand-red text-white flex items-center justify-center shadow-red-glow group-hover:scale-110 transition-transform">
+                                <i class="ph-fill ph-play text-2xl ml-0.5"></i>
+                            </div>
+                        </div>
+                        <span class="absolute top-2.5 left-2.5 px-2.5 py-0.5 rounded-md bg-brand-red text-white text-[10px] font-extrabold uppercase tracking-wider shadow">
+                            200% Hike
+                        </span>
+                        <span class="absolute bottom-2.5 right-2.5 px-2 py-0.5 rounded bg-black/75 text-white text-[10px] font-semibold flex items-center gap-1">
+                            <i class="ph-bold ph-corners-out"></i> Watch Popup
+                        </span>
                     </div>
-                    <div class="p-4">
-                        <div class="text-[11px] font-extrabold uppercase text-brand-red">Skill Yantra Corporate Training</div>
-                        <div class="font-display font-bold text-sm text-brand-dark mt-0.5">Non-IT to AVP–Scrum Role (200% Hike)</div>
+                    <div class="p-4 flex flex-col justify-between flex-1">
+                        <div>
+                            <div class="text-[11px] font-extrabold uppercase text-brand-red">Skill Yantra Corporate Training</div>
+                            <h4 class="font-display font-bold text-sm text-brand-dark mt-1 group-hover:text-brand-red transition-colors">
+                                Non-IT to AVP–Scrum Role (200% Hike) — Mithilesh's Journey
+                            </h4>
+                        </div>
+                        <div class="mt-3 pt-2.5 border-t border-slate-200/70 flex items-center justify-between text-xs font-bold text-brand-blue">
+                            <span>Play Video Testimonial</span>
+                            <i class="ph-bold ph-play-circle text-base text-brand-red"></i>
+                        </div>
                     </div>
                 </div>
 
-                <div class="bg-[#F8FAFC] rounded-2xl border border-slate-200/90 overflow-hidden shadow-sm flex flex-col justify-between">
-                    <div class="aspect-video w-full bg-slate-900">
-                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/3wIeL67uX-U?rel=0" title="Skill Yantra Corporate Training 2" frameborder="0" loading="lazy" allowfullscreen></iframe>
+                <!-- Bottom Video 2 (Opens YouTube Popup Modal) -->
+                <div onclick="openYouTubePopupModal('3wIeL67uX-U', 'Scrum Master Batch — Live Student Feedback & Career Transformation', 'Skill Yantra Corporate Training • Student Feedback')" class="group cursor-pointer bg-[#F8FAFC] rounded-2xl border-2 border-slate-200/90 hover:border-brand-blue overflow-hidden shadow-soft hover:-translate-y-1 transition-all flex flex-col justify-between">
+                    <div class="relative aspect-video w-full bg-slate-900 overflow-hidden">
+                        <img src="https://img.youtube.com/vi/3wIeL67uX-U/hqdefault.jpg" alt="Scrum Master Batch — Student's Feedback" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='https://placehold.co/480x270/0086D9/FFFFFF?text=Student+Feedback'"/>
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/30 to-transparent flex items-center justify-center">
+                            <div class="w-14 h-14 rounded-full bg-brand-blue text-white flex items-center justify-center shadow-blue-glow group-hover:scale-110 transition-transform">
+                                <i class="ph-fill ph-play text-2xl ml-0.5"></i>
+                            </div>
+                        </div>
+                        <span class="absolute top-2.5 left-2.5 px-2.5 py-0.5 rounded-md bg-brand-blue text-white text-[10px] font-extrabold uppercase tracking-wider shadow">
+                            Batch Review
+                        </span>
+                        <span class="absolute bottom-2.5 right-2.5 px-2 py-0.5 rounded bg-black/75 text-white text-[10px] font-semibold flex items-center gap-1">
+                            <i class="ph-bold ph-corners-out"></i> Watch Popup
+                        </span>
                     </div>
-                    <div class="p-4">
-                        <div class="text-[11px] font-extrabold uppercase text-brand-blue">Skill Yantra Corporate Training</div>
-                        <div class="font-display font-bold text-sm text-brand-dark mt-0.5">Scrum Master Batch — Student's Feedback</div>
+                    <div class="p-4 flex flex-col justify-between flex-1">
+                        <div>
+                            <div class="text-[11px] font-extrabold uppercase text-brand-blue">Skill Yantra Corporate Training</div>
+                            <h4 class="font-display font-bold text-sm text-brand-dark mt-1 group-hover:text-brand-blue transition-colors">
+                                Scrum Master Batch — Live Student's Feedback &amp; Experience
+                            </h4>
+                        </div>
+                        <div class="mt-3 pt-2.5 border-t border-slate-200/70 flex items-center justify-between text-xs font-bold text-brand-blue">
+                            <span>Play Video Testimonial</span>
+                            <i class="ph-bold ph-play-circle text-base text-brand-blue"></i>
+                        </div>
                     </div>
                 </div>
 
-                <div class="bg-[#F8FAFC] rounded-2xl border border-slate-200/90 overflow-hidden shadow-sm flex flex-col justify-between">
-                    <div class="aspect-video w-full bg-slate-900">
-                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/kF2vd0-1ePo?rel=0" title="Skill Yantra Corporate Training 3" frameborder="0" loading="lazy" allowfullscreen></iframe>
+                <!-- Bottom Video 3 (Opens YouTube Popup Modal) -->
+                <div onclick="openYouTubePopupModal('kF2vd0-1ePo', 'Product Owner Job Oriented Training Live Session by Skill Yantra', 'Skill Yantra Corporate Training • Product Owner Track')" class="group cursor-pointer bg-[#F8FAFC] rounded-2xl border-2 border-slate-200/90 hover:border-brand-red overflow-hidden shadow-soft hover:-translate-y-1 transition-all flex flex-col justify-between">
+                    <div class="relative aspect-video w-full bg-slate-900 overflow-hidden">
+                        <img src="https://img.youtube.com/vi/kF2vd0-1ePo/hqdefault.jpg" alt="Product Owner Job Oriented Training" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='https://placehold.co/480x270/EC2610/FFFFFF?text=Product+Owner+Training'"/>
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/30 to-transparent flex items-center justify-center">
+                            <div class="w-14 h-14 rounded-full bg-brand-red text-white flex items-center justify-center shadow-red-glow group-hover:scale-110 transition-transform">
+                                <i class="ph-fill ph-play text-2xl ml-0.5"></i>
+                            </div>
+                        </div>
+                        <span class="absolute top-2.5 left-2.5 px-2.5 py-0.5 rounded-md bg-brand-red text-white text-[10px] font-extrabold uppercase tracking-wider shadow">
+                            Product Owner
+                        </span>
+                        <span class="absolute bottom-2.5 right-2.5 px-2 py-0.5 rounded bg-black/75 text-white text-[10px] font-semibold flex items-center gap-1">
+                            <i class="ph-bold ph-corners-out"></i> Watch Popup
+                        </span>
                     </div>
-                    <div class="p-4">
-                        <div class="text-[11px] font-extrabold uppercase text-brand-red">Skill Yantra Corporate Training</div>
-                        <div class="font-display font-bold text-sm text-brand-dark mt-0.5">Product Owner Job Oriented Training</div>
+                    <div class="p-4 flex flex-col justify-between flex-1">
+                        <div>
+                            <div class="text-[11px] font-extrabold uppercase text-brand-red">Skill Yantra Corporate Training</div>
+                            <h4 class="font-display font-bold text-sm text-brand-dark mt-1 group-hover:text-brand-red transition-colors">
+                                Product Owner Job Oriented Training Workshop with Jitendra
+                            </h4>
+                        </div>
+                        <div class="mt-3 pt-2.5 border-t border-slate-200/70 flex items-center justify-between text-xs font-bold text-brand-blue">
+                            <span>Play Video Testimonial</span>
+                            <i class="ph-bold ph-play-circle text-base text-brand-red"></i>
+                        </div>
                     </div>
                 </div>
 
-                <div class="bg-[#F8FAFC] rounded-2xl border border-slate-200/90 overflow-hidden shadow-sm flex flex-col justify-between">
-                    <div class="aspect-video w-full bg-slate-900">
-                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/5dipudcERcM?rel=0" title="Skill Yantra Corporate Training 4" frameborder="0" loading="lazy" allowfullscreen></iframe>
+                <!-- Bottom Video 4 (Opens YouTube Popup Modal) -->
+                <div onclick="openYouTubePopupModal('5dipudcERcM', 'Overcoming Career Gap & Cracking Scrum Master Interviews — Skill Yantra', 'Skill Yantra Corporate Training • Career Mentorship')" class="group cursor-pointer bg-[#F8FAFC] rounded-2xl border-2 border-slate-200/90 hover:border-brand-blue overflow-hidden shadow-soft hover:-translate-y-1 transition-all flex flex-col justify-between">
+                    <div class="relative aspect-video w-full bg-slate-900 overflow-hidden">
+                        <img src="https://img.youtube.com/vi/5dipudcERcM/hqdefault.jpg" alt="Overcoming Career Gap in Interviews" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='https://placehold.co/480x270/0086D9/FFFFFF?text=Career+Mentorship'"/>
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/30 to-transparent flex items-center justify-center">
+                            <div class="w-14 h-14 rounded-full bg-brand-blue text-white flex items-center justify-center shadow-blue-glow group-hover:scale-110 transition-transform">
+                                <i class="ph-fill ph-play text-2xl ml-0.5"></i>
+                            </div>
+                        </div>
+                        <span class="absolute top-2.5 left-2.5 px-2.5 py-0.5 rounded-md bg-brand-blue text-white text-[10px] font-extrabold uppercase tracking-wider shadow">
+                            Interview Strategy
+                        </span>
+                        <span class="absolute bottom-2.5 right-2.5 px-2 py-0.5 rounded bg-black/75 text-white text-[10px] font-semibold flex items-center gap-1">
+                            <i class="ph-bold ph-corners-out"></i> Watch Popup
+                        </span>
                     </div>
-                    <div class="p-4">
-                        <div class="text-[11px] font-extrabold uppercase text-brand-blue">Skill Yantra Corporate Training</div>
-                        <div class="font-display font-bold text-sm text-brand-dark mt-0.5">Overcoming Career Gap in Interviews</div>
+                    <div class="p-4 flex flex-col justify-between flex-1">
+                        <div>
+                            <div class="text-[11px] font-extrabold uppercase text-brand-blue">Skill Yantra Corporate Training</div>
+                            <h4 class="font-display font-bold text-sm text-brand-dark mt-1 group-hover:text-brand-blue transition-colors">
+                                Overcoming Career Gaps &amp; Cracking Agile Interviews
+                            </h4>
+                        </div>
+                        <div class="mt-3 pt-2.5 border-t border-slate-200/70 flex items-center justify-between text-xs font-bold text-brand-blue">
+                            <span>Play Video Testimonial</span>
+                            <i class="ph-bold ph-play-circle text-base text-brand-blue"></i>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1424,13 +1582,13 @@
 
                     <!-- Role Filter Buttons for Reviews -->
                     <div class="flex flex-wrap gap-2">
-                        <button onclick="filterTestimonials('all')" data-tfilter="all" class="testi-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-brand-dark text-white transition-all">
+                        <button type="button" onclick="filterTestimonials('all')" data-tfilter="all" class="testi-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-brand-dark text-white transition-all">
                             All Google Reviews (8)
                         </button>
-                        <button onclick="filterTestimonials('Scrum Master')" data-tfilter="Scrum Master" class="testi-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-slate-100 text-slate-700 hover:border-brand-blue transition-all">
+                        <button type="button" onclick="filterTestimonials('Scrum Master')" data-tfilter="Scrum Master" class="testi-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-slate-100 text-slate-700 hover:border-brand-blue transition-all">
                             Scrum &amp; Roadmap
                         </button>
-                        <button onclick="filterTestimonials('Product')" data-tfilter="Product" class="testi-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-slate-100 text-slate-700 hover:border-brand-blue transition-all">
+                        <button type="button" onclick="filterTestimonials('Product')" data-tfilter="Product" class="testi-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-slate-100 text-slate-700 hover:border-brand-blue transition-all">
                             Jira &amp; Hands-On Practice
                         </button>
                     </div>
@@ -1457,7 +1615,7 @@
                         Latest Articles on <span class="text-brand-red">AI-Powered Agile</span>, Scrum &amp; Product
                     </h2>
                 </div>
-                <button onclick="openBookingModal('Subscribe to Jitendra Weekly Agile & AI Newsletter')" class="px-5 py-2.5 rounded-xl bg-white border border-slate-200 hover:border-brand-blue text-xs sm:text-sm font-bold text-brand-blue transition-all self-start md:self-auto">
+                <button type="button" onclick="openBookingModal('Subscribe to Jitendra Weekly Agile & AI Newsletter')" class="px-5 py-2.5 rounded-xl bg-white border border-slate-200 hover:border-brand-blue text-xs sm:text-sm font-bold text-brand-blue transition-all self-start md:self-auto">
                     Get Weekly Career Guides →
                 </button>
             </div>
@@ -1620,7 +1778,7 @@
         </div>
     </section>
 
-    <!-- 4. EXACT FOOTER STRUCTURE & LINKS MATCHING SKILLYANTRA.COM -->
+    <!-- EXACT FOOTER STRUCTURE & LINKS MATCHING SKILLYANTRA.COM -->
     <footer class="bg-white border-t border-slate-200 pt-16 pb-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-slate-200">
@@ -1630,7 +1788,7 @@
                     <!-- Clean SkillYantra Logo (Strictly only the logo image/SVG, no subtitle text or LLP inside the logo) -->
                     <a href="#home" class="inline-flex items-center focus:outline-none" aria-label="SkillYantra">
                         <img 
-                            src="cropped-c2aaa92a-0933-4b1a-9818-25ad3b0a82ae-removebg-preview.png" 
+                            src="./assets/logo.png" 
                             alt="SkillYantra" 
                             class="h-12 w-auto object-contain"
                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
@@ -1705,9 +1863,9 @@
                         <li><a href="#about" class="hover:text-brand-blue transition-colors">About Us</a></li>
                         <li><a href="#faq" class="hover:text-brand-blue transition-colors">FAQ</a></li>
                         <li><a href="#contact" class="hover:text-brand-blue transition-colors">Contact Us</a></li>
-                        <li><button onclick="openLegalModal('privacy')" class="hover:text-brand-red transition-colors text-left">Privacy Policy</button></li>
-                        <li><button onclick="openLegalModal('terms')" class="hover:text-brand-red transition-colors text-left">Term &amp; Condition</button></li>
-                        <li><button onclick="openLegalModal('refund')" class="hover:text-brand-red transition-colors text-left">Return &amp; Refund Policy</button></li>
+                        <li><button type="button" onclick="openLegalModal('privacy')" class="hover:text-brand-red transition-colors text-left">Privacy Policy</button></li>
+                        <li><button type="button" onclick="openLegalModal('terms')" class="hover:text-brand-red transition-colors text-left">Term &amp; Condition</button></li>
+                        <li><button type="button" onclick="openLegalModal('refund')" class="hover:text-brand-red transition-colors text-left">Return &amp; Refund Policy</button></li>
                     </ul>
                 </div>
 
@@ -1788,16 +1946,16 @@
                 <div class="lg:col-span-2">
                     <h4 class="font-display text-sm font-bold uppercase tracking-wider text-brand-dark mb-4">Top 10 Cities</h4>
                     <ul class="space-y-2.5 text-sm font-medium text-brand-slate">
-                        <li><button onclick="openBookingModal('Live Online Cohort Inquiry — Pune')" class="hover:text-brand-blue transition-colors flex items-center gap-1.5"><i class="ph-fill ph-map-pin text-brand-red text-xs"></i><span>Pune</span></button></li>
-                        <li><button onclick="openBookingModal('Live Online Cohort Inquiry — Chennai')" class="hover:text-brand-blue transition-colors flex items-center gap-1.5"><i class="ph-fill ph-map-pin text-brand-blue text-xs"></i><span>Chennai</span></button></li>
-                        <li><button onclick="openBookingModal('Live Online Cohort Inquiry — Delhi')" class="hover:text-brand-blue transition-colors flex items-center gap-1.5"><i class="ph-fill ph-map-pin text-brand-red text-xs"></i><span>Delhi</span></button></li>
-                        <li><button onclick="openBookingModal('Live Online Cohort Inquiry — Hydrabad')" class="hover:text-brand-blue transition-colors flex items-center gap-1.5"><i class="ph-fill ph-map-pin text-brand-blue text-xs"></i><span>Hydrabad</span></button></li>
-                        <li><button onclick="openBookingModal('Live Online Cohort Inquiry — Bengaluru')" class="hover:text-brand-blue transition-colors flex items-center gap-1.5"><i class="ph-fill ph-map-pin text-brand-red text-xs"></i><span>Bengaluru</span></button></li>
-                        <li><button onclick="openBookingModal('Live Online Cohort Inquiry — Kolkata')" class="hover:text-brand-blue transition-colors flex items-center gap-1.5"><i class="ph-fill ph-map-pin text-brand-blue text-xs"></i><span>Kolkata</span></button></li>
-                        <li><button onclick="openBookingModal('Live Online Cohort Inquiry — Chandigarh')" class="hover:text-brand-blue transition-colors flex items-center gap-1.5"><i class="ph-fill ph-map-pin text-brand-red text-xs"></i><span>Chandigarh</span></button></li>
-                        <li><button onclick="openBookingModal('Live Online Cohort Inquiry — Ahmedabad')" class="hover:text-brand-blue transition-colors flex items-center gap-1.5"><i class="ph-fill ph-map-pin text-brand-blue text-xs"></i><span>Ahmedabad</span></button></li>
-                        <li><button onclick="openBookingModal('Live Online Cohort Inquiry — Kochi')" class="hover:text-brand-blue transition-colors flex items-center gap-1.5"><i class="ph-fill ph-map-pin text-brand-red text-xs"></i><span>Kochi</span></button></li>
-                        <li><button onclick="openBookingModal('Live Online Cohort Inquiry — Mumbai')" class="hover:text-brand-blue transition-colors flex items-center gap-1.5"><i class="ph-fill ph-map-pin text-brand-blue text-xs"></i><span>Mumbai</span></button></li>
+                        <li><button type="button" onclick="openBookingModal('Live Online Cohort Inquiry — Pune')" class="hover:text-brand-blue transition-colors flex items-center gap-1.5"><i class="ph-fill ph-map-pin text-brand-red text-xs"></i><span>Pune</span></button></li>
+                        <li><button type="button" onclick="openBookingModal('Live Online Cohort Inquiry — Chennai')" class="hover:text-brand-blue transition-colors flex items-center gap-1.5"><i class="ph-fill ph-map-pin text-brand-blue text-xs"></i><span>Chennai</span></button></li>
+                        <li><button type="button" onclick="openBookingModal('Live Online Cohort Inquiry — Delhi')" class="hover:text-brand-blue transition-colors flex items-center gap-1.5"><i class="ph-fill ph-map-pin text-brand-red text-xs"></i><span>Delhi</span></button></li>
+                        <li><button type="button" onclick="openBookingModal('Live Online Cohort Inquiry — Hydrabad')" class="hover:text-brand-blue transition-colors flex items-center gap-1.5"><i class="ph-fill ph-map-pin text-brand-blue text-xs"></i><span>Hydrabad</span></button></li>
+                        <li><button type="button" onclick="openBookingModal('Live Online Cohort Inquiry — Bengaluru')" class="hover:text-brand-blue transition-colors flex items-center gap-1.5"><i class="ph-fill ph-map-pin text-brand-red text-xs"></i><span>Bengaluru</span></button></li>
+                        <li><button type="button" onclick="openBookingModal('Live Online Cohort Inquiry — Kolkata')" class="hover:text-brand-blue transition-colors flex items-center gap-1.5"><i class="ph-fill ph-map-pin text-brand-blue text-xs"></i><span>Kolkata</span></button></li>
+                        <li><button type="button" onclick="openBookingModal('Live Online Cohort Inquiry — Chandigarh')" class="hover:text-brand-blue transition-colors flex items-center gap-1.5"><i class="ph-fill ph-map-pin text-brand-red text-xs"></i><span>Chandigarh</span></button></li>
+                        <li><button type="button" onclick="openBookingModal('Live Online Cohort Inquiry — Ahmedabad')" class="hover:text-brand-blue transition-colors flex items-center gap-1.5"><i class="ph-fill ph-map-pin text-brand-blue text-xs"></i><span>Ahmedabad</span></button></li>
+                        <li><button type="button" onclick="openBookingModal('Live Online Cohort Inquiry — Kochi')" class="hover:text-brand-blue transition-colors flex items-center gap-1.5"><i class="ph-fill ph-map-pin text-brand-red text-xs"></i><span>Kochi</span></button></li>
+                        <li><button type="button" onclick="openBookingModal('Live Online Cohort Inquiry — Mumbai')" class="hover:text-brand-blue transition-colors flex items-center gap-1.5"><i class="ph-fill ph-map-pin text-brand-blue text-xs"></i><span>Mumbai</span></button></li>
                     </ul>
                 </div>
 
@@ -1809,19 +1967,19 @@
                     © <span id="current-year">2026</span> <span class="text-brand-red">SKILL YANTRA CONSULTING LLP</span>. All Rights Reserved.
                 </div>
                 <div class="flex flex-wrap items-center justify-center gap-4 font-semibold">
-                    <button onclick="openLegalModal('privacy')" class="hover:text-brand-blue transition-colors">Privacy Policy</button>
+                    <button type="button" onclick="openLegalModal('privacy')" class="hover:text-brand-blue transition-colors">Privacy Policy</button>
                     <span>•</span>
-                    <button onclick="openLegalModal('terms')" class="hover:text-brand-blue transition-colors">Term &amp; Condition</button>
+                    <button type="button" onclick="openLegalModal('terms')" class="hover:text-brand-blue transition-colors">Term &amp; Condition</button>
                     <span>•</span>
-                    <button onclick="openLegalModal('refund')" class="hover:text-brand-blue transition-colors">Return &amp; Refund Policy</button>
+                    <button type="button" onclick="openLegalModal('refund')" class="hover:text-brand-blue transition-colors">Return &amp; Refund Policy</button>
                 </div>
             </div>
         </div>
     </footer>
 
     <!-- MODAL 1: COURSE SYLLABUS & CURRICULUM MODAL -->
-    <div id="syllabus-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm">
-        <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-200 animate-fadeIn">
+    <div id="syllabus-modal" onclick="if(event.target === this) closeSyllabusModal()" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-900/65 backdrop-blur-sm">
+        <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-200">
             <div class="sticky top-0 bg-white/95 backdrop-blur-md px-6 sm:px-8 py-5 border-b border-slate-100 flex items-center justify-between z-10">
                 <div>
                     <span id="modal-course-badge" class="inline-block px-3 py-0.5 rounded-full text-[11px] font-bold uppercase bg-brand-redLight text-brand-red mb-1">
@@ -1829,7 +1987,7 @@
                     </span>
                     <h3 id="modal-course-title" class="font-display text-xl sm:text-2xl font-extrabold text-brand-dark">Course Title</h3>
                 </div>
-                <button onclick="closeSyllabusModal()" class="w-10 h-10 rounded-xl bg-slate-100 hover:bg-brand-redLight hover:text-brand-red text-slate-600 flex items-center justify-center transition-colors" aria-label="Close Modal">
+                <button type="button" onclick="closeSyllabusModal()" class="w-10 h-10 rounded-xl bg-slate-100 hover:bg-brand-redLight hover:text-brand-red text-slate-600 flex items-center justify-center transition-colors" aria-label="Close Modal">
                     <i class="ph-bold ph-x text-xl"></i>
                 </button>
             </div>
@@ -1870,7 +2028,7 @@
                     <div class="text-xs text-slate-500">
                         Includes Certification Prep + JIRA Capstone + Mock Interviews with <strong>Jitendra</strong>
                     </div>
-                    <button id="modal-enroll-btn" class="px-6 py-3.5 rounded-xl bg-brand-red hover:bg-brand-redDark text-white font-bold text-sm shadow-red-glow transition-all shrink-0">
+                    <button type="button" id="modal-enroll-btn" class="px-6 py-3.5 rounded-xl bg-brand-red hover:bg-brand-redDark text-white font-bold text-sm shadow-red-glow transition-all shrink-0">
                         Enroll / Book Free Demo →
                     </button>
                 </div>
@@ -1879,7 +2037,7 @@
     </div>
 
     <!-- MODAL 2: BOOKING / ENROLLMENT MODAL -->
-    <div id="booking-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm">
+    <div id="booking-modal" onclick="if(event.target === this) closeBookingModal()" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-900/65 backdrop-blur-sm">
         <div class="bg-white rounded-3xl max-w-lg w-full overflow-hidden shadow-2xl border border-slate-200">
             <div class="bg-gradient-to-r from-brand-blue via-[#0074BD] to-brand-red p-6 sm:p-7 text-white flex items-start justify-between gap-4">
                 <div>
@@ -1888,7 +2046,7 @@
                     </span>
                     <h3 id="booking-modal-title" class="font-display text-xl font-extrabold">Book Your Free Demo &amp; Career Call</h3>
                 </div>
-                <button onclick="closeBookingModal()" class="w-9 h-9 rounded-xl bg-white/15 hover:bg-white/30 text-white flex items-center justify-center transition-colors shrink-0" aria-label="Close">
+                <button type="button" onclick="closeBookingModal()" class="w-9 h-9 rounded-xl bg-white/15 hover:bg-white/30 text-white flex items-center justify-center transition-colors shrink-0" aria-label="Close">
                     <i class="ph-bold ph-x text-lg"></i>
                 </button>
             </div>
@@ -1926,7 +2084,7 @@
                     <h4 class="font-display text-xl font-extrabold text-brand-dark">Slot Reserved Successfully!</h4>
                     <p id="modal-booking-success-msg" class="text-sm text-slate-600"></p>
                     <div class="pt-2">
-                        <button onclick="closeBookingModal()" class="px-6 py-2.5 rounded-xl bg-brand-dark text-white text-xs font-bold">Done</button>
+                        <button type="button" onclick="closeBookingModal()" class="px-6 py-2.5 rounded-xl bg-brand-dark text-white text-xs font-bold">Done</button>
                     </div>
                 </div>
             </div>
@@ -1934,18 +2092,69 @@
     </div>
 
     <!-- MODAL 3: BLOG ARTICLE READER & LEGAL POLICIES MODAL -->
-    <div id="info-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm">
+    <div id="info-modal" onclick="if(event.target === this) closeInfoModal()" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-900/65 backdrop-blur-sm">
         <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[88vh] overflow-y-auto shadow-2xl border border-slate-200">
             <div class="sticky top-0 bg-white/95 backdrop-blur-md px-6 sm:px-8 py-5 border-b border-slate-100 flex items-center justify-between">
                 <div>
                     <span id="info-modal-badge" class="inline-block px-3 py-0.5 rounded-full text-[11px] font-bold uppercase bg-brand-blueLight text-brand-blue mb-1">SkillYantra</span>
                     <h3 id="info-modal-title" class="font-display text-xl font-extrabold text-brand-dark">Title</h3>
                 </div>
-                <button onclick="closeInfoModal()" class="w-10 h-10 rounded-xl bg-slate-100 hover:bg-brand-redLight hover:text-brand-red text-slate-600 flex items-center justify-center transition-colors">
+                <button type="button" onclick="closeInfoModal()" class="w-10 h-10 rounded-xl bg-slate-100 hover:bg-brand-redLight hover:text-brand-red text-slate-600 flex items-center justify-center transition-colors">
                     <i class="ph-bold ph-x text-xl"></i>
                 </button>
             </div>
             <div id="info-modal-body" class="p-6 sm:p-8 text-sm sm:text-base text-slate-700 leading-relaxed space-y-4"></div>
+        </div>
+    </div>
+
+    <!-- MODAL 4: YOUTUBE VIDEO POPUP LIGHTBOX MODAL (FOR BOTTOM 4 VIDEOS & FEATURED STORIES) -->
+    <div id="youtube-popup-modal" onclick="if(event.target === this) closeYouTubePopupModal()" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-950/85 backdrop-blur-md">
+        <div class="bg-brand-dark rounded-3xl max-w-4xl w-full overflow-hidden shadow-2xl border-2 border-white/15">
+            <!-- Modal Header -->
+            <div class="px-5 sm:px-7 py-4 bg-gradient-to-r from-brand-dark via-[#112240] to-brand-dark border-b border-white/10 flex items-center justify-between gap-4 text-white">
+                <div class="min-w-0">
+                    <span id="yt-popup-badge" class="inline-block px-2.5 py-0.5 rounded bg-brand-red text-white text-[11px] font-extrabold uppercase tracking-wider mb-1">
+                        Skill Yantra Corporate Training
+                    </span>
+                    <h3 id="yt-popup-title" class="font-display text-base sm:text-xl font-extrabold truncate">
+                        Success Story Video
+                    </h3>
+                </div>
+                <button type="button" onclick="closeYouTubePopupModal()" class="w-10 h-10 rounded-xl bg-white/10 hover:bg-brand-red text-white flex items-center justify-center transition-colors shrink-0" aria-label="Close Video Popup">
+                    <i class="ph-bold ph-x text-xl"></i>
+                </button>
+            </div>
+
+            <!-- 16:9 Embedded Video Container -->
+            <div class="relative w-full aspect-video bg-black">
+                <iframe 
+                    id="yt-popup-iframe"
+                    class="w-full h-full"
+                    src="" 
+                    title="Skill Yantra YouTube Video Testimonial Player"
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+            <!-- Modal Footer with Direct YouTube Link & Consultation CTA -->
+            <div class="px-5 sm:px-7 py-4 bg-slate-900 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 text-white">
+                <div class="flex items-center gap-2 text-xs text-slate-300">
+                    <i class="ph-fill ph-seal-check text-brand-blue text-lg"></i>
+                    <span>Mentored Live by <strong>Jitendra Kumar</strong> • Practical Agile &amp; Scrum Career Growth</span>
+                </div>
+                <div class="flex flex-wrap items-center gap-2.5">
+                    <a id="yt-popup-external" href="https://www.youtube.com/watch?v=M7Rw689uCCc" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-bold transition-colors inline-flex items-center gap-1.5">
+                        <i class="ph-fill ph-youtube-logo text-brand-red text-base"></i>
+                        <span>Watch on YouTube</span>
+                    </a>
+                    <button type="button" onclick="closeYouTubePopupModal(); openBookingModal('Inspired by Success Story Video — Book 1:1 Call with Jitendra');" class="px-4 py-2 rounded-xl bg-brand-red hover:bg-brand-redDark text-white text-xs font-bold transition-colors inline-flex items-center gap-1.5">
+                        <i class="ph-bold ph-calendar-check"></i>
+                        <span>Book 1:1 Career Call</span>
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -1983,12 +2192,13 @@
                 'sm': 'AI Scrum Master • ₹20L – ₹32L PA',
                 'dev': 'SAFe® POPM / AI Product Owner • ₹24L – ₹38L PA',
                 'ba': 'Certified Scrum Product Owner (CSPO) • ₹18L – ₹30L PA',
-                'pm': 'SAFe® Agile & Enterprise Coach • ₹26L – ₹42L PA'
+                'pm': 'SAFe® Agile & Enterprise Coach • ₹26L – ₹42L PA',
+                'nonit': 'AI Scrum Master Bootcamp • ₹14L – ₹24L PA'
             };
             output.textContent = map[val] || 'AI Scrum Master • ₹20L – ₹32L PA';
         }
 
-        // 3. Interactive Career Projection Tool Logic
+        // 3. Interactive Career Projection Tool Logic + Dynamic Range Slider Visual Fill
         let selectedCalcTrack = 'ai-sm';
 
         const calcTrackConfig = {
@@ -2022,12 +2232,65 @@
             }
         };
 
+        const roleModifierMap = {
+            'Software Engineer / QA': {
+                bonusFactor: 0.12,
+                note: 'Your technical/QA background gives you a strong edge in JIRA automation, Definition of Done, and technical backlog refinement.'
+            },
+            'Scrum Master': {
+                bonusFactor: 0.15,
+                note: 'Jitendra maps your existing Scrum experience into enterprise SAFe®, AI sprint forecasting, and multi-team delivery leadership.'
+            },
+            'Project Manager': {
+                bonusFactor: 0.18,
+                note: 'Your delivery governance & stakeholder management skills translate directly into high-paying Enterprise Agile Coach & RTE roles.'
+            },
+            'Business Analyst': {
+                bonusFactor: 0.14,
+                note: 'Your requirement elicitation & domain skills position you for an immediate jump into Product Ownership (CSPO/PSPO) & AI PM roles.'
+            },
+            'Product Owner / Associate PM': {
+                bonusFactor: 0.20,
+                note: 'Upgrade your Product credentials with AI-powered discovery, SAFe® POPM, and Evidence-Based Management for senior leadership roles.'
+            },
+            'Non-Tech / Operations': {
+                bonusFactor: 0.08,
+                note: 'Zero coding required! We rebrand your operations, communication, and team coordination experience into practical Scrum Master & BA offers.'
+            }
+        };
+
+        function updateRangeSliderVisual(sliderEl) {
+            if (!sliderEl) return;
+            const min = parseFloat(sliderEl.min) || 0;
+            const max = parseFloat(sliderEl.max) || 100;
+            const val = parseFloat(sliderEl.value) || 0;
+            const pct = Math.min(Math.max(((val - min) / (max - min)) * 100, 0), 100);
+            sliderEl.style.background = `linear-gradient(90deg, #0086D9 0%, #EC2610 ${pct}%, #E2E8F0 ${pct}%, #E2E8F0 100%)`;
+        }
+
+        function stepSliderValue(sliderId, delta) {
+            const slider = document.getElementById(sliderId);
+            if (!slider) return;
+            const min = parseFloat(slider.min);
+            const max = parseFloat(slider.max);
+            const nextVal = Math.min(Math.max(parseFloat(slider.value) + delta, min), max);
+            slider.value = nextVal;
+            calculateCareerProjection();
+        }
+
+        function setSliderDirect(sliderId, targetValue) {
+            const slider = document.getElementById(sliderId);
+            if (!slider) return;
+            slider.value = targetValue;
+            calculateCareerProjection();
+        }
+
         function selectCalcTrack(trackKey) {
             selectedCalcTrack = trackKey;
             const buttons = document.querySelectorAll('.calc-track-btn');
             buttons.forEach(btn => {
                 if (btn.getAttribute('data-track') === trackKey) {
-                    btn.className = 'calc-track-btn p-3 rounded-xl border-2 border-brand-blue bg-brand-blueLight text-brand-blue text-left transition-all';
+                    btn.className = 'calc-track-btn p-3 rounded-xl border-2 border-brand-blue bg-brand-blueLight text-brand-blue text-left transition-all shadow-sm';
                 } else {
                     btn.className = 'calc-track-btn p-3 rounded-xl border-2 border-slate-200 bg-white text-slate-700 hover:border-brand-blue/50 text-left transition-all';
                 }
@@ -2036,17 +2299,27 @@
         }
 
         function calculateCareerProjection() {
-            const exp = parseInt(document.getElementById('calc-exp-slider').value, 10);
-            const ctc = parseInt(document.getElementById('calc-ctc-slider').value, 10);
+            const expSlider = document.getElementById('calc-exp-slider');
+            const ctcSlider = document.getElementById('calc-ctc-slider');
+            const currentRole = document.getElementById('calc-current-role').value;
+
+            updateRangeSliderVisual(expSlider);
+            updateRangeSliderVisual(ctcSlider);
+
+            const exp = parseInt(expSlider.value, 10);
+            const ctc = parseInt(ctcSlider.value, 10);
             const config = calcTrackConfig[selectedCalcTrack];
+            const roleMod = roleModifierMap[currentRole] || { bonusFactor: 0.10, note: '' };
 
             document.getElementById('calc-exp-display').textContent = `${exp} ${exp === 1 ? 'Year' : 'Years'}`;
             document.getElementById('calc-ctc-display').textContent = `₹${ctc} LPA`;
+            document.getElementById('proj-transition-from').textContent = `Transitioning from ${currentRole} (${exp} ${exp === 1 ? 'Yr' : 'Yrs'} Exp)`;
 
-            // Calculate realistic post-cohort target CTC based on current CTC + experience + track
-            const expBoost = Math.min(exp * 0.45, 7);
-            const projectedMid = Math.round((ctc * config.multiplier) + expBoost);
-            const projectedLow = Math.max(ctc + 6, Math.round(projectedMid * 0.9));
+            // Calculate realistic post-cohort target CTC based on current role + current CTC + experience + track
+            const expBoost = Math.min(exp * 0.45, 7.5);
+            const effectiveMultiplier = config.multiplier + roleMod.bonusFactor;
+            const projectedMid = Math.round((ctc * effectiveMultiplier) + expBoost);
+            const projectedLow = Math.max(ctc + 5, Math.round(projectedMid * 0.9));
             const projectedHigh = Math.round(projectedMid * 1.12);
             const hikePercent = Math.round(((projectedMid - ctc) / ctc) * 100);
             const standardCtc = (ctc * 1.22).toFixed(1);
@@ -2056,6 +2329,11 @@
             document.getElementById('proj-ctc-range').textContent = `₹${projectedLow}L – ₹${projectedHigh}L`;
             document.getElementById('proj-timeline').textContent = config.timeline;
             document.getElementById('proj-demand').textContent = config.demand;
+
+            const noteEl = document.getElementById('proj-role-note');
+            if (noteEl && roleMod.note) {
+                noteEl.innerHTML = `<i class="ph-fill ph-sparkle text-brand-red text-base shrink-0"></i><span>${roleMod.note}</span>`;
+            }
 
             // Update visual comparison bars
             const maxScale = Math.max(projectedHigh + 8, 50);
@@ -2347,11 +2625,11 @@
                             </div>
 
                             <div class="grid grid-cols-2 gap-2.5">
-                                <button onclick="openSyllabusModal('${course.id}')" class="py-2.5 px-3 rounded-xl border-2 border-brand-blue/20 hover:border-brand-blue text-brand-blue font-bold text-xs transition-all flex items-center justify-center gap-1.5">
+                                <button type="button" onclick="openSyllabusModal('${course.id}')" class="py-2.5 px-3 rounded-xl border-2 border-brand-blue/20 hover:border-brand-blue text-brand-blue font-bold text-xs transition-all flex items-center justify-center gap-1.5">
                                     <i class="ph-bold ph-list-bullets"></i>
                                     <span>View Syllabus</span>
                                 </button>
-                                <button onclick="openBookingModal('Enroll: ${course.title.replace(/'/g, "\\'")}')" class="py-2.5 px-3 rounded-xl bg-brand-red hover:bg-brand-redDark text-white font-bold text-xs shadow-sm transition-all flex items-center justify-center gap-1.5">
+                                <button type="button" onclick="openBookingModal('Enroll: ${course.title.replace(/'/g, "\\'")}')" class="py-2.5 px-3 rounded-xl bg-brand-red hover:bg-brand-redDark text-white font-bold text-xs shadow-sm transition-all flex items-center justify-center gap-1.5">
                                     <span>Enroll Now</span>
                                     <i class="ph-bold ph-arrow-right"></i>
                                 </button>
@@ -2419,7 +2697,7 @@
             modal.classList.remove('flex');
         }
 
-        // 5. Step-by-Step Transformation Blueprint Logic
+        // 5. Step-by-Step Transformation Blueprint Logic (Fixed Active Tab Contrast)
         const blueprintPhases = [
             {
                 step: 'Step 01 • Weeks 1–2',
@@ -2474,10 +2752,18 @@
         function selectBlueprintPhase(index) {
             const tabs = document.querySelectorAll('.blueprint-tab');
             tabs.forEach((tab, idx) => {
+                const subLabel = tab.querySelector('.bphase-sub');
                 if (idx === index) {
                     tab.className = 'blueprint-tab p-4 rounded-2xl border-2 border-brand-red bg-brand-red text-white text-left transition-all shadow-red-glow';
+                    if (subLabel) {
+                        subLabel.className = 'bphase-sub flex items-center justify-between text-xs font-bold uppercase text-white/90 mb-1';
+                    }
                 } else {
                     tab.className = 'blueprint-tab p-4 rounded-2xl border-2 border-slate-200 bg-[#F8FAFC] hover:border-brand-blue text-brand-dark text-left transition-all';
+                    if (subLabel) {
+                        const accentColor = idx % 2 === 0 ? 'text-brand-red' : 'text-brand-blue';
+                        subLabel.className = `bphase-sub flex items-center justify-between text-xs font-bold uppercase ${accentColor} mb-1`;
+                    }
                 }
             });
 
@@ -2513,7 +2799,7 @@
                             `).join('')}
                         </ul>
                         <div class="pt-3">
-                            <button onclick="openBookingModal('Blueprint Walkthrough with Jitendra (${phase.step})')" class="w-full py-3 px-4 rounded-xl bg-brand-blue hover:bg-brand-blueDark text-white font-bold text-xs sm:text-sm transition-all">
+                            <button type="button" onclick="openBookingModal('Blueprint Walkthrough with Jitendra (${phase.step})')" class="w-full py-3 px-4 rounded-xl bg-brand-blue hover:bg-brand-blueDark text-white font-bold text-xs sm:text-sm transition-all">
                                 Discuss This Phase with Jitendra →
                             </button>
                         </div>
@@ -2522,8 +2808,16 @@
             `;
         }
 
-        // 6. YouTube Video Story Switcher ("Corporate Scrum Master Training Success Stories")
+        // 6. YouTube Video Story Switcher & YouTube Popup Lightbox Modal
+        let currentStageVideo = {
+            id: 'M7Rw689uCCc',
+            title: 'Mithilesh Transitioned from Non-IT to an AVP–Scrum Role with 200% Hike — SkillYantra',
+            badge: '200% Salary Hike Success Story'
+        };
+
         function loadYouTubeStory(videoId, title, badgeText, activeIdx) {
+            currentStageVideo = { id: videoId, title: title, badge: badgeText };
+
             const iframe = document.getElementById('main-yt-iframe');
             const titleEl = document.getElementById('main-yt-title');
             const badgeEl = document.getElementById('main-yt-badge');
@@ -2544,6 +2838,38 @@
                     card.className = 'yt-playlist-card w-full p-3.5 rounded-2xl border-2 border-slate-200 bg-white hover:border-brand-blue text-left transition-all flex items-center gap-3.5 group';
                 }
             });
+        }
+
+        function openYouTubePopupModal(videoId, title, badgeText) {
+            const modal = document.getElementById('youtube-popup-modal');
+            const iframe = document.getElementById('yt-popup-iframe');
+            const titleEl = document.getElementById('yt-popup-title');
+            const badgeEl = document.getElementById('yt-popup-badge');
+            const extLink = document.getElementById('yt-popup-external');
+
+            if (titleEl) titleEl.textContent = title || 'Skill Yantra Corporate Training Success Story';
+            if (badgeEl) badgeEl.textContent = badgeText || 'Skill Yantra Video Testimonial';
+            if (extLink) extLink.href = `https://www.youtube.com/watch?v=${videoId}`;
+            if (iframe) {
+                iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+            }
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function openCurrentStageInPopup() {
+            openYouTubePopupModal(currentStageVideo.id, currentStageVideo.title, currentStageVideo.badge);
+        }
+
+        function closeYouTubePopupModal() {
+            const modal = document.getElementById('youtube-popup-modal');
+            const iframe = document.getElementById('yt-popup-iframe');
+            if (iframe) {
+                iframe.src = ''; // Stop video audio playback when popup closes
+            }
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
         }
 
         // 7. Verified Google Reviews Data from skillyantra.com ("What Our Clients Say About Us" — "Sir" removed per user instruction)
@@ -2720,7 +3046,7 @@
                     </div>
                     <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
                         <span class="text-xs font-bold text-slate-500">By Jitendra</span>
-                        <button onclick="openBlogModal('${b.id}')" class="text-xs sm:text-sm font-extrabold text-brand-red hover:text-brand-blue transition-colors inline-flex items-center gap-1">
+                        <button type="button" onclick="openBlogModal('${b.id}')" class="text-xs sm:text-sm font-extrabold text-brand-red hover:text-brand-blue transition-colors inline-flex items-center gap-1">
                             <span>Read Full Article</span>
                             <i class="ph-bold ph-arrow-right"></i>
                         </button>
@@ -2796,9 +3122,9 @@
             const container = document.getElementById('faq-container');
             container.innerHTML = faqItems.map((item, idx) => `
                 <div class="rounded-2xl border border-slate-200/90 bg-[#F8FAFC] overflow-hidden">
-                    <button onclick="toggleFaq(${idx})" class="w-full px-6 py-4 text-left flex items-center justify-between gap-4 font-display font-bold text-sm sm:text-base text-brand-dark hover:text-brand-blue transition-colors">
+                    <button type="button" onclick="toggleFaq(${idx})" class="w-full px-6 py-4 text-left flex items-center justify-between gap-4 font-display font-bold text-sm sm:text-base text-brand-dark hover:text-brand-blue transition-colors">
                         <span>${item.q}</span>
-                        <i id="faq-icon-${idx}" class="ph-bold ph-plus text-brand-red text-lg shrink-0 transition-transform"></i>
+                        <i id="faq-icon-${idx}" class="ph-bold ${idx === 0 ? 'ph-minus' : 'ph-plus'} text-brand-red text-lg shrink-0 transition-transform"></i>
                     </button>
                     <div id="faq-ans-${idx}" class="${idx === 0 ? '' : 'hidden'} px-6 pb-5 text-xs sm:text-sm text-brand-slate leading-relaxed border-t border-slate-200/60 pt-3 bg-white">
                         ${item.a}
@@ -2900,6 +3226,16 @@
             successDiv.classList.remove('hidden');
             e.target.reset();
         }
+
+        // Global Escape Key Handler for All Modals
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeSyllabusModal();
+                closeBookingModal();
+                closeInfoModal();
+                closeYouTubePopupModal();
+            }
+        });
 
         // Initialize all interactive views on page load
         window.addEventListener('DOMContentLoaded', () => {
