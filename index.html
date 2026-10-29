@@ -1,0 +1,2624 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillYantra | India's Premier AI-Powered Agile & Product Academy with Jitendra</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            red: '#EC2610',
+                            redDark: '#C81E0B',
+                            redLight: '#FEF2F2',
+                            blue: '#0086D9',
+                            blueDark: '#006BB0',
+                            blueLight: '#F0F9FF',
+                            swooshBlue: '#4AA8E8',
+                            dark: '#0F172A',
+                            slate: '#475569'
+                        }
+                    },
+                    boxShadow: {
+                        'soft': '0 10px 35px -5px rgba(15, 23, 42, 0.06), 0 4px 15px -3px rgba(15, 23, 42, 0.04)',
+                        'blue-glow': '0 12px 28px -6px rgba(0, 134, 217, 0.28)',
+                        'red-glow': '0 12px 28px -6px rgba(236, 38, 16, 0.28)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Utilities & Subtle Background Patterns */
+        body {
+            background-color: #FFFFFF;
+            color: #0F172A;
+            overflow-x: hidden;
+        }
+        .bg-grid-pattern {
+            background-image: radial-gradient(rgba(0, 134, 217, 0.10) 1px, transparent 1px),
+                              radial-gradient(rgba(236, 38, 16, 0.08) 1px, #FFFFFF 1px);
+            background-size: 36px 36px;
+            background-position: 0 0, 18px 18px;
+        }
+        .hero-aura {
+            background: radial-gradient(circle at 85% 20%, rgba(0, 134, 217, 0.09) 0%, transparent 48%),
+                        radial-gradient(circle at 12% 80%, rgba(236, 38, 16, 0.08) 0%, transparent 48%);
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F8FAFC;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #CBD5E1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0086D9;
+        }
+        /* Custom Range Slider Styling */
+        input[type=range] {
+            -webkit-appearance: none;
+            appearance: none;
+            background: transparent;
+            cursor: pointer;
+        }
+        input[type=range]::-webkit-slider-runnable-track {
+            height: 8px;
+            border-radius: 999px;
+        }
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            height: 22px;
+            width: 22px;
+            border-radius: 50%;
+            background: #EC2610;
+            border: 3px solid #FFFFFF;
+            box-shadow: 0 2px 8px rgba(236, 38, 16, 0.45);
+            margin-top: -7px;
+            transition: transform 0.15s ease;
+        }
+        input[type=range]::-webkit-slider-thumb:hover {
+            transform: scale(1.12);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-brand-blue selection:text-white">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-gradient-to-r from-brand-blue via-[#0074BD] to-brand-red text-white text-xs sm:text-sm py-2.5 px-4">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
+            <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2 font-medium">
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-bold uppercase tracking-wider bg-white text-brand-red shadow-sm">
+                    AI-Powered Live Cohort
+                </span>
+                <span>Practical Agile, Scrum &amp; Product Training with <strong>Jitendra</strong> — Next Batch Starts This Saturday!</span>
+            </div>
+            <div class="flex items-center gap-4 shrink-0">
+                <a href="tel:+919611796309" class="hidden md:inline-flex items-center gap-1 font-semibold hover:underline">
+                    <i class="ph-bold ph-phone-call"></i>
+                    <span>+91 9611796309</span>
+                </a>
+                <button onclick="openBookingModal('Free AI Career Strategy Call with Jitendra')" class="inline-flex items-center gap-1 font-bold underline decoration-white/70 hover:decoration-white underline-offset-4">
+                    <span>Book Free Demo</span>
+                    <i class="ph-bold ph-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky Navigation Header -->
+    <header id="navbar" class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80 transition-all duration-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Clean SkillYantra Logo (Strictly only the logo image/SVG, no subtitle text or LLP inside the logo) -->
+                <a href="#home" class="flex items-center focus:outline-none group shrink-0" aria-label="SkillYantra Home">
+                    <img 
+                        src="cropped-c2aaa92a-0933-4b1a-9818-25ad3b0a82ae-removebg-preview.png" 
+                        alt="SkillYantra" 
+                        class="h-11 sm:h-12 md:h-14 w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02]"
+                        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                    />
+                    <!-- Pixel-Accurate Inline SVG Fallback matching the attached SkillYantra Logo -->
+                    <div style="display:none;" class="items-center select-none">
+                        <svg class="h-12 sm:h-14 w-auto" viewBox="0 0 370 96" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SkillYantra">
+                            <path d="M35 46 C 16 62, 34 79, 114 75 C 68 85, 16 74, 35 46 Z" fill="#EC2610"/>
+                            <path d="M18 52 C -5 73, 28 95, 148 86 C 85 98, -2 85, 18 52 Z" fill="#4AA8E8"/>
+                            <text x="42" y="60" font-family="Inter, Arial, sans-serif" font-size="56" font-weight="600" fill="#EC2610" letter-spacing="-0.5">Skill</text>
+                            <text x="168" y="60" font-family="Inter, Arial, sans-serif" font-size="56" font-weight="600" fill="#0086D9" letter-spacing="-0.5">Yantra</text>
+                        </svg>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links (Exact Menu Items from skillyantra.com) -->
+                <nav class="hidden lg:flex items-center gap-1 xl:gap-1.5" aria-label="Primary Navigation">
+                    <a href="#home" class="px-3 py-2 rounded-lg text-sm font-semibold text-brand-dark hover:text-brand-red hover:bg-brand-redLight/60 transition-colors">Home</a>
+                    <a href="#about" class="px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:text-brand-blue hover:bg-brand-blueLight transition-colors">About</a>
+                    <a href="#courses" class="px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:text-brand-blue hover:bg-brand-blueLight transition-colors flex items-center gap-1">
+                        <span>Courses</span>
+                        <span class="px-1.5 py-0.5 text-[10px] font-extrabold rounded bg-brand-red text-white leading-none">AI</span>
+                    </a>
+                    <a href="#blog" class="px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:text-brand-blue hover:bg-brand-blueLight transition-colors">Blog</a>
+                    <a href="#contact" class="px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:text-brand-blue hover:bg-brand-blueLight transition-colors">Contact Us</a>
+                    <a href="#services" class="px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:text-brand-blue hover:bg-brand-blueLight transition-colors">Services</a>
+                    <a href="#success-story" class="px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:text-brand-blue hover:bg-brand-blueLight transition-colors">Success Story</a>
+                </nav>
+
+                <!-- Desktop CTA Buttons -->
+                <div class="hidden lg:flex items-center gap-2.5">
+                    <a href="#career-tool" class="px-3.5 py-2.5 rounded-xl text-xs xl:text-sm font-bold text-brand-blue border-2 border-brand-blue/20 hover:border-brand-blue hover:bg-brand-blueLight transition-all flex items-center gap-1.5">
+                        <i class="ph-bold ph-chart-line-up text-brand-red"></i>
+                        <span>Career Tool</span>
+                    </a>
+                    <button onclick="openBookingModal('Enroll / Book Free Demo Session with Jitendra')" class="px-4 xl:px-5 py-2.5 rounded-xl text-xs xl:text-sm font-bold text-white bg-brand-red hover:bg-brand-redDark shadow-red-glow transition-all flex items-center gap-2">
+                        <i class="ph-bold ph-calendar-check text-base"></i>
+                        <span>Enroll / Free Demo</span>
+                    </button>
+                </div>
+
+                <!-- Mobile Hamburger Button -->
+                <div class="flex lg:hidden">
+                    <button id="mobile-menu-btn" type="button" onclick="toggleMobileMenu()" class="inline-flex items-center justify-center p-2.5 rounded-xl text-slate-700 hover:text-brand-blue hover:bg-brand-blueLight border border-slate-200 focus:outline-none transition-colors" aria-label="Toggle Navigation">
+                        <i id="menu-icon-open" class="ph-bold ph-list text-2xl"></i>
+                        <i id="menu-icon-close" class="ph-bold ph-x text-2xl hidden"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer (All 7 Menu Links + Quick Tools & Contact Info) -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-slate-200 shadow-xl max-h-[85vh] overflow-y-auto">
+            <div class="px-4 pt-3 pb-6 space-y-1.5">
+                <a href="#home" onclick="closeMobileMenu()" class="block px-4 py-3 rounded-xl text-base font-semibold text-slate-800 hover:bg-brand-blueLight hover:text-brand-blue transition-colors">Home</a>
+                <a href="#about" onclick="closeMobileMenu()" class="block px-4 py-3 rounded-xl text-base font-semibold text-slate-800 hover:bg-brand-blueLight hover:text-brand-blue transition-colors">About</a>
+                <a href="#courses" onclick="closeMobileMenu()" class="flex items-center justify-between px-4 py-3 rounded-xl text-base font-semibold text-slate-800 hover:bg-brand-blueLight hover:text-brand-blue transition-colors">
+                    <span>Courses (11 Flagship Programs)</span>
+                    <span class="px-2 py-0.5 text-xs font-bold rounded-full bg-brand-red text-white">AI-Powered</span>
+                </a>
+                <a href="#blog" onclick="closeMobileMenu()" class="block px-4 py-3 rounded-xl text-base font-semibold text-slate-800 hover:bg-brand-blueLight hover:text-brand-blue transition-colors">Blog</a>
+                <a href="#contact" onclick="closeMobileMenu()" class="block px-4 py-3 rounded-xl text-base font-semibold text-slate-800 hover:bg-brand-blueLight hover:text-brand-blue transition-colors">Contact Us</a>
+                <a href="#services" onclick="closeMobileMenu()" class="block px-4 py-3 rounded-xl text-base font-semibold text-slate-800 hover:bg-brand-blueLight hover:text-brand-blue transition-colors">Services</a>
+                <a href="#success-story" onclick="closeMobileMenu()" class="block px-4 py-3 rounded-xl text-base font-semibold text-slate-800 hover:bg-brand-blueLight hover:text-brand-blue transition-colors">Success Story</a>
+                
+                <!-- Interactive Signature Tools Shortcuts -->
+                <div class="pt-2 pb-2 border-t border-slate-100">
+                    <a href="#career-tool" onclick="closeMobileMenu()" class="block px-4 py-2.5 rounded-xl text-sm font-bold text-brand-red bg-brand-redLight/60 hover:bg-brand-redLight transition-colors mb-1.5">
+                        <i class="ph-bold ph-chart-line-up mr-1"></i> Interactive Career Projection Tool
+                    </a>
+                    <a href="#blueprint" onclick="closeMobileMenu()" class="block px-4 py-2.5 rounded-xl text-sm font-bold text-brand-blue bg-brand-blueLight/60 hover:bg-brand-blueLight transition-colors">
+                        <i class="ph-bold ph-path mr-1"></i> Step-by-Step Transformation Blueprint
+                    </a>
+                </div>
+
+                <!-- Mobile Quick Contact Details -->
+                <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 text-xs space-y-1.5 text-slate-600">
+                    <div class="font-bold text-brand-dark uppercase tracking-wider">Direct Contact Support</div>
+                    <div class="flex items-center gap-2">
+                        <i class="ph-bold ph-phone-call text-brand-red"></i>
+                        <a href="tel:+919611796309" class="font-semibold text-brand-dark hover:text-brand-blue">+91 9611796309</a>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="ph-bold ph-envelope-simple text-brand-blue"></i>
+                        <a href="mailto:connect@skillyantra.com" class="font-semibold text-brand-dark hover:text-brand-blue">connect@skillyantra.com</a>
+                    </div>
+                </div>
+
+                <div class="pt-3 grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <a href="#career-tool" onclick="closeMobileMenu()" class="w-full py-3 px-4 rounded-xl text-center text-sm font-bold text-brand-blue bg-brand-blueLight border border-brand-blue/20">
+                        Project My Salary
+                    </a>
+                    <button onclick="closeMobileMenu(); openBookingModal('Enroll / Book Free Demo with Jitendra');" class="w-full py-3 px-4 rounded-xl text-center text-sm font-bold text-white bg-brand-red hover:bg-brand-redDark shadow-md flex items-center justify-center gap-2">
+                        <i class="ph-bold ph-calendar-check"></i>
+                        <span>Book Free Demo</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- A. HERO SECTION (#home) -->
+    <section id="home" class="relative pt-10 pb-16 sm:pt-14 sm:pb-24 lg:pt-16 lg:pb-28 bg-grid-pattern hero-aura overflow-hidden">
+        <!-- Decorative Top-Right & Bottom-Left Accent Blobs -->
+        <div class="pointer-events-none absolute -top-24 -right-24 w-96 h-96 rounded-full bg-brand-blue/10 blur-3xl"></div>
+        <div class="pointer-events-none absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-brand-red/10 blur-3xl"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+                
+                <!-- Left Column: Hero Copy & CTAs -->
+                <div class="lg:col-span-7 text-center lg:text-left">
+                    <!-- Eyebrow Badge -->
+                    <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white border border-brand-blue/25 shadow-sm mb-6">
+                        <span class="flex h-2.5 w-2.5 relative">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-red opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-brand-red"></span>
+                        </span>
+                        <span class="text-xs sm:text-sm font-extrabold tracking-wide uppercase text-brand-dark">
+                            <span class="text-brand-red">AI-POWERED</span> <span class="text-brand-blue">AGILE, SCRUM &amp; PRODUCT ACADEMY</span>
+                        </span>
+                    </div>
+
+                    <!-- Main Headline -->
+                    <h1 class="font-display text-3xl sm:text-5xl lg:text-[50px] font-extrabold text-brand-dark tracking-tight leading-[1.15] mb-6">
+                        Practical <span class="text-brand-red">AI-Powered Agile</span>, <span class="text-brand-blue">Scrum &amp; Product</span> Training for Real Career Growth
+                    </h1>
+
+                    <!-- Subtitle -->
+                    <p class="text-base sm:text-lg lg:text-xl text-brand-slate leading-relaxed max-w-2xl mx-auto lg:mx-0 mb-8">
+                        Move beyond textbook theory. Master live enterprise simulations, <strong>GenAI workflows for Scrum Masters, Product Owners &amp; Business Analysts</strong>, SAFe® execution, and JIRA automation—mentored live by <strong class="text-brand-dark font-bold">Jitendra</strong> with end-to-end job transition support.
+                    </p>
+
+                    <!-- Dual Action Buttons -->
+                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-4 mb-10">
+                        <a href="#career-tool" class="px-7 py-4 rounded-2xl text-base font-bold text-white bg-brand-red hover:bg-brand-redDark shadow-red-glow transition-all flex items-center justify-center gap-2.5 group">
+                            <i class="ph-bold ph-calculator text-xl"></i>
+                            <span>Launch Career Projection Tool</span>
+                            <i class="ph-bold ph-arrow-right text-lg transition-transform group-hover:translate-x-1"></i>
+                        </a>
+                        <a href="#courses" class="px-7 py-4 rounded-2xl text-base font-bold text-white bg-brand-blue hover:bg-brand-blueDark shadow-blue-glow transition-all flex items-center justify-center gap-2.5">
+                            <i class="ph-bold ph-books text-xl"></i>
+                            <span>Explore All 11 Courses</span>
+                        </a>
+                    </div>
+
+                    <!-- Key Outcome Metrics Strip -->
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-5 pt-8 border-t border-slate-200/90">
+                        <div class="text-center lg:text-left">
+                            <div class="font-display text-2xl sm:text-3xl font-extrabold text-brand-red">5,200+</div>
+                            <p class="text-xs sm:text-sm font-medium text-slate-600 mt-0.5">Careers Transformed</p>
+                        </div>
+                        <div class="text-center lg:text-left sm:border-l border-slate-200 sm:pl-4">
+                            <div class="font-display text-2xl sm:text-3xl font-extrabold text-brand-blue">145%</div>
+                            <p class="text-xs sm:text-sm font-medium text-slate-600 mt-0.5">Avg. Salary Hike</p>
+                        </div>
+                        <div class="text-center lg:text-left sm:border-l border-slate-200 sm:pl-4">
+                            <div class="font-display text-2xl sm:text-3xl font-extrabold text-brand-red">98.6%</div>
+                            <p class="text-xs sm:text-sm font-medium text-slate-600 mt-0.5">Certification &amp; Transition</p>
+                        </div>
+                        <div class="text-center lg:text-left sm:border-l border-slate-200 sm:pl-4">
+                            <div class="font-display text-2xl sm:text-3xl font-extrabold text-brand-dark flex items-center justify-center lg:justify-start gap-1">
+                                <span>4.9/5</span>
+                                <i class="ph-fill ph-star text-amber-400 text-xl"></i>
+                            </div>
+                            <p class="text-xs sm:text-sm font-medium text-slate-600 mt-0.5">Learner Rating</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Live AI-Powered Cohort Preview + Quick Career Assessment Widget -->
+                <div class="lg:col-span-5">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <div class="absolute -inset-1.5 bg-gradient-to-tr from-brand-red via-brand-blue to-brand-swooshBlue rounded-3xl opacity-20 blur-lg"></div>
+                        
+                        <div class="relative bg-white rounded-3xl border border-slate-200/90 shadow-soft p-6 sm:p-8">
+                            <!-- Card Header -->
+                            <div class="flex items-center justify-between pb-5 mb-5 border-b border-slate-100">
+                                <div>
+                                    <span class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-brand-red bg-brand-redLight px-3 py-1 rounded-full mb-1.5">
+                                        <i class="ph-fill ph-sparkle"></i> Live Interactive Cohorts
+                                    </span>
+                                    <h2 class="font-display text-xl font-extrabold text-brand-dark">AI-Powered Career Accelerator</h2>
+                                </div>
+                                <div class="w-12 h-12 rounded-2xl bg-brand-blueLight text-brand-blue flex items-center justify-center shrink-0">
+                                    <i class="ph-duotone ph-cpu text-2xl"></i>
+                                </div>
+                            </div>
+
+                            <!-- AI Tools & Capabilities Strip -->
+                            <div class="mb-5">
+                                <div class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2.5">Enterprise Agile &amp; AI Stack Covered</div>
+                                <div class="grid grid-cols-3 gap-2">
+                                    <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200/70 text-center">
+                                        <div class="text-xs font-extrabold text-brand-blue">JIRA + AI</div>
+                                        <div class="text-[11px] text-slate-500">Sprint Automation</div>
+                                    </div>
+                                    <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200/70 text-center">
+                                        <div class="text-xs font-extrabold text-brand-red">GenAI Scrum</div>
+                                        <div class="text-[11px] text-slate-500">Backlog &amp; PRDs</div>
+                                    </div>
+                                    <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200/70 text-center">
+                                        <div class="text-xs font-extrabold text-brand-blue">SAFe® 6.0</div>
+                                        <div class="text-[11px] text-slate-500">POPM &amp; PI Labs</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Quick Interactive Career Assessment Mini-Widget -->
+                            <div class="p-4 rounded-2xl bg-[#F8FAFC] border border-slate-200/90 space-y-3.5 mb-5">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-xs font-extrabold uppercase tracking-wider text-brand-dark flex items-center gap-1.5">
+                                        <i class="ph-bold ph-lightning text-brand-red"></i>
+                                        Quick Career Track Finder
+                                    </span>
+                                    <span class="text-[11px] font-semibold text-brand-blue">Instant Preview</span>
+                                </div>
+
+                                <div>
+                                    <label for="hero-quick-role" class="block text-[11px] font-bold text-slate-500 uppercase mb-1">Select Your Current Background</label>
+                                    <select id="hero-quick-role" onchange="updateHeroQuickPreview()" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs sm:text-sm font-semibold text-brand-dark bg-white focus:border-brand-blue outline-none">
+                                        <option value="sm">Scrum Master / Project Coordinator</option>
+                                        <option value="dev">Software Engineer / QA / Tech Lead</option>
+                                        <option value="ba">Business Analyst / Functional Consultant</option>
+                                        <option value="pm">Product Owner / Associate PM</option>
+                                    </select>
+                                </div>
+
+                                <div class="p-3 rounded-xl bg-white border border-brand-blue/20 flex items-center justify-between gap-2">
+                                    <div>
+                                        <div class="text-[11px] font-semibold text-slate-400">Recommended Track &amp; Target CTC</div>
+                                        <div id="hero-quick-output" class="text-xs sm:text-sm font-extrabold text-brand-blue mt-0.5">
+                                            AI Scrum Master • ₹20L – ₹32L PA
+                                        </div>
+                                    </div>
+                                    <a href="#career-tool" class="px-3 py-1.5 rounded-lg bg-brand-redLight text-brand-red text-xs font-bold shrink-0 hover:bg-brand-red hover:text-white transition-colors">
+                                        Calculate →
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Live Batch Status Box with Jitendra -->
+                            <div class="p-4 rounded-2xl bg-gradient-to-r from-brand-blueLight via-white to-brand-redLight border border-brand-blue/20 flex flex-col sm:flex-row items-center justify-between gap-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-full bg-brand-dark text-white font-display font-bold flex items-center justify-center shrink-0">
+                                        J
+                                    </div>
+                                    <div>
+                                        <div class="text-xs font-bold text-brand-red uppercase tracking-wide">Mentored Live by Jitendra</div>
+                                        <div class="text-sm font-bold text-brand-dark">Free 1:1 Career Clarity Call</div>
+                                    </div>
+                                </div>
+                                <button onclick="openBookingModal('Free 1:1 Career Clarity Call with Jitendra')" class="w-full sm:w-auto px-4 py-2.5 rounded-xl bg-brand-dark hover:bg-brand-blue text-white text-xs font-bold transition-colors shrink-0">
+                                    Book Free Slot
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ROLE TRANSITION & OFFICIAL CERTIFICATIONS STRIP -->
+    <section class="py-7 bg-[#F8FAFC] border-y border-slate-200/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-5">
+                <p class="text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-500 text-center md:text-left shrink-0">
+                    High-Growth Career Tracks We Specialize In:
+                </p>
+                <div class="flex flex-wrap items-center justify-center gap-2.5">
+                    <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold bg-white border border-slate-200 text-slate-800 shadow-sm">
+                        <i class="ph-fill ph-check-circle text-brand-red"></i> AI Scrum Master
+                    </span>
+                    <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold bg-white border border-slate-200 text-slate-800 shadow-sm">
+                        <i class="ph-fill ph-check-circle text-brand-blue"></i> PSM™ &amp; CSM® Mastery
+                    </span>
+                    <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold bg-white border border-slate-200 text-slate-800 shadow-sm">
+                        <i class="ph-fill ph-check-circle text-brand-red"></i> CSPO® &amp; PSPO™ Product Owner
+                    </span>
+                    <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold bg-white border border-slate-200 text-slate-800 shadow-sm">
+                        <i class="ph-fill ph-check-circle text-brand-blue"></i> SAFe® Agilist &amp; POPM
+                    </span>
+                    <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold bg-white border border-slate-200 text-slate-800 shadow-sm">
+                        <i class="ph-fill ph-check-circle text-brand-red"></i> JIRA, Business Analyst &amp; PM
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- B. INTERACTIVE CAREER PROJECTION TOOL (#career-tool) -->
+    <section id="career-tool" class="py-16 sm:py-24 bg-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-redLight text-brand-red text-xs font-bold uppercase tracking-wider mb-3">
+                    <i class="ph-bold ph-chart-line-up text-sm"></i>
+                    <span>Interactive Career Projection Tool</span>
+                </div>
+                <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-brand-dark tracking-tight mb-4">
+                    Simulate Your <span class="text-brand-red">AI-Powered</span> Agile &amp; Product <span class="text-brand-blue">Salary Hike</span>
+                </h2>
+                <p class="text-base sm:text-lg text-brand-slate">
+                    Adjust your current role, experience, and annual CTC below to see how practical AI-Powered Agile, Scrum, and Product training with <strong>Jitendra</strong> accelerates your 3-year compensation trajectory.
+                </p>
+            </div>
+
+            <!-- Calculator Main Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                
+                <!-- Left Panel: Interactive Controls (5 Columns) -->
+                <div class="lg:col-span-5 bg-[#F8FAFC] rounded-3xl border border-slate-200/90 p-6 sm:p-8 flex flex-col justify-between shadow-soft">
+                    <div class="space-y-6">
+                        <div class="flex items-center justify-between border-b border-slate-200 pb-4">
+                            <h3 class="font-display text-lg font-extrabold text-brand-dark flex items-center gap-2">
+                                <i class="ph-duotone ph-sliders-horizontal text-brand-blue text-2xl"></i>
+                                <span>Your Career Inputs</span>
+                            </h3>
+                            <button onclick="resetCalculator()" class="text-xs font-bold text-brand-red hover:underline">
+                                Reset Defaults
+                            </button>
+                        </div>
+
+                        <!-- 1. Current Role Select -->
+                        <div>
+                            <label for="calc-current-role" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
+                                1. Current Role / Background
+                            </label>
+                            <select id="calc-current-role" onchange="calculateCareerProjection()" class="w-full px-4 py-3 rounded-xl border border-slate-300 bg-white text-sm font-semibold text-brand-dark focus:border-brand-blue focus:ring-3 focus:ring-brand-blue/15 outline-none transition-all">
+                                <option value="Software Engineer / QA">Software Engineer / QA / Tech Lead</option>
+                                <option value="Scrum Master" selected>Scrum Master / Agile Delivery Coordinator</option>
+                                <option value="Project Manager">Project Manager / Delivery Manager</option>
+                                <option value="Business Analyst">Business Analyst / Functional Consultant</option>
+                                <option value="Product Owner / Associate PM">Product Owner / Associate PM</option>
+                                <option value="Non-Tech / Operations">Non-Tech / Operations / Support Lead</option>
+                            </select>
+                        </div>
+
+                        <!-- 2. Years of Experience Slider -->
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <label for="calc-exp-slider" class="text-xs font-bold uppercase tracking-wider text-slate-700">
+                                    2. Years of Experience
+                                </label>
+                                <span id="calc-exp-display" class="px-3 py-1 rounded-lg bg-brand-blueLight text-brand-blue font-display font-extrabold text-sm">
+                                    6 Years
+                                </span>
+                            </div>
+                            <input type="range" id="calc-exp-slider" min="1" max="20" step="1" value="6" oninput="calculateCareerProjection()" class="w-full bg-slate-200 rounded-lg">
+                            <div class="flex justify-between text-[11px] font-medium text-slate-400 mt-1">
+                                <span>1 Yr</span>
+                                <span>5 Yrs</span>
+                                <span>10 Yrs</span>
+                                <span>15 Yrs</span>
+                                <span>20 Yrs</span>
+                            </div>
+                        </div>
+
+                        <!-- 3. Current Annual CTC Slider -->
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <label for="calc-ctc-slider" class="text-xs font-bold uppercase tracking-wider text-slate-700">
+                                    3. Current Annual CTC (₹ LPA)
+                                </label>
+                                <span id="calc-ctc-display" class="px-3 py-1 rounded-lg bg-brand-redLight text-brand-red font-display font-extrabold text-sm">
+                                    ₹12 LPA
+                                </span>
+                            </div>
+                            <input type="range" id="calc-ctc-slider" min="4" max="45" step="1" value="12" oninput="calculateCareerProjection()" class="w-full bg-slate-200 rounded-lg">
+                            <div class="flex justify-between text-[11px] font-medium text-slate-400 mt-1">
+                                <span>₹4 LPA</span>
+                                <span>₹15 LPA</span>
+                                <span>₹25 LPA</span>
+                                <span>₹35 LPA</span>
+                                <span>₹45 LPA</span>
+                            </div>
+                        </div>
+
+                        <!-- 4. Target AI-Powered Specialization Track -->
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2.5">
+                                4. Target AI-Powered Track at SkillYantra
+                            </label>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5" id="calc-track-buttons">
+                                <button type="button" onclick="selectCalcTrack('ai-sm')" data-track="ai-sm" class="calc-track-btn p-3 rounded-xl border-2 border-brand-blue bg-brand-blueLight text-brand-blue text-left transition-all">
+                                    <div class="text-xs font-extrabold">AI Scrum Master &amp; Agile Lead</div>
+                                    <div class="text-[11px] opacity-80">PSM/CSM + GenAI Sprint Labs</div>
+                                </button>
+                                <button type="button" onclick="selectCalcTrack('ai-pm')" data-track="ai-pm" class="calc-track-btn p-3 rounded-xl border-2 border-slate-200 bg-white text-slate-700 hover:border-brand-blue/50 text-left transition-all">
+                                    <div class="text-xs font-extrabold">CSPO / PSPO™ &amp; AI PM</div>
+                                    <div class="text-[11px] opacity-80">AI Product Strategy &amp; Backlogs</div>
+                                </button>
+                                <button type="button" onclick="selectCalcTrack('ai-coach')" data-track="ai-coach" class="calc-track-btn p-3 rounded-xl border-2 border-slate-200 bg-white text-slate-700 hover:border-brand-blue/50 text-left transition-all">
+                                    <div class="text-xs font-extrabold">SAFe® Agile &amp; Enterprise Coach</div>
+                                    <div class="text-[11px] opacity-80">SAFe Agilist, POPM &amp; PI Planning</div>
+                                </button>
+                                <button type="button" onclick="selectCalcTrack('ai-ba')" data-track="ai-ba" class="calc-track-btn p-3 rounded-xl border-2 border-slate-200 bg-white text-slate-700 hover:border-brand-blue/50 text-left transition-all">
+                                    <div class="text-xs font-extrabold">AI Business Analyst &amp; PM</div>
+                                    <div class="text-[11px] opacity-80">BRD/FRD, JIRA &amp; Delivery Mastery</div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 pt-5 border-t border-slate-200/80 flex items-center justify-between text-xs text-slate-500">
+                        <span>Verified across India's Top 10 IT Hubs</span>
+                        <span class="font-bold text-brand-blue">SkillYantra Placement Data</span>
+                    </div>
+                </div>
+
+                <!-- Right Panel: Real-Time Projection Dashboard (7 Columns) -->
+                <div class="lg:col-span-7 bg-white rounded-3xl border-2 border-brand-blue/20 p-6 sm:p-8 shadow-soft flex flex-col justify-between relative overflow-hidden">
+                    <!-- Top Ribbon -->
+                    <div class="flex flex-wrap items-center justify-between gap-3 pb-6 border-b border-slate-100">
+                        <div>
+                            <div class="text-xs font-bold uppercase tracking-wider text-brand-blue">Projected Career Destination</div>
+                            <h3 id="proj-role-title" class="font-display text-2xl sm:text-3xl font-extrabold text-brand-dark mt-0.5">
+                                Senior AI Scrum Master &amp; Delivery Lead
+                            </h3>
+                        </div>
+                        <span id="proj-hike-badge" class="px-4 py-1.5 rounded-full bg-brand-red text-white font-display font-extrabold text-sm shadow-sm">
+                            +125% Projected Hike
+                        </span>
+                    </div>
+
+                    <!-- 3 Key Output Metrics -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 my-6">
+                        <div class="p-4 rounded-2xl bg-brand-blueLight/70 border border-brand-blue/20">
+                            <div class="text-xs font-bold uppercase text-slate-500">Projected Post-Cohort CTC</div>
+                            <div id="proj-ctc-range" class="font-display text-2xl sm:text-3xl font-extrabold text-brand-blue mt-1">
+                                ₹24L – ₹30L
+                            </div>
+                            <div class="text-[11px] font-semibold text-slate-600 mt-0.5">Annual Compensation (LPA)</div>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-brand-redLight/70 border border-brand-red/20">
+                            <div class="text-xs font-bold uppercase text-slate-500">Est. Transition Timeline</div>
+                            <div id="proj-timeline" class="font-display text-2xl sm:text-3xl font-extrabold text-brand-red mt-1">
+                                8 – 10 Weeks
+                            </div>
+                            <div class="text-[11px] font-semibold text-slate-600 mt-0.5">With Jitendra's Job Bootcamp</div>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200">
+                            <div class="text-xs font-bold uppercase text-slate-500">Recruiter Demand Score</div>
+                            <div id="proj-demand" class="font-display text-2xl sm:text-3xl font-extrabold text-brand-dark mt-1">
+                                Very High (9.7/10)
+                            </div>
+                            <div class="text-[11px] font-semibold text-emerald-600 mt-0.5">High Shortlist Priority</div>
+                        </div>
+                    </div>
+
+                    <!-- Visual 3-Year Career Trajectory Comparison Bars -->
+                    <div class="p-5 rounded-2xl bg-[#F8FAFC] border border-slate-200/90 mb-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h4 class="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-brand-dark">
+                                3-Year Salary Trajectory Comparison
+                            </h4>
+                            <span class="text-xs font-semibold text-slate-500">Standard Path vs SkillYantra AI-Powered Path</span>
+                        </div>
+
+                        <div class="space-y-4">
+                            <!-- Current Baseline -->
+                            <div>
+                                <div class="flex justify-between text-xs font-bold text-slate-600 mb-1">
+                                    <span>Current Compensation Baseline</span>
+                                    <span id="bar-current-label">₹12 LPA</span>
+                                </div>
+                                <div class="w-full h-3 bg-slate-200 rounded-full overflow-hidden">
+                                    <div id="bar-current-fill" class="h-full bg-slate-500 rounded-full transition-all duration-300" style="width: 30%;"></div>
+                                </div>
+                            </div>
+
+                            <!-- Standard Traditional Path -->
+                            <div>
+                                <div class="flex justify-between text-xs font-bold text-slate-600 mb-1">
+                                    <span>Standard Path (Without Practical AI &amp; Agile Mastery)</span>
+                                    <span id="bar-standard-label">₹14.6 LPA (+22%)</span>
+                                </div>
+                                <div class="w-full h-3 bg-slate-200 rounded-full overflow-hidden">
+                                    <div id="bar-standard-fill" class="h-full bg-brand-swooshBlue rounded-full transition-all duration-300" style="width: 40%;"></div>
+                                </div>
+                            </div>
+
+                            <!-- SkillYantra AI-Powered Path -->
+                            <div>
+                                <div class="flex justify-between text-xs font-extrabold text-brand-red mb-1">
+                                    <span class="flex items-center gap-1"><i class="ph-fill ph-rocket-launch"></i> SkillYantra AI-Powered Transformation Path</span>
+                                    <span id="bar-ai-label">₹27 LPA (+125%)</span>
+                                </div>
+                                <div class="w-full h-3.5 bg-slate-200 rounded-full overflow-hidden">
+                                    <div id="bar-ai-fill" class="h-full bg-gradient-to-r from-brand-blue to-brand-red rounded-full transition-all duration-300" style="width: 78%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Unlocked AI Capabilities & Direct CTA -->
+                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 pt-4 border-t border-slate-100">
+                        <div class="space-y-1.5">
+                            <div class="text-xs font-bold uppercase tracking-wider text-slate-400">Core AI &amp; Agile Skills Unlocked:</div>
+                            <div id="proj-skills-tags" class="flex flex-wrap gap-1.5">
+                                <!-- Populated dynamically -->
+                            </div>
+                        </div>
+                        <button onclick="openCalculatorBooking()" class="px-6 py-3.5 rounded-xl bg-brand-red hover:bg-brand-redDark text-white font-bold text-xs sm:text-sm shadow-red-glow transition-all shrink-0 flex items-center justify-center gap-2">
+                            <i class="ph-bold ph-calendar-check text-lg"></i>
+                            <span>Book 1:1 Roadmap with Jitendra</span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- C. LIVE INTERACTIVE COHORTS & ALL 11 OFFICIAL COURSES (#courses) -->
+    <section id="courses" class="py-16 sm:py-24 bg-[#F8FAFC] border-t border-slate-200/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-blueLight text-brand-blue text-xs font-bold uppercase tracking-wider mb-3">
+                    <i class="ph-bold ph-broadcast text-sm"></i>
+                    <span>Live Interactive Cohorts &amp; Our Courses</span>
+                </div>
+                <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-brand-dark tracking-tight mb-4">
+                    Job-Oriented <span class="text-brand-red">AI-Powered</span> Agile, Scrum &amp; Product Courses Mentored by <span class="text-brand-blue">Jitendra</span>
+                </h2>
+                <p class="text-base sm:text-lg text-brand-slate">
+                    Choose from our 11 industry-recognized training programs combining global certification prep with real-time JIRA projects, GenAI tools, and placement support.
+                </p>
+            </div>
+
+            <!-- Interactive Category Filter Tabs -->
+            <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 mb-10" id="program-tabs">
+                <button onclick="filterPrograms('all')" data-filter="all" class="program-tab px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-brand-blue text-white shadow-blue-glow">
+                    All Courses (11)
+                </button>
+                <button onclick="filterPrograms('scrum')" data-filter="scrum" class="program-tab px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-white border border-slate-200 text-slate-700 hover:bg-brand-blueLight hover:text-brand-blue">
+                    AI &amp; Scrum Master (4)
+                </button>
+                <button onclick="filterPrograms('product')" data-filter="product" class="program-tab px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-white border border-slate-200 text-slate-700 hover:bg-brand-blueLight hover:text-brand-blue">
+                    Product Owner &amp; SAFe® (4)
+                </button>
+                <button onclick="filterPrograms('ba-pm')" data-filter="ba-pm" class="program-tab px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-white border border-slate-200 text-slate-700 hover:bg-brand-blueLight hover:text-brand-blue">
+                    Business Analyst &amp; PM (2)
+                </button>
+                <button onclick="filterPrograms('tools')" data-filter="tools" class="program-tab px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-white border border-slate-200 text-slate-700 hover:bg-brand-blueLight hover:text-brand-blue">
+                    Tools &amp; JIRA (1)
+                </button>
+            </div>
+
+            <!-- 11 Course Cards Grid -->
+            <div id="programs-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 mb-16">
+                <!-- Rendered dynamically by JavaScript -->
+            </div>
+
+            <!-- Live Upcoming Interactive Cohorts Schedule Board -->
+            <div id="cohorts" class="bg-white rounded-3xl border border-slate-200/90 shadow-soft overflow-hidden">
+                <div class="p-6 sm:p-8 bg-gradient-to-r from-brand-dark via-[#112240] to-brand-blue text-white flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+                    <div>
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-red text-white text-xs font-bold uppercase tracking-wider mb-2">
+                            <span class="h-2 w-2 rounded-full bg-white animate-ping"></span>
+                            Live Interactive Cohorts Schedule
+                        </div>
+                        <h3 class="font-display text-2xl font-extrabold">Upcoming Live Batches Led by Jitendra</h3>
+                        <p class="text-xs sm:text-sm text-slate-200 mt-1">Interactive weekend and weekday evening cohorts with live JIRA simulations, GenAI labs, and 1:1 mock interviews.</p>
+                    </div>
+                    <button onclick="openBookingModal('Custom Corporate or 1:1 Fast-Track Cohort Inquiry')" class="px-5 py-3 rounded-xl bg-white text-brand-dark hover:bg-brand-red hover:text-white font-bold text-xs sm:text-sm transition-colors shrink-0">
+                        Request 1:1 Fast-Track Batch
+                    </button>
+                </div>
+
+                <div class="p-6 sm:p-8 divide-y divide-slate-200">
+                    <!-- Batch Row 1 -->
+                    <div class="py-4 first:pt-0 last:pb-0 grid grid-cols-1 lg:grid-cols-12 gap-4 items-center">
+                        <div class="lg:col-span-4">
+                            <span class="inline-block px-2.5 py-0.5 rounded-md bg-brand-redLight text-brand-red text-[11px] font-bold uppercase mb-1">Flagship AI Cohort</span>
+                            <h4 class="font-display font-extrabold text-base text-brand-dark">AI Scrum Master Training &amp; Job Oriented Bootcamp</h4>
+                            <p class="text-xs text-slate-500">Mentored Live by Jitendra • Includes PSM/CSM + JIRA AI Automation</p>
+                        </div>
+                        <div class="lg:col-span-3 flex items-center gap-3 text-xs sm:text-sm font-semibold text-slate-700">
+                            <i class="ph-duotone ph-calendar-blank text-brand-blue text-xl"></i>
+                            <div>
+                                <div>Starts: <strong class="text-brand-dark">This Saturday</strong></div>
+                                <div class="text-xs text-slate-500">Sat &amp; Sun • 10:00 AM – 1:00 PM IST</div>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-3">
+                            <div class="flex justify-between text-xs font-bold mb-1">
+                                <span class="text-brand-red">Only 4 Seats Left</span>
+                                <span class="text-slate-500">85% Booked</span>
+                            </div>
+                            <div class="w-full h-2.5 bg-slate-100 rounded-full overflow-hidden">
+                                <div class="h-full bg-brand-red rounded-full" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-2 text-right">
+                            <button onclick="openBookingModal('Reserve Seat: AI Scrum Master Training Cohort')" class="w-full lg:w-auto px-4 py-2.5 rounded-xl bg-brand-red hover:bg-brand-redDark text-white font-bold text-xs transition-all">
+                                Reserve Seat →
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Batch Row 2 -->
+                    <div class="py-4 first:pt-0 last:pb-0 grid grid-cols-1 lg:grid-cols-12 gap-4 items-center">
+                        <div class="lg:col-span-4">
+                            <span class="inline-block px-2.5 py-0.5 rounded-md bg-brand-blueLight text-brand-blue text-[11px] font-bold uppercase mb-1">Product Leadership Cohort</span>
+                            <h4 class="font-display font-extrabold text-base text-brand-dark">CSPO® / Professional Product Owner™ (PSPO™) &amp; SAFe POPM</h4>
+                            <p class="text-xs text-slate-500">Mentored Live by Jitendra • GenAI Backlog, PRDs &amp; Value Stream Labs</p>
+                        </div>
+                        <div class="lg:col-span-3 flex items-center gap-3 text-xs sm:text-sm font-semibold text-slate-700">
+                            <i class="ph-duotone ph-calendar-blank text-brand-blue text-xl"></i>
+                            <div>
+                                <div>Starts: <strong class="text-brand-dark">Next Saturday</strong></div>
+                                <div class="text-xs text-slate-500">Sat &amp; Sun • 2:30 PM – 5:30 PM IST</div>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-3">
+                            <div class="flex justify-between text-xs font-bold mb-1">
+                                <span class="text-brand-blue">6 Seats Left</span>
+                                <span class="text-slate-500">76% Booked</span>
+                            </div>
+                            <div class="w-full h-2.5 bg-slate-100 rounded-full overflow-hidden">
+                                <div class="h-full bg-brand-blue rounded-full" style="width: 76%;"></div>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-2 text-right">
+                            <button onclick="openBookingModal('Reserve Seat: CSPO / PSPO & SAFe POPM Cohort')" class="w-full lg:w-auto px-4 py-2.5 rounded-xl bg-brand-blue hover:bg-brand-blueDark text-white font-bold text-xs transition-all">
+                                Reserve Seat →
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Batch Row 3 -->
+                    <div class="py-4 first:pt-0 last:pb-0 grid grid-cols-1 lg:grid-cols-12 gap-4 items-center">
+                        <div class="lg:col-span-4">
+                            <span class="inline-block px-2.5 py-0.5 rounded-md bg-slate-100 text-slate-700 text-[11px] font-bold uppercase mb-1">Weekday Evening Batch</span>
+                            <h4 class="font-display font-extrabold text-base text-brand-dark">Business Analyst, Project Management &amp; JIRA Basics Lab</h4>
+                            <p class="text-xs text-slate-500">Mentored Live by Jitendra • End-to-End Enterprise Project Execution</p>
+                        </div>
+                        <div class="lg:col-span-3 flex items-center gap-3 text-xs sm:text-sm font-semibold text-slate-700">
+                            <i class="ph-duotone ph-calendar-blank text-brand-blue text-xl"></i>
+                            <div>
+                                <div>Starts: <strong class="text-brand-dark">Upcoming Tuesday</strong></div>
+                                <div class="text-xs text-slate-500">Tue &amp; Thu • 8:00 PM – 10:00 PM IST</div>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-3">
+                            <div class="flex justify-between text-xs font-bold mb-1">
+                                <span class="text-brand-red">5 Seats Left</span>
+                                <span class="text-slate-500">80% Booked</span>
+                            </div>
+                            <div class="w-full h-2.5 bg-slate-100 rounded-full overflow-hidden">
+                                <div class="h-full bg-brand-red rounded-full" style="width: 80%;"></div>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-2 text-right">
+                            <button onclick="openBookingModal('Reserve Seat: Business Analyst, Project Management & JIRA Cohort')" class="w-full lg:w-auto px-4 py-2.5 rounded-xl bg-brand-dark hover:bg-brand-blue text-white font-bold text-xs transition-all">
+                                Reserve Seat →
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- D. STEP-BY-STEP TRANSFORMATION BLUEPRINT (#blueprint) -->
+    <section id="blueprint" class="py-16 sm:py-24 bg-white border-t border-slate-200/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-redLight text-brand-red text-xs font-bold uppercase tracking-wider mb-3">
+                    <i class="ph-bold ph-path text-sm"></i>
+                    <span>Step-by-Step Transformation Blueprint</span>
+                </div>
+                <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-brand-dark tracking-tight mb-4">
+                    How We Transform Your Career in <span class="text-brand-blue">4 Structured Steps</span>
+                </h2>
+                <p class="text-base sm:text-lg text-brand-slate">
+                    Explore each step of <strong>Jitendra's</strong> practical career transformation system designed to take you from your current role to high-paying Agile, Scrum, and Product positions.
+                </p>
+            </div>
+
+            <!-- Interactive Blueprint Phase Selector Tabs -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-8" id="blueprint-tabs">
+                <button onclick="selectBlueprintPhase(0)" data-bphase="0" class="blueprint-tab p-4 rounded-2xl border-2 border-brand-red bg-brand-red text-white text-left transition-all shadow-red-glow">
+                    <div class="flex items-center justify-between text-xs font-bold uppercase opacity-90 mb-1">
+                        <span>Step 01 • Weeks 1–2</span>
+                        <i class="ph-bold ph-compass text-lg"></i>
+                    </div>
+                    <div class="font-display font-extrabold text-base">1:1 Career Diagnostic &amp; Agile Foundations</div>
+                </button>
+
+                <button onclick="selectBlueprintPhase(1)" data-bphase="1" class="blueprint-tab p-4 rounded-2xl border-2 border-slate-200 bg-[#F8FAFC] hover:border-brand-blue text-brand-dark text-left transition-all">
+                    <div class="flex items-center justify-between text-xs font-bold uppercase text-brand-blue mb-1">
+                        <span>Step 02 • Weeks 3–5</span>
+                        <i class="ph-bold ph-cpu text-lg"></i>
+                    </div>
+                    <div class="font-display font-extrabold text-base">AI-Powered Agile &amp; Product Workflows</div>
+                </button>
+
+                <button onclick="selectBlueprintPhase(2)" data-bphase="2" class="blueprint-tab p-4 rounded-2xl border-2 border-slate-200 bg-[#F8FAFC] hover:border-brand-blue text-brand-dark text-left transition-all">
+                    <div class="flex items-center justify-between text-xs font-bold uppercase text-brand-red mb-1">
+                        <span>Step 03 • Weeks 6–8</span>
+                        <i class="ph-bold ph-briefcase text-lg"></i>
+                    </div>
+                    <div class="font-display font-extrabold text-base">Real-World Enterprise Capstone Projects</div>
+                </button>
+
+                <button onclick="selectBlueprintPhase(3)" data-bphase="3" class="blueprint-tab p-4 rounded-2xl border-2 border-slate-200 bg-[#F8FAFC] hover:border-brand-blue text-brand-dark text-left transition-all">
+                    <div class="flex items-center justify-between text-xs font-bold uppercase text-brand-blue mb-1">
+                        <span>Step 04 • Weeks 9–12</span>
+                        <i class="ph-bold ph-trophy text-lg"></i>
+                    </div>
+                    <div class="font-display font-extrabold text-base">Resume Branding, Mock Interviews &amp; Placement</div>
+                </button>
+            </div>
+
+            <!-- Interactive Blueprint Detail Card -->
+            <div id="blueprint-detail-panel" class="bg-gradient-to-br from-[#F0F7FF] via-white to-[#FEF2F2] rounded-3xl border border-brand-blue/20 p-6 sm:p-10 shadow-soft">
+                <!-- Populated dynamically via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- E. SERVICES SECTION (#services) -->
+    <section id="services" class="py-16 sm:py-24 bg-[#F8FAFC] border-t border-slate-200/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-blueLight text-brand-blue text-xs font-bold uppercase tracking-wider mb-3">
+                    <i class="ph-bold ph-stack text-sm"></i>
+                    <span>Our Core Services</span>
+                </div>
+                <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-brand-dark tracking-tight mb-4">
+                    End-to-End <span class="text-brand-red">Agile, Scrum &amp; AI</span> Enablement Services
+                </h2>
+                <p class="text-base sm:text-lg text-brand-slate">
+                    Whether you are an individual professional aiming for a 100%+ salary hike or an enterprise scaling Agile delivery, <strong>SkillYantra</strong> delivers measurable outcomes.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+                <!-- Service 1 -->
+                <div class="p-7 sm:p-8 rounded-3xl bg-white border border-slate-200/90 hover:border-brand-red/40 shadow-soft flex flex-col justify-between transition-all group">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="w-14 h-14 rounded-2xl bg-brand-redLight text-brand-red flex items-center justify-center group-hover:bg-brand-red group-hover:text-white transition-colors">
+                                <i class="ph-duotone ph-certificate text-3xl"></i>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-brand-redLight text-brand-red text-xs font-bold uppercase">Global Certifications</span>
+                        </div>
+                        <h3 class="font-display text-xl sm:text-2xl font-extrabold text-brand-dark mb-3">
+                            1. Live Interactive Certification Cohorts
+                        </h3>
+                        <p class="text-sm sm:text-base text-brand-slate leading-relaxed mb-5">
+                            Comprehensive, first-attempt guaranteed exam preparation for <strong>PSM™ I/II, CSM®, CSPO®, PSPO™, SAFe® Agilist, and SAFe® POPM</strong> taught through real project case studies rather than rote dumps.
+                        </p>
+                        <ul class="space-y-2 text-xs sm:text-sm font-medium text-slate-700 mb-6">
+                            <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-brand-red"></i> Full mock exam simulators &amp; question deconstruction</li>
+                            <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-brand-red"></i> Weekend &amp; weekday evening live interactive classes</li>
+                        </ul>
+                    </div>
+                    <button onclick="openBookingModal('Service Inquiry: Live Interactive Certification Cohorts')" class="w-full sm:w-auto self-start px-5 py-2.5 rounded-xl bg-brand-redLight text-brand-red hover:bg-brand-red hover:text-white font-bold text-xs sm:text-sm transition-colors">
+                        Explore Certification Batches →
+                    </button>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="p-7 sm:p-8 rounded-3xl bg-white border border-slate-200/90 hover:border-brand-blue/40 shadow-soft flex flex-col justify-between transition-all group">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="w-14 h-14 rounded-2xl bg-brand-blueLight text-brand-blue flex items-center justify-center group-hover:bg-brand-blue group-hover:text-white transition-colors">
+                                <i class="ph-duotone ph-rocket-launch text-3xl"></i>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-brand-blueLight text-brand-blue text-xs font-bold uppercase">100% Practical</span>
+                        </div>
+                        <h3 class="font-display text-xl sm:text-2xl font-extrabold text-brand-dark mb-3">
+                            2. Job-Oriented Career Transition Bootcamps
+                        </h3>
+                        <p class="text-sm sm:text-base text-brand-slate leading-relaxed mb-5">
+                            Intensive hands-on bootcamps where you act as an <strong>AI Scrum Master, Product Owner, or Business Analyst</strong> inside live JIRA &amp; Confluence environments, building real backlogs, burndown reports, and PRDs.
+                        </p>
+                        <ul class="space-y-2 text-xs sm:text-sm font-medium text-slate-700 mb-6">
+                            <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-brand-blue"></i> Live multi-sprint simulations &amp; GenAI prompt engineering</li>
+                            <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-brand-blue"></i> First-90-days on-the-job survival toolkit &amp; templates</li>
+                        </ul>
+                    </div>
+                    <button onclick="openBookingModal('Service Inquiry: Job-Oriented Career Transition Bootcamp')" class="w-full sm:w-auto self-start px-5 py-2.5 rounded-xl bg-brand-blueLight text-brand-blue hover:bg-brand-blue hover:text-white font-bold text-xs sm:text-sm transition-colors">
+                        Join Job Bootcamp →
+                    </button>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="p-7 sm:p-8 rounded-3xl bg-white border border-slate-200/90 hover:border-brand-blue/40 shadow-soft flex flex-col justify-between transition-all group">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="w-14 h-14 rounded-2xl bg-brand-blueLight text-brand-blue flex items-center justify-center group-hover:bg-brand-blue group-hover:text-white transition-colors">
+                                <i class="ph-duotone ph-user-focus text-3xl"></i>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-brand-blueLight text-brand-blue text-xs font-bold uppercase">Direct with Jitendra</span>
+                        </div>
+                        <h3 class="font-display text-xl sm:text-2xl font-extrabold text-brand-dark mb-3">
+                            3. 1:1 Executive Mentorship &amp; Mock Interviews with Jitendra
+                        </h3>
+                        <p class="text-sm sm:text-base text-brand-slate leading-relaxed mb-5">
+                            Personalized 1-on-1 career coaching, ATS-optimized resume rewriting, LinkedIn authority branding, and scenario-based panel mock interviews directly with <strong>Jitendra</strong>.
+                        </p>
+                        <ul class="space-y-2 text-xs sm:text-sm font-medium text-slate-700 mb-6">
+                            <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-brand-blue"></i> Line-by-line resume &amp; LinkedIn profile transformation</li>
+                            <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-brand-blue"></i> Detailed feedback on tough behavioral &amp; situational questions</li>
+                        </ul>
+                    </div>
+                    <button onclick="openBookingModal('Service Inquiry: 1:1 Executive Mentorship & Mock Interviews with Jitendra')" class="w-full sm:w-auto self-start px-5 py-2.5 rounded-xl bg-brand-blueLight text-brand-blue hover:bg-brand-blue hover:text-white font-bold text-xs sm:text-sm transition-colors">
+                        Book 1:1 Mentorship →
+                    </button>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="p-7 sm:p-8 rounded-3xl bg-white border border-slate-200/90 hover:border-brand-red/40 shadow-soft flex flex-col justify-between transition-all group">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="w-14 h-14 rounded-2xl bg-brand-redLight text-brand-red flex items-center justify-center group-hover:bg-brand-red group-hover:text-white transition-colors">
+                                <i class="ph-duotone ph-buildings text-3xl"></i>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-brand-redLight text-brand-red text-xs font-bold uppercase">Enterprise B2B</span>
+                        </div>
+                        <h3 class="font-display text-xl sm:text-2xl font-extrabold text-brand-dark mb-3">
+                            4. Corporate Agile &amp; AI Transformation Consulting
+                        </h3>
+                        <p class="text-sm sm:text-base text-brand-slate leading-relaxed mb-5">
+                            Customized enterprise workshops, Agile Release Train (ART) launches, JIRA workflow standardization, and AI-powered engineering/product productivity coaching for corporate teams.
+                        </p>
+                        <ul class="space-y-2 text-xs sm:text-sm font-medium text-slate-700 mb-6">
+                            <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-brand-red"></i> Tailored for GCCs, IT Services &amp; Product Startups</li>
+                            <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-brand-red"></i> Measurable sprint predictability &amp; value delivery KPIs</li>
+                        </ul>
+                    </div>
+                    <button onclick="openBookingModal('Service Inquiry: Corporate Agile & AI Transformation Consulting')" class="w-full sm:w-auto self-start px-5 py-2.5 rounded-xl bg-brand-redLight text-brand-red hover:bg-brand-red hover:text-white font-bold text-xs sm:text-sm transition-colors">
+                        Request Corporate Proposal →
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- F. ABOUT US & MEET YOUR MENTOR — JITENDRA (#about) -->
+    <section id="about" class="py-16 sm:py-24 bg-[#F0F7FF] border-y border-brand-blue/15 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+                
+                <!-- Left Column: Mentor Profile Card -->
+                <div class="lg:col-span-5">
+                    <div class="bg-white rounded-3xl border border-slate-200/90 shadow-soft overflow-hidden">
+                        <div class="h-28 bg-gradient-to-r from-brand-blue via-[#0074BD] to-brand-red relative">
+                            <div class="absolute right-4 top-4 bg-white/20 backdrop-blur-md text-white px-3 py-1 rounded-full text-xs font-bold">
+                                Principal Mentor &amp; Founder
+                            </div>
+                        </div>
+
+                        <div class="px-6 sm:px-8 pb-8 relative">
+                            <div class="-mt-14 mb-4 flex items-end justify-between">
+                                <div class="w-28 h-28 rounded-3xl bg-white p-1.5 shadow-lg border border-slate-100">
+                                    <div class="w-full h-full rounded-2xl bg-gradient-to-br from-brand-blue to-brand-dark text-white flex flex-col items-center justify-center">
+                                        <span class="font-display text-3xl font-extrabold tracking-tight">J</span>
+                                        <span class="text-[10px] uppercase tracking-widest text-sky-200 font-bold">Mentor</span>
+                                    </div>
+                                </div>
+                                <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-bold bg-brand-redLight text-brand-red">
+                                    <i class="ph-fill ph-seal-check"></i> Enterprise Agile Coach
+                                </span>
+                            </div>
+
+                            <h3 class="font-display text-2xl sm:text-3xl font-extrabold text-brand-dark">Jitendra</h3>
+                            <p class="text-sm font-semibold text-brand-blue mt-1">
+                                Founder &amp; Lead AI-Powered Agile, Scrum &amp; Product Mentor at SkillYantra
+                            </p>
+
+                            <p class="text-sm text-brand-slate leading-relaxed mt-4">
+                                With 18+ years of real-world IT leadership driving enterprise Agile transformations, scaled Scrum execution, and AI-powered product delivery, <strong>Jitendra</strong> built SkillYantra around a simple mission: <em>"Practical Agile and Scrum training for real career growth."</em>
+                            </p>
+
+                            <!-- Credentials Badges -->
+                            <div class="mt-6 pt-6 border-t border-slate-100">
+                                <div class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Specializations &amp; Coaching Domains</div>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 rounded-lg bg-slate-100 text-slate-700 text-xs font-semibold">AI Scrum Master</span>
+                                    <span class="px-3 py-1 rounded-lg bg-slate-100 text-slate-700 text-xs font-semibold">PSM™ / CSM® / CSPO® / PSPO™</span>
+                                    <span class="px-3 py-1 rounded-lg bg-slate-100 text-slate-700 text-xs font-semibold">SAFe® 6.0 POPM &amp; Agilist</span>
+                                    <span class="px-3 py-1 rounded-lg bg-slate-100 text-slate-700 text-xs font-semibold">JIRA &amp; Business Analysis</span>
+                                </div>
+                            </div>
+
+                            <div class="mt-6">
+                                <button onclick="openBookingModal('1-on-1 Mentorship Discovery with Jitendra')" class="w-full py-3.5 px-5 rounded-xl bg-brand-blue hover:bg-brand-blueDark text-white font-bold text-sm shadow-blue-glow transition-all flex items-center justify-center gap-2">
+                                    <i class="ph-bold ph-calendar-plus text-lg"></i>
+                                    <span>Book a 1-on-1 Session with Jitendra</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: About SkillYantra & Interactive Mentor Tabs -->
+                <div class="lg:col-span-7">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-brand-blue/20 text-brand-blue text-xs font-bold uppercase tracking-wider mb-4 shadow-sm">
+                        <i class="ph-bold ph-buildings text-sm"></i>
+                        <span>About SkillYantra &amp; Jitendra</span>
+                    </div>
+
+                    <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-brand-dark tracking-tight leading-tight mb-4">
+                        Practical Agile and Scrum Training for Real Career Growth
+                    </h2>
+
+                    <p class="text-base sm:text-lg text-brand-slate leading-relaxed mb-6">
+                        At <strong>SkillYantra</strong>, we bridge the gap between theoretical certifications and day-one workplace readiness. Across Bengaluru, Pune, Hyderabad, Mumbai, Chennai, Delhi, and globally, thousands of professionals have transformed their careers through <strong>Jitendra's</strong> live, scenario-driven coaching.
+                    </p>
+
+                    <!-- Interactive Mentor Tabs -->
+                    <div class="bg-white rounded-3xl border border-slate-200/90 p-5 sm:p-7 shadow-soft">
+                        <div class="flex flex-wrap gap-2 border-b border-slate-100 pb-4 mb-5">
+                            <button onclick="switchMentorTab('philosophy')" id="mentor-tab-btn-philosophy" class="mentor-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-brand-red text-white transition-all">
+                                Jitendra's Philosophy
+                            </button>
+                            <button onclick="switchMentorTab('experience')" id="mentor-tab-btn-experience" class="mentor-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-slate-100 text-slate-700 hover:bg-brand-blueLight hover:text-brand-blue transition-all">
+                                Hands-On Lab Methodology
+                            </button>
+                            <button onclick="switchMentorTab('impact')" id="mentor-tab-btn-impact" class="mentor-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-slate-100 text-slate-700 hover:bg-brand-blueLight hover:text-brand-blue transition-all">
+                                Pan-India &amp; Global Impact
+                            </button>
+                        </div>
+
+                        <!-- Tab Content 1: Philosophy -->
+                        <div id="mentor-tab-philosophy" class="mentor-tab-content space-y-4">
+                            <blockquote class="p-4 rounded-2xl bg-brand-redLight/60 border-l-4 border-brand-red text-sm sm:text-base font-medium text-brand-dark italic">
+                                "A certificate gets your resume shortlisted, but practical command over JIRA, AI-assisted sprint execution, and stakeholder management is what wins high-paying offers. At SkillYantra, we train you for the actual job."
+                                <footer class="mt-2 font-bold not-italic text-brand-red text-xs uppercase tracking-wider">— Jitendra</footer>
+                            </blockquote>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                                <div class="flex items-start gap-3">
+                                    <i class="ph-fill ph-check-square-offset text-brand-blue text-xl shrink-0 mt-0.5"></i>
+                                    <div>
+                                        <h4 class="text-sm font-bold text-brand-dark">Real Project Simulations</h4>
+                                        <p class="text-xs text-slate-600 mt-0.5">Practice Sprint Planning, PI Planning, Backlog Refinement, and Retrospectives live.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <i class="ph-fill ph-check-square-offset text-brand-red text-xl shrink-0 mt-0.5"></i>
+                                    <div>
+                                        <h4 class="text-sm font-bold text-brand-dark">Direct 1:1 Feedback</h4>
+                                        <p class="text-xs text-slate-600 mt-0.5">Jitendra personally evaluates your resume, JIRA boards, and mock interviews.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tab Content 2: Practical Methodology -->
+                        <div id="mentor-tab-experience" class="mentor-tab-content hidden space-y-4">
+                            <p class="text-sm sm:text-base text-slate-700 leading-relaxed">
+                                Every cohort combines Agile/Scrum mastery with modern AI productivity tools so you can outperform traditional candidates:
+                            </p>
+                            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm font-medium text-slate-700">
+                                <li class="flex items-center gap-2.5 p-3 rounded-xl bg-slate-50">
+                                    <i class="ph-bold ph-kanban text-brand-blue text-lg"></i>
+                                    <span>JIRA Administration, Dashboards &amp; JQL</span>
+                                </li>
+                                <li class="flex items-center gap-2.5 p-3 rounded-xl bg-slate-50">
+                                    <i class="ph-bold ph-robot text-brand-red text-lg"></i>
+                                    <span>AI Prompting for User Stories &amp; Acceptance Criteria</span>
+                                </li>
+                                <li class="flex items-center gap-2.5 p-3 rounded-xl bg-slate-50">
+                                    <i class="ph-bold ph-chart-line-up text-brand-blue text-lg"></i>
+                                    <span>Velocity, Capacity, DOR/DOD &amp; Flow Metrics</span>
+                                </li>
+                                <li class="flex items-center gap-2.5 p-3 rounded-xl bg-slate-50">
+                                    <i class="ph-bold ph-target text-brand-red text-lg"></i>
+                                    <span>SAFe® PI Planning, BRD/FRD &amp; Roadmapping</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Tab Content 3: Mentorship Impact -->
+                        <div id="mentor-tab-impact" class="mentor-tab-content hidden space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                                <div class="p-4 rounded-2xl bg-brand-blueLight border border-brand-blue/15 text-center">
+                                    <div class="font-display text-2xl font-extrabold text-brand-blue">5,200+</div>
+                                    <div class="text-xs font-semibold text-slate-700 mt-1">Professionals Mentored by Jitendra</div>
+                                </div>
+                                <div class="p-4 rounded-2xl bg-brand-redLight border border-brand-red/15 text-center">
+                                    <div class="font-display text-2xl font-extrabold text-brand-red">Top 10 Cities</div>
+                                    <div class="text-xs font-semibold text-slate-700 mt-1">Pune, Bengaluru, Hyderabad, Mumbai, Delhi &amp; More</div>
+                                </div>
+                                <div class="p-4 rounded-2xl bg-slate-100 border border-slate-200 text-center">
+                                    <div class="font-display text-2xl font-extrabold text-brand-dark">98.6%</div>
+                                    <div class="text-xs font-semibold text-slate-700 mt-1">First-Attempt Certification &amp; Job Success</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- G. SUCCESS STORY SECTION (#success-story) -->
+    <section id="success-story" class="py-16 sm:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                <div class="max-w-2xl">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-redLight text-brand-red text-xs font-bold uppercase tracking-wider mb-3">
+                        <i class="ph-bold ph-quotes text-sm"></i>
+                        <span>Verified Success Stories</span>
+                    </div>
+                    <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-brand-dark tracking-tight">
+                        Real Career Transformations Mentored by <span class="text-brand-blue">Jitendra</span>
+                    </h2>
+                </div>
+
+                <!-- Role Filter Buttons for Testimonials -->
+                <div class="flex flex-wrap gap-2">
+                    <button onclick="filterTestimonials('all')" data-tfilter="all" class="testi-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-brand-dark text-white transition-all">
+                        All Stories (6)
+                    </button>
+                    <button onclick="filterTestimonials('Scrum Master')" data-tfilter="Scrum Master" class="testi-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-slate-100 text-slate-700 hover:border-brand-blue transition-all">
+                        AI &amp; Scrum Masters
+                    </button>
+                    <button onclick="filterTestimonials('Product')" data-tfilter="Product" class="testi-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-slate-100 text-slate-700 hover:border-brand-blue transition-all">
+                        Product Owners &amp; BA
+                    </button>
+                </div>
+            </div>
+
+            <!-- Testimonials Grid -->
+            <div id="testimonials-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- H. LATEST BLOGS & AGILE/AI INSIGHTS (#blog) -->
+    <section id="blog" class="py-16 sm:py-24 bg-[#F8FAFC] border-t border-slate-200/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                <div>
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-blueLight text-brand-blue text-xs font-bold uppercase tracking-wider mb-3">
+                        <i class="ph-bold ph-newspaper text-sm"></i>
+                        <span>SkillYantra Blog &amp; Insights</span>
+                    </div>
+                    <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-brand-dark tracking-tight">
+                        Latest Articles on <span class="text-brand-red">AI-Powered Agile</span>, Scrum &amp; Product
+                    </h2>
+                </div>
+                <button onclick="openBookingModal('Subscribe to Jitendra Weekly Agile & AI Newsletter')" class="px-5 py-2.5 rounded-xl bg-white border border-slate-200 hover:border-brand-blue text-xs sm:text-sm font-bold text-brand-blue transition-all self-start md:self-auto">
+                    Get Weekly Career Guides →
+                </button>
+            </div>
+
+            <div id="blogs-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+                <!-- Populated dynamically via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- I. INTERACTIVE FAQ ACCORDION SECTION (#faq) -->
+    <section id="faq" class="py-16 sm:py-24 bg-white border-t border-slate-200/80">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-blueLight text-brand-blue text-xs font-bold uppercase tracking-wider mb-3">
+                    <i class="ph-bold ph-question text-sm"></i>
+                    <span>Frequently Asked Questions</span>
+                </div>
+                <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-brand-dark tracking-tight mb-3">
+                    Everything You Need to Know
+                </h2>
+                <p class="text-base text-brand-slate">
+                    Have questions about SkillYantra courses, certifications, or live mentorship with <strong>Jitendra</strong>? Find answers below.
+                </p>
+            </div>
+
+            <div id="faq-container" class="space-y-4">
+                <!-- Populated dynamically via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT US SECTION (#contact) -->
+    <section id="contact" class="py-16 sm:py-24 bg-gradient-to-b from-[#F0F7FF] to-white border-t border-brand-blue/15">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-3xl border border-slate-200/90 shadow-soft overflow-hidden">
+                <div class="grid grid-cols-1 lg:grid-cols-12">
+                    
+                    <!-- Left Column: Official Contact Details (connect@skillyantra.com | +91 9611796309 | www.skillyantra.com) -->
+                    <div class="lg:col-span-5 bg-gradient-to-br from-brand-dark via-[#112240] to-brand-blue p-8 sm:p-10 lg:p-12 text-white flex flex-col justify-between">
+                        <div>
+                            <span class="inline-block px-3.5 py-1 rounded-full bg-brand-red text-white text-xs font-bold uppercase tracking-wider mb-5">
+                                Contact Us • Free Career Counseling
+                            </span>
+                            <h2 class="font-display text-2xl sm:text-3xl font-extrabold leading-tight mb-4">
+                                Speak Directly with Jitendra &amp; Our Career Advisors
+                            </h2>
+                            <p class="text-sm sm:text-base text-slate-200 leading-relaxed mb-8">
+                                Practical Agile and Scrum training for real career growth. Reach out to schedule a free 1:1 profile review, demo class, or course counseling session.
+                            </p>
+
+                            <div class="space-y-5">
+                                <div class="flex items-start gap-4">
+                                    <div class="w-11 h-11 rounded-xl bg-white/10 flex items-center justify-center shrink-0 text-sky-300">
+                                        <i class="ph-bold ph-envelope-simple text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-xs uppercase tracking-wider text-slate-300 font-semibold">Official Email</div>
+                                        <a href="mailto:connect@skillyantra.com" class="text-sm sm:text-base font-bold text-white hover:text-sky-300 transition-colors">connect@skillyantra.com</a>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-4">
+                                    <div class="w-11 h-11 rounded-xl bg-white/10 flex items-center justify-center shrink-0 text-sky-300">
+                                        <i class="ph-bold ph-phone-call text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-xs uppercase tracking-wider text-slate-300 font-semibold">Call / WhatsApp Support</div>
+                                        <a href="tel:+919611796309" class="text-sm sm:text-base font-bold text-white hover:text-sky-300 transition-colors">+91 9611796309</a>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-4">
+                                    <div class="w-11 h-11 rounded-xl bg-white/10 flex items-center justify-center shrink-0 text-sky-300">
+                                        <i class="ph-bold ph-globe text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-xs uppercase tracking-wider text-slate-300 font-semibold">Official Website</div>
+                                        <a href="https://skillyantra.com/" target="_blank" rel="noopener noreferrer" class="text-sm sm:text-base font-bold text-white hover:text-sky-300 transition-colors">www.skillyantra.com</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-10 pt-6 border-t border-white/15 flex items-center justify-between text-xs text-slate-300">
+                            <span>Live Online Across Top 10 Cities</span>
+                            <span>100% Privacy Guaranteed</span>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Interactive Consultation Form -->
+                    <div class="lg:col-span-7 p-8 sm:p-10 lg:p-12">
+                        <h3 class="font-display text-2xl font-extrabold text-brand-dark mb-2">
+                            Book Your Free Counseling / Demo Session
+                        </h3>
+                        <p class="text-sm text-brand-slate mb-6">
+                            Fill in your details below and our team will schedule your session with <strong>Jitendra</strong>.
+                        </p>
+
+                        <form id="contact-form" onsubmit="handleContactSubmit(event)" class="space-y-5">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label for="fullName" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Full Name *</label>
+                                    <input type="text" id="fullName" required placeholder="e.g., Rahul Sharma" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-brand-blue focus:ring-3 focus:ring-brand-blue/15 text-sm outline-none transition-all">
+                                </div>
+                                <div>
+                                    <label for="emailAddr" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Email Address *</label>
+                                    <input type="email" id="emailAddr" required placeholder="e.g., rahul@example.com" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-brand-blue focus:ring-3 focus:ring-brand-blue/15 text-sm outline-none transition-all">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label for="phoneNum" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Phone / WhatsApp Number *</label>
+                                    <input type="tel" id="phoneNum" required placeholder="e.g., +91 98765 43210" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-brand-blue focus:ring-3 focus:ring-brand-blue/15 text-sm outline-none transition-all">
+                                </div>
+                                <div>
+                                    <label for="targetTrack" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Select Course / Program *</label>
+                                    <select id="targetTrack" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-brand-blue focus:ring-3 focus:ring-brand-blue/15 text-sm outline-none bg-white transition-all">
+                                        <option value="AI Scrum Master Training">AI Scrum Master Training</option>
+                                        <option value="Professional Scrum Master Training">Professional Scrum Master Training</option>
+                                        <option value="Certified Scrum Product Owner Training">Certified Scrum Product Owner Training</option>
+                                        <option value="Scrum Master Job Oriented Training">Scrum Master Job Oriented Training</option>
+                                        <option value="Certified Scrum Master">Certified Scrum Master</option>
+                                        <option value="professional product Owner™ training">professional product Owner™ training</option>
+                                        <option value="SAFe Product Owner/Product Manager Certification">SAFe Product Owner/Product Manager Certification</option>
+                                        <option value="SAFe® Agile Certification Training">SAFe® Agile Certification Training</option>
+                                        <option value="JIRA Basics">JIRA Basics</option>
+                                        <option value="Business Analyst">Business Analyst</option>
+                                        <option value="Project Management Training">Project Management Training</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="careerGoal" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Your City &amp; Career Goal (Optional)</label>
+                                <textarea id="careerGoal" rows="3" placeholder="Tell Jitendra briefly about your current role, city, and career goal..." class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-brand-blue focus:ring-3 focus:ring-brand-blue/15 text-sm outline-none transition-all"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-brand-red hover:bg-brand-redDark text-white font-bold text-sm sm:text-base shadow-red-glow transition-all flex items-center justify-center gap-2">
+                                <i class="ph-bold ph-paper-plane-tilt text-lg"></i>
+                                <span>Submit &amp; Schedule Session with Jitendra</span>
+                            </button>
+                        </form>
+
+                        <!-- Instant Confirmation Message -->
+                        <div id="contact-success" class="hidden mt-6 p-6 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-900">
+                            <div class="flex items-start gap-3">
+                                <i class="ph-fill ph-check-circle text-2xl text-emerald-600 shrink-0 mt-0.5"></i>
+                                <div>
+                                    <h4 class="font-display font-bold text-base">Request Received Successfully!</h4>
+                                    <p id="contact-success-text" class="text-sm text-emerald-800 mt-1"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. EXACT FOOTER STRUCTURE & LINKS MATCHING SKILLYANTRA.COM -->
+    <footer class="bg-white border-t border-slate-200 pt-16 pb-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-slate-200">
+                
+                <!-- Column 1: Brand, Tagline, Socials & Contact Details (4 Cols) -->
+                <div class="lg:col-span-4 space-y-6">
+                    <!-- Clean SkillYantra Logo (Strictly only the logo image/SVG, no subtitle text or LLP inside the logo) -->
+                    <a href="#home" class="inline-flex items-center focus:outline-none" aria-label="SkillYantra">
+                        <img 
+                            src="cropped-c2aaa92a-0933-4b1a-9818-25ad3b0a82ae-removebg-preview.png" 
+                            alt="SkillYantra" 
+                            class="h-12 w-auto object-contain"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                        />
+                        <!-- Pixel-Accurate Inline SVG Fallback -->
+                        <div style="display:none;" class="items-center select-none">
+                            <svg class="h-12 w-auto" viewBox="0 0 370 96" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SkillYantra">
+                                <path d="M35 46 C 16 62, 34 79, 114 75 C 68 85, 16 74, 35 46 Z" fill="#EC2610"/>
+                                <path d="M18 52 C -5 73, 28 95, 148 86 C 85 98, -2 85, 18 52 Z" fill="#4AA8E8"/>
+                                <text x="42" y="60" font-family="Inter, Arial, sans-serif" font-size="56" font-weight="600" fill="#EC2610" letter-spacing="-0.5">Skill</text>
+                                <text x="168" y="60" font-family="Inter, Arial, sans-serif" font-size="56" font-weight="600" fill="#0086D9" letter-spacing="-0.5">Yantra</text>
+                            </svg>
+                        </div>
+                    </a>
+
+                    <p class="text-sm sm:text-base font-medium text-brand-slate leading-relaxed">
+                        Practical Agile and Scrum training for real career growth.
+                    </p>
+
+                    <!-- Social Links (Facebook, Instagram, Linkedin, Youtube) -->
+                    <div>
+                        <div class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Follow Us</div>
+                        <div class="flex flex-wrap items-center gap-2.5">
+                            <a href="https://skillyantra.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-100 hover:bg-brand-blue hover:text-white text-slate-700 text-xs font-bold transition-colors">
+                                <i class="ph-fill ph-facebook-logo text-base"></i>
+                                <span>Facebook</span>
+                            </a>
+                            <a href="https://skillyantra.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-100 hover:bg-brand-red hover:text-white text-slate-700 text-xs font-bold transition-colors">
+                                <i class="ph-fill ph-instagram-logo text-base"></i>
+                                <span>Instagram</span>
+                            </a>
+                            <a href="https://skillyantra.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-100 hover:bg-brand-blue hover:text-white text-slate-700 text-xs font-bold transition-colors">
+                                <i class="ph-fill ph-linkedin-logo text-base"></i>
+                                <span>Linkedin</span>
+                            </a>
+                            <a href="https://skillyantra.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-100 hover:bg-brand-red hover:text-white text-slate-700 text-xs font-bold transition-colors">
+                                <i class="ph-fill ph-youtube-logo text-base"></i>
+                                <span>Youtube</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Contact Details -->
+                    <div class="pt-2">
+                        <h4 class="font-display text-sm font-bold uppercase tracking-wider text-brand-dark mb-3">Contact Details</h4>
+                        <ul class="space-y-2.5 text-sm font-medium text-brand-slate">
+                            <li class="flex items-center gap-2.5">
+                                <i class="ph-bold ph-envelope-simple text-brand-red text-lg"></i>
+                                <a href="mailto:connect@skillyantra.com" class="hover:text-brand-blue transition-colors">connect@skillyantra.com</a>
+                            </li>
+                            <li class="flex items-center gap-2.5">
+                                <i class="ph-bold ph-phone-call text-brand-blue text-lg"></i>
+                                <a href="tel:+919611796309" class="hover:text-brand-blue transition-colors">+91 9611796309</a>
+                            </li>
+                            <li class="flex items-center gap-2.5">
+                                <i class="ph-bold ph-globe text-brand-red text-lg"></i>
+                                <a href="https://skillyantra.com/" target="_blank" rel="noopener noreferrer" class="hover:text-brand-blue transition-colors">www.skillyantra.com</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Column 2: About Links (2 Cols) -->
+                <div class="lg:col-span-2">
+                    <h4 class="font-display text-sm font-bold uppercase tracking-wider text-brand-dark mb-4">About</h4>
+                    <ul class="space-y-2.5 text-sm font-medium text-brand-slate">
+                        <li><a href="#home" class="hover:text-brand-blue transition-colors">Home</a></li>
+                        <li><a href="#courses" class="hover:text-brand-blue transition-colors">Our Courses</a></li>
+                        <li><a href="#blog" class="hover:text-brand-blue transition-colors">Blogs</a></li>
+                        <li><a href="#services" class="hover:text-brand-blue transition-colors">Services</a></li>
+                        <li><a href="#success-story" class="hover:text-brand-blue transition-colors">Success Stories</a></li>
+                        <li><a href="#about" class="hover:text-brand-blue transition-colors">About Us</a></li>
+                        <li><a href="#faq" class="hover:text-brand-blue transition-colors">FAQ</a></li>
+                        <li><a href="#contact" class="hover:text-brand-blue transition-colors">Contact Us</a></li>
+                        <li><button onclick="openLegalModal('privacy')" class="hover:text-brand-red transition-colors text-left">Privacy Policy</button></li>
+                        <li><button onclick="openLegalModal('terms')" class="hover:text-brand-red transition-colors text-left">Term &amp; Condition</button></li>
+                        <li><button onclick="openLegalModal('refund')" class="hover:text-brand-red transition-colors text-left">Return &amp; Refund Policy</button></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Our Courses (4 Cols - Exact 11 Courses) -->
+                <div class="lg:col-span-4">
+                    <h4 class="font-display text-sm font-bold uppercase tracking-wider text-brand-dark mb-4">Our Courses</h4>
+                    <ul class="space-y-2.5 text-sm font-medium text-brand-slate">
+                        <li>
+                            <a href="#courses" onclick="openCourseByTitle('AI Scrum Master Training')" class="hover:text-brand-red transition-colors flex items-center gap-1.5">
+                                <i class="ph-bold ph-caret-right text-brand-red text-xs"></i>
+                                <span>AI Scrum Master Training</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#courses" onclick="openCourseByTitle('Professional Scrum Master Training')" class="hover:text-brand-blue transition-colors flex items-center gap-1.5">
+                                <i class="ph-bold ph-caret-right text-brand-blue text-xs"></i>
+                                <span>Professional Scrum Master Training</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#courses" onclick="openCourseByTitle('Certified Scrum Product Owner Training')" class="hover:text-brand-blue transition-colors flex items-center gap-1.5">
+                                <i class="ph-bold ph-caret-right text-brand-blue text-xs"></i>
+                                <span>Certified Scrum Product Owner Training</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#courses" onclick="openCourseByTitle('Scrum Master Job Oriented Training')" class="hover:text-brand-red transition-colors flex items-center gap-1.5">
+                                <i class="ph-bold ph-caret-right text-brand-red text-xs"></i>
+                                <span>Scrum Master Job Oriented Training</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#courses" onclick="openCourseByTitle('Certified Scrum Master')" class="hover:text-brand-blue transition-colors flex items-center gap-1.5">
+                                <i class="ph-bold ph-caret-right text-brand-blue text-xs"></i>
+                                <span>Certified Scrum Master</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#courses" onclick="openCourseByTitle('professional product Owner™ training')" class="hover:text-brand-blue transition-colors flex items-center gap-1.5">
+                                <i class="ph-bold ph-caret-right text-brand-blue text-xs"></i>
+                                <span>professional product Owner™ training</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#courses" onclick="openCourseByTitle('SAFe Product Owner/Product Manager Certification')" class="hover:text-brand-red transition-colors flex items-center gap-1.5">
+                                <i class="ph-bold ph-caret-right text-brand-red text-xs"></i>
+                                <span>SAFe Product Owner/Product Manager Certification</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#courses" onclick="openCourseByTitle('SAFe® Agile Certification Training')" class="hover:text-brand-blue transition-colors flex items-center gap-1.5">
+                                <i class="ph-bold ph-caret-right text-brand-blue text-xs"></i>
+                                <span>SAFe® Agile Certification Training</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#courses" onclick="openCourseByTitle('JIRA Basics')" class="hover:text-brand-blue transition-colors flex items-center gap-1.5">
+                                <i class="ph-bold ph-caret-right text-brand-blue text-xs"></i>
+                                <span>JIRA Basics</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#courses" onclick="openCourseByTitle('Business Analyst')" class="hover:text-brand-red transition-colors flex items-center gap-1.5">
+                                <i class="ph-bold ph-caret-right text-brand-red text-xs"></i>
+                                <span>Business Analyst</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#courses" onclick="openCourseByTitle('Project Management Training')" class="hover:text-brand-blue transition-colors flex items-center gap-1.5">
+                                <i class="ph-bold ph-caret-right text-brand-blue text-xs"></i>
+                                <span>Project Management Training</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Top 10 Cities (2 Cols) -->
+                <div class="lg:col-span-2">
+                    <h4 class="font-display text-sm font-bold uppercase tracking-wider text-brand-dark mb-4">Top 10 Cities</h4>
+                    <ul class="space-y-2.5 text-sm font-medium text-brand-slate">
+                        <li><button onclick="openBookingModal('Live Online Cohort Inquiry — Pune')" class="hover:text-brand-blue transition-colors flex items-center gap-1.5"><i class="ph-fill ph-map-pin text-brand-red text-xs"></i><span>Pune</span></button></li>
+                        <li><button onclick="openBookingModal('Live Online Cohort Inquiry — Chennai')" class="hover:text-brand-blue transition-colors flex items-center gap-1.5"><i class="ph-fill ph-map-pin text-brand-blue text-xs"></i><span>Chennai</span></button></li>
+                        <li><button onclick="openBookingModal('Live Online Cohort Inquiry — Delhi')" class="hover:text-brand-blue transition-colors flex items-center gap-1.5"><i class="ph-fill ph-map-pin text-brand-red text-xs"></i><span>Delhi</span></button></li>
+                        <li><button onclick="openBookingModal('Live Online Cohort Inquiry — Hydrabad')" class="hover:text-brand-blue transition-colors flex items-center gap-1.5"><i class="ph-fill ph-map-pin text-brand-blue text-xs"></i><span>Hydrabad</span></button></li>
+                        <li><button onclick="openBookingModal('Live Online Cohort Inquiry — Bengaluru')" class="hover:text-brand-blue transition-colors flex items-center gap-1.5"><i class="ph-fill ph-map-pin text-brand-red text-xs"></i><span>Bengaluru</span></button></li>
+                        <li><button onclick="openBookingModal('Live Online Cohort Inquiry — Kolkata')" class="hover:text-brand-blue transition-colors flex items-center gap-1.5"><i class="ph-fill ph-map-pin text-brand-blue text-xs"></i><span>Kolkata</span></button></li>
+                        <li><button onclick="openBookingModal('Live Online Cohort Inquiry — Chandigarh')" class="hover:text-brand-blue transition-colors flex items-center gap-1.5"><i class="ph-fill ph-map-pin text-brand-red text-xs"></i><span>Chandigarh</span></button></li>
+                        <li><button onclick="openBookingModal('Live Online Cohort Inquiry — Ahmedabad')" class="hover:text-brand-blue transition-colors flex items-center gap-1.5"><i class="ph-fill ph-map-pin text-brand-blue text-xs"></i><span>Ahmedabad</span></button></li>
+                        <li><button onclick="openBookingModal('Live Online Cohort Inquiry — Kochi')" class="hover:text-brand-blue transition-colors flex items-center gap-1.5"><i class="ph-fill ph-map-pin text-brand-red text-xs"></i><span>Kochi</span></button></li>
+                        <li><button onclick="openBookingModal('Live Online Cohort Inquiry — Mumbai')" class="hover:text-brand-blue transition-colors flex items-center gap-1.5"><i class="ph-fill ph-map-pin text-brand-blue text-xs"></i><span>Mumbai</span></button></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Footer Bottom Copyright Bar with SKILL YANTRA CONSULTING LLP -->
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+                <div class="font-bold text-brand-dark tracking-wide text-center sm:text-left">
+                    © <span id="current-year">2026</span> <span class="text-brand-red">SKILL YANTRA CONSULTING LLP</span>. All Rights Reserved.
+                </div>
+                <div class="flex flex-wrap items-center justify-center gap-4 font-semibold">
+                    <button onclick="openLegalModal('privacy')" class="hover:text-brand-blue transition-colors">Privacy Policy</button>
+                    <span>•</span>
+                    <button onclick="openLegalModal('terms')" class="hover:text-brand-blue transition-colors">Term &amp; Condition</button>
+                    <span>•</span>
+                    <button onclick="openLegalModal('refund')" class="hover:text-brand-blue transition-colors">Return &amp; Refund Policy</button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL 1: COURSE SYLLABUS & CURRICULUM MODAL -->
+    <div id="syllabus-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm">
+        <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-200 animate-fadeIn">
+            <div class="sticky top-0 bg-white/95 backdrop-blur-md px-6 sm:px-8 py-5 border-b border-slate-100 flex items-center justify-between z-10">
+                <div>
+                    <span id="modal-course-badge" class="inline-block px-3 py-0.5 rounded-full text-[11px] font-bold uppercase bg-brand-redLight text-brand-red mb-1">
+                        Live Cohort Curriculum
+                    </span>
+                    <h3 id="modal-course-title" class="font-display text-xl sm:text-2xl font-extrabold text-brand-dark">Course Title</h3>
+                </div>
+                <button onclick="closeSyllabusModal()" class="w-10 h-10 rounded-xl bg-slate-100 hover:bg-brand-redLight hover:text-brand-red text-slate-600 flex items-center justify-center transition-colors" aria-label="Close Modal">
+                    <i class="ph-bold ph-x text-xl"></i>
+                </button>
+            </div>
+
+            <div class="p-6 sm:p-8 space-y-6">
+                <p id="modal-course-desc" class="text-sm sm:text-base text-brand-slate leading-relaxed"></p>
+
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 p-4 rounded-2xl bg-[#F8FAFC] border border-slate-200/80">
+                    <div>
+                        <div class="text-[11px] font-bold uppercase text-slate-400">Duration</div>
+                        <div id="modal-course-duration" class="text-sm font-extrabold text-brand-dark mt-0.5"></div>
+                    </div>
+                    <div>
+                        <div class="text-[11px] font-bold uppercase text-slate-400">Next Live Batch</div>
+                        <div id="modal-course-batch" class="text-sm font-extrabold text-brand-blue mt-0.5"></div>
+                    </div>
+                    <div class="col-span-2 sm:col-span-1">
+                        <div class="text-[11px] font-bold uppercase text-slate-400">Lead Mentor</div>
+                        <div class="text-sm font-extrabold text-brand-red mt-0.5">Jitendra</div>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-display text-sm font-extrabold uppercase tracking-wider text-brand-dark mb-3">
+                        Key Modules &amp; Hands-On Labs Covered
+                    </h4>
+                    <ul id="modal-course-modules" class="space-y-2.5 text-sm text-slate-700"></ul>
+                </div>
+
+                <div>
+                    <h4 class="font-display text-sm font-extrabold uppercase tracking-wider text-brand-dark mb-2.5">
+                        AI &amp; Enterprise Tools You Will Practice
+                    </h4>
+                    <div id="modal-course-tools" class="flex flex-wrap gap-2"></div>
+                </div>
+
+                <div class="pt-4 border-t border-slate-100 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
+                    <div class="text-xs text-slate-500">
+                        Includes Certification Prep + JIRA Capstone + Mock Interviews with <strong>Jitendra</strong>
+                    </div>
+                    <button id="modal-enroll-btn" class="px-6 py-3.5 rounded-xl bg-brand-red hover:bg-brand-redDark text-white font-bold text-sm shadow-red-glow transition-all shrink-0">
+                        Enroll / Book Free Demo →
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 2: BOOKING / ENROLLMENT MODAL -->
+    <div id="booking-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm">
+        <div class="bg-white rounded-3xl max-w-lg w-full overflow-hidden shadow-2xl border border-slate-200">
+            <div class="bg-gradient-to-r from-brand-blue via-[#0074BD] to-brand-red p-6 sm:p-7 text-white flex items-start justify-between gap-4">
+                <div>
+                    <span class="inline-block px-2.5 py-0.5 rounded-full bg-white/20 text-[11px] font-bold uppercase tracking-wider mb-1.5">
+                        Direct Session with Jitendra
+                    </span>
+                    <h3 id="booking-modal-title" class="font-display text-xl font-extrabold">Book Your Free Demo &amp; Career Call</h3>
+                </div>
+                <button onclick="closeBookingModal()" class="w-9 h-9 rounded-xl bg-white/15 hover:bg-white/30 text-white flex items-center justify-center transition-colors shrink-0" aria-label="Close">
+                    <i class="ph-bold ph-x text-lg"></i>
+                </button>
+            </div>
+
+            <div class="p-6 sm:p-7">
+                <form id="modal-booking-form" onsubmit="handleModalBookingSubmit(event)" class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Your Full Name *</label>
+                        <input type="text" id="modal-name" required placeholder="Enter your full name" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:border-brand-blue text-sm outline-none">
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Phone / WhatsApp *</label>
+                            <input type="tel" id="modal-phone" required placeholder="+91 98765 43210" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:border-brand-blue text-sm outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Email Address *</label>
+                            <input type="email" id="modal-email" required placeholder="you@example.com" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:border-brand-blue text-sm outline-none">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Preferred Course / Track</label>
+                        <input type="text" id="modal-context-input" readonly class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-xs sm:text-sm font-bold text-brand-blue outline-none">
+                    </div>
+                    <button type="submit" class="w-full py-3.5 px-6 rounded-xl bg-brand-red hover:bg-brand-redDark text-white font-bold text-sm shadow-red-glow transition-all flex items-center justify-center gap-2">
+                        <i class="ph-bold ph-check-circle text-lg"></i>
+                        <span>Confirm My Slot with Jitendra</span>
+                    </button>
+                </form>
+
+                <div id="modal-booking-success" class="hidden text-center py-6 space-y-3">
+                    <div class="w-14 h-14 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">
+                        <i class="ph-fill ph-check-circle text-3xl"></i>
+                    </div>
+                    <h4 class="font-display text-xl font-extrabold text-brand-dark">Slot Reserved Successfully!</h4>
+                    <p id="modal-booking-success-msg" class="text-sm text-slate-600"></p>
+                    <div class="pt-2">
+                        <button onclick="closeBookingModal()" class="px-6 py-2.5 rounded-xl bg-brand-dark text-white text-xs font-bold">Done</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 3: BLOG ARTICLE READER & LEGAL POLICIES MODAL -->
+    <div id="info-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm">
+        <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[88vh] overflow-y-auto shadow-2xl border border-slate-200">
+            <div class="sticky top-0 bg-white/95 backdrop-blur-md px-6 sm:px-8 py-5 border-b border-slate-100 flex items-center justify-between">
+                <div>
+                    <span id="info-modal-badge" class="inline-block px-3 py-0.5 rounded-full text-[11px] font-bold uppercase bg-brand-blueLight text-brand-blue mb-1">SkillYantra</span>
+                    <h3 id="info-modal-title" class="font-display text-xl font-extrabold text-brand-dark">Title</h3>
+                </div>
+                <button onclick="closeInfoModal()" class="w-10 h-10 rounded-xl bg-slate-100 hover:bg-brand-redLight hover:text-brand-red text-slate-600 flex items-center justify-center transition-colors">
+                    <i class="ph-bold ph-x text-xl"></i>
+                </button>
+            </div>
+            <div id="info-modal-body" class="p-6 sm:p-8 text-sm sm:text-base text-slate-700 leading-relaxed space-y-4"></div>
+        </div>
+    </div>
+
+    <!-- COMPLETE INTERACTIVE JAVASCRIPT -->
+    <script>
+        // 1. Mobile Navigation Drawer Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const openIcon = document.getElementById('menu-icon-open');
+            const closeIcon = document.getElementById('menu-icon-close');
+            const isHidden = menu.classList.contains('hidden');
+            if (isHidden) {
+                menu.classList.remove('hidden');
+                openIcon.classList.add('hidden');
+                closeIcon.classList.remove('hidden');
+            } else {
+                closeMobileMenu();
+            }
+        }
+
+        function closeMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const openIcon = document.getElementById('menu-icon-open');
+            const closeIcon = document.getElementById('menu-icon-close');
+            menu.classList.add('hidden');
+            openIcon.classList.remove('hidden');
+            closeIcon.classList.add('hidden');
+        }
+
+        // 2. Hero Quick Track Preview
+        function updateHeroQuickPreview() {
+            const val = document.getElementById('hero-quick-role').value;
+            const output = document.getElementById('hero-quick-output');
+            const map = {
+                'sm': 'AI Scrum Master • ₹20L – ₹32L PA',
+                'dev': 'SAFe® POPM / AI Product Owner • ₹24L – ₹38L PA',
+                'ba': 'Certified Scrum Product Owner (CSPO) • ₹18L – ₹30L PA',
+                'pm': 'SAFe® Agile & Enterprise Coach • ₹26L – ₹42L PA'
+            };
+            output.textContent = map[val] || 'AI Scrum Master • ₹20L – ₹32L PA';
+        }
+
+        // 3. Interactive Career Projection Tool Logic
+        let selectedCalcTrack = 'ai-sm';
+
+        const calcTrackConfig = {
+            'ai-sm': {
+                title: 'Senior AI Scrum Master & Agile Delivery Lead',
+                multiplier: 2.15,
+                timeline: '8 – 10 Weeks',
+                demand: 'Very High (9.7/10)',
+                skills: ['AI Scrum Master Workflows', 'PSM™ I/II & CSM® Mastery', 'JIRA & JQL Automation', 'Sprint Forecasting & Metrics']
+            },
+            'ai-pm': {
+                title: 'Certified Scrum Product Owner (CSPO / PSPO™) & AI PM',
+                multiplier: 2.25,
+                timeline: '10 – 12 Weeks',
+                demand: 'Exceptional (9.8/10)',
+                skills: ['GenAI PRD & Backlog Engineering', 'CSPO® & PSPO™ Strategy', 'Value Stream Mapping', 'OKRs & Product Roadmaps']
+            },
+            'ai-coach': {
+                title: 'SAFe® Agile Leader & Enterprise Agile Coach',
+                multiplier: 2.35,
+                timeline: '10 – 14 Weeks',
+                demand: 'High Executive Demand (9.6/10)',
+                skills: ['SAFe® 6.0 Agilist & POPM', 'PI Planning Simulation', 'Agile Release Train (ART)', 'Executive Stakeholder Coaching']
+            },
+            'ai-ba': {
+                title: 'Lead AI Business Analyst & Project Delivery Manager',
+                multiplier: 2.05,
+                timeline: '8 – 10 Weeks',
+                demand: 'High (9.5/10)',
+                skills: ['AI-Assisted BRD/FRD & User Stories', 'JIRA & Confluence Administration', 'Agile Project Management', 'UAT & Stakeholder Sign-off']
+            }
+        };
+
+        function selectCalcTrack(trackKey) {
+            selectedCalcTrack = trackKey;
+            const buttons = document.querySelectorAll('.calc-track-btn');
+            buttons.forEach(btn => {
+                if (btn.getAttribute('data-track') === trackKey) {
+                    btn.className = 'calc-track-btn p-3 rounded-xl border-2 border-brand-blue bg-brand-blueLight text-brand-blue text-left transition-all';
+                } else {
+                    btn.className = 'calc-track-btn p-3 rounded-xl border-2 border-slate-200 bg-white text-slate-700 hover:border-brand-blue/50 text-left transition-all';
+                }
+            });
+            calculateCareerProjection();
+        }
+
+        function calculateCareerProjection() {
+            const exp = parseInt(document.getElementById('calc-exp-slider').value, 10);
+            const ctc = parseInt(document.getElementById('calc-ctc-slider').value, 10);
+            const config = calcTrackConfig[selectedCalcTrack];
+
+            document.getElementById('calc-exp-display').textContent = `${exp} ${exp === 1 ? 'Year' : 'Years'}`;
+            document.getElementById('calc-ctc-display').textContent = `₹${ctc} LPA`;
+
+            // Calculate realistic post-cohort target CTC based on current CTC + experience + track
+            const expBoost = Math.min(exp * 0.45, 7);
+            const projectedMid = Math.round((ctc * config.multiplier) + expBoost);
+            const projectedLow = Math.max(ctc + 6, Math.round(projectedMid * 0.9));
+            const projectedHigh = Math.round(projectedMid * 1.12);
+            const hikePercent = Math.round(((projectedMid - ctc) / ctc) * 100);
+            const standardCtc = (ctc * 1.22).toFixed(1);
+
+            document.getElementById('proj-role-title').textContent = config.title;
+            document.getElementById('proj-hike-badge').textContent = `+${hikePercent}% Projected Hike`;
+            document.getElementById('proj-ctc-range').textContent = `₹${projectedLow}L – ₹${projectedHigh}L`;
+            document.getElementById('proj-timeline').textContent = config.timeline;
+            document.getElementById('proj-demand').textContent = config.demand;
+
+            // Update visual comparison bars
+            const maxScale = Math.max(projectedHigh + 8, 50);
+            const currWidth = Math.min(Math.max(Math.round((ctc / maxScale) * 100), 14), 75);
+            const stdWidth = Math.min(Math.max(Math.round((standardCtc / maxScale) * 100), 20), 82);
+            const aiWidth = Math.min(Math.max(Math.round((projectedMid / maxScale) * 100), 42), 96);
+
+            document.getElementById('bar-current-label').textContent = `₹${ctc} LPA`;
+            document.getElementById('bar-current-fill').style.width = `${currWidth}%`;
+
+            document.getElementById('bar-standard-label').textContent = `₹${standardCtc} LPA (+22%)`;
+            document.getElementById('bar-standard-fill').style.width = `${stdWidth}%`;
+
+            document.getElementById('bar-ai-label').textContent = `₹${projectedMid} LPA (+${hikePercent}%)`;
+            document.getElementById('bar-ai-fill').style.width = `${aiWidth}%`;
+
+            // Render skills tags
+            const tagsContainer = document.getElementById('proj-skills-tags');
+            tagsContainer.innerHTML = config.skills.map(skill =>
+                `<span class="px-2.5 py-1 rounded-lg bg-brand-blueLight text-brand-blue text-xs font-bold">${skill}</span>`
+            ).join('');
+        }
+
+        function resetCalculator() {
+            document.getElementById('calc-current-role').value = 'Scrum Master';
+            document.getElementById('calc-exp-slider').value = 6;
+            document.getElementById('calc-ctc-slider').value = 12;
+            selectCalcTrack('ai-sm');
+        }
+
+        function openCalculatorBooking() {
+            const roleTitle = document.getElementById('proj-role-title').textContent;
+            const ctcRange = document.getElementById('proj-ctc-range').textContent;
+            openBookingModal(`1:1 Roadmap Validation: ${roleTitle} (${ctcRange})`);
+        }
+
+        // 4. All 11 Official SkillYantra Courses Data & Filtering
+        const coursesData = [
+            {
+                id: 'ai-sm',
+                title: 'AI Scrum Master Training',
+                category: 'scrum',
+                badge: 'Flagship AI Cohort',
+                badgeColor: 'red',
+                duration: '8 Weeks Live + Capstone',
+                nextBatch: 'Starts This Saturday',
+                seatsLeft: '4 Seats Left',
+                shortDesc: 'Master AI-powered Sprint planning, automated impediment forecasting, GenAI prompt workflows for Scrum ceremonies, and enterprise JIRA intelligence with Jitendra.',
+                tools: ['ChatGPT & Claude for Agile', 'JIRA AI & JQL', 'Miro AI', 'Sprint Analytics'],
+                modules: [
+                    'AI-Powered Sprint Planning, Capacity Forecasting & Velocity Intelligence',
+                    'Automating User Story Splitting, DOR/DOD & Acceptance Criteria with GenAI',
+                    'Advanced JIRA Dashboards, Filters, JQL & Burndown/Burnup Reporting',
+                    'Handling Difficult Stakeholders, Conflict Resolution & Anti-Patterns Live',
+                    'Resume Branding & Scenario-Based AI Scrum Master Mock Interviews with Jitendra'
+                ]
+            },
+            {
+                id: 'psm',
+                title: 'Professional Scrum Master Training',
+                category: 'scrum',
+                badge: 'Scrum.org PSM™ I & II',
+                badgeColor: 'blue',
+                duration: '6 Weeks Live Interactive',
+                nextBatch: 'Weekend Batch Open',
+                seatsLeft: '6 Seats Left',
+                shortDesc: 'Deep-dive into the official Scrum Guide, empirical process control, servant leadership, and real-world scenario mastery to clear PSM™ I & II on your first attempt.',
+                tools: ['Scrum.org Framework', 'JIRA Boards', 'Confluence', 'Retrospective Tools'],
+                modules: [
+                    'Empirical Scrum Pillars, Values, Accountabilities & Sprint Events Deep-Dive',
+                    'Facilitating High-Impact Sprint Planning, Daily Scrum, Review & Retrospectives',
+                    'Coaching Development Teams & Product Owners Through Real Bottlenecks',
+                    'Full-Length PSM™ Exam Simulators & Tricky Scenario Question Deconstruction',
+                    'Practical JIRA Project Setup & On-the-Job Scrum Master Playbook'
+                ]
+            },
+            {
+                id: 'cspo',
+                title: 'Certified Scrum Product Owner Training',
+                category: 'product',
+                badge: 'CSPO® Product Track',
+                badgeColor: 'red',
+                duration: '6 Weeks Live + Project',
+                nextBatch: 'Starts Next Saturday',
+                seatsLeft: '5 Seats Left',
+                shortDesc: 'Learn end-to-end Product Ownership, product visioning, value maximization, AI-assisted backlog refinement, release planning, and stakeholder alignment.',
+                tools: ['JIRA Product Discovery', 'GenAI PRD Prompts', 'Miro Roadmaps', 'Confluence'],
+                modules: [
+                    'Product Vision, Market Discovery, Personas & Value Proposition Design',
+                    'Writing Epics, Features, User Stories & Gherkin Acceptance Criteria',
+                    'Prioritization Frameworks: MoSCoW, WSJF, Kano & RICE Scoring',
+                    'Release Planning, Product Metrics (OKRs, KPIs) & Stakeholder Negotiation',
+                    'Live Product Backlog Portfolio Creation & Mock Interviews with Jitendra'
+                ]
+            },
+            {
+                id: 'sm-job',
+                title: 'Scrum Master Job Oriented Training',
+                category: 'scrum',
+                badge: '100% Job-Oriented',
+                badgeColor: 'red',
+                duration: '10 Weeks End-to-End Bootcamp',
+                nextBatch: 'Starts This Weekend',
+                seatsLeft: '3 Seats Left',
+                shortDesc: 'Designed specifically for career switchers and practicing leads looking to crack high-paying Scrum Master interviews with real project artifacts and 1:1 coaching.',
+                tools: ['JIRA Admin & JQL', 'Confluence Spaces', 'GenAI Agile Copilot', 'Azure Boards'],
+                modules: [
+                    'End-to-End Multi-Sprint Live Project Simulation from Project Kickoff to Release',
+                    'Creating Real Project Artifacts: Charter, RACI, Risk Register & Sprint Reports',
+                    'Mastering 150+ Real Behavioral & Situational Scrum Master Interview Questions',
+                    'ATS Resume Engineering, Naukri/LinkedIn Optimization & Recruiter Outreach',
+                    '1-on-1 Panel Mock Interviews & First-90-Days Survival Kit with Jitendra'
+                ]
+            },
+            {
+                id: 'csm',
+                title: 'Certified Scrum Master',
+                category: 'scrum',
+                badge: 'CSM® Certification Track',
+                badgeColor: 'blue',
+                duration: '4–6 Weeks Live Cohort',
+                nextBatch: 'Enrolling Now',
+                seatsLeft: '7 Seats Left',
+                shortDesc: 'Build rock-solid Scrum foundations, earn your globally recognized Certified Scrum Master credential, and learn how to lead agile teams with confidence.',
+                tools: ['Scrum Framework', 'JIRA Agile Boards', 'Miro', 'Team Coaching Models'],
+                modules: [
+                    'Agile Manifesto, Principles & Scrum Framework Accountabilities',
+                    'Sprint Execution, Estimation Techniques (Planning Poker, T-Shirt Sizing)',
+                    'Impediment Removal, Servant Leadership & Psychological Safety',
+                    'CSM® Exam Preparation, Practice Tests & Post-Certification Career Roadmap'
+                ]
+            },
+            {
+                id: 'pspo',
+                title: 'professional product Owner™ training',
+                category: 'product',
+                badge: 'Scrum.org PSPO™ I & II',
+                badgeColor: 'blue',
+                duration: '6 Weeks Live Interactive',
+                nextBatch: 'Weekend Cohort',
+                seatsLeft: '5 Seats Left',
+                shortDesc: 'Master Evidence-Based Management (EBM), commercial product strategy, backlog optimization, and clear Scrum.org PSPO™ certification with Jitendra.',
+                tools: ['Evidence-Based Management', 'JIRA & Confluence', 'AI Market Research', 'Value Metrics'],
+                modules: [
+                    'Product Value Maximization & Evidence-Based Management (Key Value Areas)',
+                    'Advanced Product Backlog Management, Forecasting & Release Strategies',
+                    'Total Cost of Ownership (TCO), Product Budgeting & Stakeholder Alignment',
+                    'PSPO™ I & II Exam Simulators & Real-World Product Case Studies'
+                ]
+            },
+            {
+                id: 'safe-popm',
+                title: 'SAFe Product Owner/Product Manager Certification',
+                category: 'product',
+                badge: 'SAFe® 6.0 POPM',
+                badgeColor: 'red',
+                duration: '6 Weeks Enterprise Track',
+                nextBatch: 'Starts 15th',
+                seatsLeft: '6 Seats Left',
+                shortDesc: 'Deliver value at enterprise scale. Master Agile Release Trains (ARTs), PI Planning, Customer Centricity, WSJF prioritization, and SAFe® 6.0 POPM certification.',
+                tools: ['SAFe® 6.0 Framework', 'PI Planning Boards', 'JIRA Align / BigPicture', 'WSJF Matrix'],
+                modules: [
+                    'Product Owner & Product Manager Responsibilities in the SAFe® Enterprise',
+                    'Preparing & Executing Program Increment (PI) Planning & System Demos',
+                    'Decomposing Epics to Features & Stories; Managing Program & Team Backlogs',
+                    'SAFe® 6.0 POPM Exam Preparation & Enterprise Product Interview Readiness'
+                ]
+            },
+            {
+                id: 'safe-agile',
+                title: 'SAFe® Agile Certification Training',
+                category: 'product',
+                badge: 'Leading SAFe® 6.0',
+                badgeColor: 'blue',
+                duration: '6 Weeks Executive Track',
+                nextBatch: 'Starts Next Weekend',
+                seatsLeft: '5 Seats Left',
+                shortDesc: 'Lead enterprise-wide Agile transformations using the Scaled Agile Framework (SAFe® 6.0). Ideal for Senior Scrum Masters, Managers, and aspiring Agile Coaches.',
+                tools: ['Scaled Agile Framework', 'Lean Portfolio Metrics', 'ART Execution', 'PI Simulation'],
+                modules: [
+                    'Thriving in the Digital Age with Business Agility & SAFe® Core Competencies',
+                    'Launching & Leading Agile Release Trains (ARTs) & Live PI Planning Simulation',
+                    'Lean Portfolio Management (LPM), Value Streams & DevOps Culture',
+                    'Leading SAFe® (SAFe Agilist) Certification Exam Prep & Leadership Coaching'
+                ]
+            },
+            {
+                id: 'jira',
+                title: 'JIRA Basics',
+                category: 'tools',
+                badge: 'Hands-On Tool Lab',
+                badgeColor: 'blue',
+                duration: '4 Weeks Live Practical Lab',
+                nextBatch: 'Weekday Evening Batch',
+                seatsLeft: '8 Seats Left',
+                shortDesc: 'Go from beginner to confident JIRA practitioner. Create Scrum & Kanban projects, custom workflows, JQL filters, executive dashboards, and Confluence integration.',
+                tools: ['Atlassian JIRA Cloud', 'JQL Queries', 'JIRA Dashboards', 'Confluence Integration'],
+                modules: [
+                    'Setting Up Company-Managed & Team-Managed Scrum & Kanban Projects in JIRA',
+                    'Creating Epics, Stories, Tasks, Sub-tasks, Bugs & Custom Issue Workflows',
+                    'Mastering JQL (JIRA Query Language) Filters, Subscriptions & Bulk Operations',
+                    'Building Executive Sprint Dashboards, Velocity Charts & Confluence Reports'
+                ]
+            },
+            {
+                id: 'ba',
+                title: 'Business Analyst',
+                category: 'ba-pm',
+                badge: 'AI-Powered BA Track',
+                badgeColor: 'red',
+                duration: '8 Weeks Job-Oriented',
+                nextBatch: 'Starts This Saturday',
+                seatsLeft: '5 Seats Left',
+                shortDesc: 'Master end-to-end Business Analysis in Agile & Waterfall environments—requirements elicitation, BRD/FRD/SRS documentation, wireframing, SQL basics, and AI tools.',
+                tools: ['JIRA & Confluence', 'Balsamiq / Figma', 'MS Visio / Draw.io', 'GenAI BA Prompts'],
+                modules: [
+                    'Requirements Elicitation Techniques, Stakeholder Analysis & Process Modeling (BPMN)',
+                    'Drafting Production-Grade BRD, FRD, SRS, Use Cases & User Stories with AI',
+                    'Wireframing, Prototyping, API/SQL Fundamentals & UAT Coordination',
+                    'Real Banking/E-Commerce Capstone Project & BA Mock Interviews with Jitendra'
+                ]
+            },
+            {
+                id: 'pm-training',
+                title: 'Project Management Training',
+                category: 'ba-pm',
+                badge: 'Hybrid Agile + PM',
+                badgeColor: 'blue',
+                duration: '8 Weeks Live Cohort',
+                nextBatch: 'Next Weekend',
+                seatsLeft: '6 Seats Left',
+                shortDesc: 'Master modern Hybrid Project Management combining PMBOK® principles, Agile delivery, risk management, budgeting, resource forecasting, and executive reporting.',
+                tools: ['JIRA & MS Project', 'Risk & RAID Logs', 'EVM Metrics', 'AI Project Copilot'],
+                modules: [
+                    'Project Initiation, Charter Creation, Scope Management & WBS Architecture',
+                    'Hybrid Project Execution: Blending Predictive (Waterfall) & Adaptive (Agile) Delivery',
+                    'Schedule, Budget (EVM), Resource Allocation & RAID Log Governance',
+                    'Executive Stakeholder Communication & Senior Project Manager Interview Prep'
+                ]
+            }
+        ];
+
+        function renderPrograms(filter = 'all') {
+            const grid = document.getElementById('programs-grid');
+            const filtered = filter === 'all' ? coursesData : coursesData.filter(c => c.category === filter);
+
+            grid.innerHTML = filtered.map(course => {
+                const isRed = course.badgeColor === 'red';
+                const badgeClass = isRed
+                    ? 'bg-brand-redLight text-brand-red border-brand-red/20'
+                    : 'bg-brand-blueLight text-brand-blue border-brand-blue/20';
+
+                return `
+                    <div class="bg-white rounded-3xl border border-slate-200/90 hover:border-brand-blue/40 shadow-soft hover:-translate-y-1 transition-all duration-200 flex flex-col justify-between p-6 sm:p-7">
+                        <div>
+                            <div class="flex items-center justify-between gap-2 mb-4">
+                                <span class="px-3 py-1 rounded-full text-xs font-bold border ${badgeClass}">
+                                    ${course.badge}
+                                </span>
+                                <span class="text-xs font-bold text-brand-red flex items-center gap-1">
+                                    <span class="w-2 h-2 rounded-full bg-brand-red animate-pulse"></span>
+                                    ${course.seatsLeft}
+                                </span>
+                            </div>
+
+                            <h3 class="font-display text-xl font-extrabold text-brand-dark mb-2.5 leading-snug">
+                                ${course.title}
+                            </h3>
+
+                            <p class="text-xs sm:text-sm text-brand-slate leading-relaxed mb-5">
+                                ${course.shortDesc}
+                            </p>
+
+                            <div class="flex flex-wrap gap-1.5 mb-5">
+                                ${course.tools.map(t => `<span class="px-2.5 py-1 rounded-lg bg-slate-100 text-slate-700 text-[11px] font-semibold">${t}</span>`).join('')}
+                            </div>
+                        </div>
+
+                        <div class="pt-4 border-t border-slate-100 space-y-4">
+                            <div class="flex items-center justify-between text-xs font-semibold text-slate-600">
+                                <span class="flex items-center gap-1.5">
+                                    <i class="ph-bold ph-clock text-brand-blue"></i>
+                                    ${course.duration}
+                                </span>
+                                <span class="flex items-center gap-1.5 text-brand-dark font-bold">
+                                    <i class="ph-bold ph-calendar-check text-brand-red"></i>
+                                    ${course.nextBatch}
+                                </span>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-2.5">
+                                <button onclick="openSyllabusModal('${course.id}')" class="py-2.5 px-3 rounded-xl border-2 border-brand-blue/20 hover:border-brand-blue text-brand-blue font-bold text-xs transition-all flex items-center justify-center gap-1.5">
+                                    <i class="ph-bold ph-list-bullets"></i>
+                                    <span>View Syllabus</span>
+                                </button>
+                                <button onclick="openBookingModal('Enroll: ${course.title.replace(/'/g, "\\'")}')" class="py-2.5 px-3 rounded-xl bg-brand-red hover:bg-brand-redDark text-white font-bold text-xs shadow-sm transition-all flex items-center justify-center gap-1.5">
+                                    <span>Enroll Now</span>
+                                    <i class="ph-bold ph-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function filterPrograms(category) {
+            const tabs = document.querySelectorAll('.program-tab');
+            tabs.forEach(tab => {
+                if (tab.getAttribute('data-filter') === category) {
+                    tab.className = 'program-tab px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-brand-blue text-white shadow-blue-glow';
+                } else {
+                    tab.className = 'program-tab px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-white border border-slate-200 text-slate-700 hover:bg-brand-blueLight hover:text-brand-blue';
+                }
+            });
+            renderPrograms(category);
+        }
+
+        function openSyllabusModal(courseId) {
+            const course = coursesData.find(c => c.id === courseId);
+            if (!course) return;
+
+            document.getElementById('modal-course-badge').textContent = course.badge;
+            document.getElementById('modal-course-title').textContent = course.title;
+            document.getElementById('modal-course-desc').textContent = course.shortDesc;
+            document.getElementById('modal-course-duration').textContent = course.duration;
+            document.getElementById('modal-course-batch').textContent = course.nextBatch;
+
+            document.getElementById('modal-course-modules').innerHTML = course.modules.map((m, idx) => `
+                <li class="flex items-start gap-3 p-3 rounded-xl bg-slate-50 border border-slate-200/70">
+                    <span class="w-6 h-6 rounded-full bg-brand-blue text-white text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">${idx + 1}</span>
+                    <span class="font-medium text-brand-dark">${m}</span>
+                </li>
+            `).join('');
+
+            document.getElementById('modal-course-tools').innerHTML = course.tools.map(t =>
+                `<span class="px-3 py-1 rounded-lg bg-brand-blueLight text-brand-blue text-xs font-bold">${t}</span>`
+            ).join('');
+
+            const enrollBtn = document.getElementById('modal-enroll-btn');
+            enrollBtn.onclick = function() {
+                closeSyllabusModal();
+                openBookingModal(`Enroll in ${course.title}`);
+            };
+
+            const modal = document.getElementById('syllabus-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function openCourseByTitle(titleQuery) {
+            const match = coursesData.find(c => c.title.toLowerCase() === titleQuery.toLowerCase());
+            if (match) {
+                openSyllabusModal(match.id);
+            }
+        }
+
+        function closeSyllabusModal() {
+            const modal = document.getElementById('syllabus-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // 5. Step-by-Step Transformation Blueprint Logic
+        const blueprintPhases = [
+            {
+                step: 'Step 01 • Weeks 1–2',
+                title: '1:1 Career Diagnostic & Core Agile/Scrum Foundations',
+                summary: 'Your transformation starts with a personal 1-on-1 profile audit with Jitendra. We map your transferable experience and build unshakeable mastery across Agile, Scrum, Kanban, and Product fundamentals.',
+                deliverables: [
+                    'Personalized Career Transition Roadmap & Target CTC Plan with Jitendra',
+                    'Deep-Dive into Empirical Scrum, Accountabilities, Events & Artifacts',
+                    'Agile Estimation, Capacity Planning, DOR/DOD & Value Metrics Mastery',
+                    'Setting Up Your Enterprise JIRA & Confluence Sandbox Environment'
+                ],
+                outcome: 'Outcome: Complete clarity on your target role + rock-solid Agile & Scrum command.'
+            },
+            {
+                step: 'Step 02 • Weeks 3–5',
+                title: 'AI-Powered Agile, Scrum & Product Workflows',
+                summary: 'Learn how top 1% Scrum Masters, Product Owners, and Business Analysts use Generative AI and JIRA automation to save 10+ hours a week and make data-backed delivery decisions.',
+                deliverables: [
+                    'GenAI Prompt Engineering for Epics, User Stories, Gherkin & Acceptance Criteria',
+                    'AI-Driven Sprint Risk Forecasting, Sentiment Analysis & Retrospective Synthesis',
+                    'Advanced JIRA Workflows, Custom JQL Filters & Executive Sprint Dashboards',
+                    'Creating AI-Assisted PRDs, BRDs, Roadmaps & Stakeholder Presentations'
+                ],
+                outcome: 'Outcome: Hands-on mastery of modern AI + JIRA workflows that recruiters actively test for.'
+            },
+            {
+                step: 'Step 03 • Weeks 6–8',
+                title: 'Real-World Enterprise Capstone Projects & Certification',
+                summary: 'Step into simulated multi-team enterprise sprints and Program Increment (PI) planning sessions led by Jitendra. Build a verifiable portfolio and clear your global certification on the first attempt.',
+                deliverables: [
+                    'Live Role-Play of Sprint Planning, Daily Scrum, Sprint Review & Retrospectives',
+                    'SAFe® PI Planning Simulation, Dependency Mapping & Risk ROAMing',
+                    'Full-Length Mock Exams & Question Deconstruction for PSM / CSM / CSPO / PSPO / SAFe',
+                    'Verified Capstone Portfolio (JIRA Boards, Confluence Wiki, Product Roadmap & Metrics)'
+                ],
+                outcome: 'Outcome: Global Certification + Real Enterprise Project Portfolio to showcase in interviews.'
+            },
+            {
+                step: 'Step 04 • Weeks 9–12',
+                title: 'ATS Resume Branding, Mock Interviews & Job Placement Support',
+                summary: 'We translate your training and past work history into high-impact Agile/Product achievements, prepare you through rigorous 1:1 mock interviews with Jitendra, and support you through salary negotiation.',
+                deliverables: [
+                    'Line-by-Line ATS Resume Makeover & High-Visibility LinkedIn Profile Optimization',
+                    'Scenario-Based & Behavioral 1-on-1 Mock Interviews Directly with Jitendra',
+                    'Access to 200+ Real Interview Scenarios & Hiring Manager Evaluation Rubrics',
+                    'Offer Negotiation Strategy & First-90-Days On-The-Job Mentorship Support'
+                ],
+                outcome: 'Outcome: Confident interview performance and high-growth career transition.'
+            }
+        ];
+
+        function selectBlueprintPhase(index) {
+            const tabs = document.querySelectorAll('.blueprint-tab');
+            tabs.forEach((tab, idx) => {
+                if (idx === index) {
+                    tab.className = 'blueprint-tab p-4 rounded-2xl border-2 border-brand-red bg-brand-red text-white text-left transition-all shadow-red-glow';
+                } else {
+                    tab.className = 'blueprint-tab p-4 rounded-2xl border-2 border-slate-200 bg-[#F8FAFC] hover:border-brand-blue text-brand-dark text-left transition-all';
+                }
+            });
+
+            const phase = blueprintPhases[index];
+            const panel = document.getElementById('blueprint-detail-panel');
+            panel.innerHTML = `
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-7 space-y-4">
+                        <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-brand-red text-white text-xs font-bold uppercase tracking-wider">
+                            <i class="ph-bold ph-steps"></i> ${phase.step}
+                        </span>
+                        <h3 class="font-display text-2xl sm:text-3xl font-extrabold text-brand-dark">
+                            ${phase.title}
+                        </h3>
+                        <p class="text-sm sm:text-base text-brand-slate leading-relaxed">
+                            ${phase.summary}
+                        </p>
+                        <div class="p-4 rounded-2xl bg-white border border-brand-blue/20 text-xs sm:text-sm font-bold text-brand-blue flex items-center gap-2.5">
+                            <i class="ph-fill ph-seal-check text-brand-red text-xl shrink-0"></i>
+                            <span>${phase.outcome}</span>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-5 bg-white rounded-2xl border border-slate-200 p-5 sm:p-6 shadow-sm space-y-3">
+                        <div class="text-xs font-extrabold uppercase tracking-wider text-brand-dark border-b border-slate-100 pb-2.5">
+                            Key Weekly Deliverables &amp; Milestones
+                        </div>
+                        <ul class="space-y-2.5 text-xs sm:text-sm font-medium text-slate-700">
+                            ${phase.deliverables.map(d => `
+                                <li class="flex items-start gap-2.5">
+                                    <i class="ph-fill ph-check-circle text-brand-red text-lg shrink-0 mt-0.5"></i>
+                                    <span>${d}</span>
+                                </li>
+                            `).join('')}
+                        </ul>
+                        <div class="pt-3">
+                            <button onclick="openBookingModal('Blueprint Walkthrough with Jitendra (${phase.step})')" class="w-full py-3 px-4 rounded-xl bg-brand-blue hover:bg-brand-blueDark text-white font-bold text-xs sm:text-sm transition-all">
+                                Discuss This Phase with Jitendra →
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // 6. Mentor Spotlight Tabs
+        function switchMentorTab(tabName) {
+            const contents = document.querySelectorAll('.mentor-tab-content');
+            contents.forEach(c => c.classList.add('hidden'));
+            document.getElementById(`mentor-tab-${tabName}`).classList.remove('hidden');
+
+            const btns = document.querySelectorAll('.mentor-tab-btn');
+            btns.forEach(b => {
+                b.className = 'mentor-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-slate-100 text-slate-700 hover:bg-brand-blueLight hover:text-brand-blue transition-all';
+            });
+            const activeBtn = document.getElementById(`mentor-tab-btn-${tabName}`);
+            activeBtn.className = 'mentor-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-brand-red text-white transition-all';
+        }
+
+        // 7. Verified Success Stories Data & Filter
+        const testimonialsData = [
+            {
+                name: 'Vikramaditya Kulkarni',
+                city: 'Pune',
+                prevRole: 'Senior QA Engineer',
+                newRole: 'AI Scrum Master',
+                hike: '140% Salary Hike',
+                category: 'Scrum Master',
+                quote: 'Jitendra completely transformed my approach to Agile. Instead of memorizing definitions, I built live JIRA dashboards and practiced AI sprint workflows. Cleared PSM I and landed 3 Scrum Master offers in Pune!'
+            },
+            {
+                name: 'Ananya Deshmukh',
+                city: 'Bengaluru',
+                prevRole: 'Business Analyst',
+                newRole: 'Senior Product Owner (PSPO™)',
+                hike: '155% Salary Hike',
+                category: 'Product',
+                quote: 'The Certified Scrum Product Owner and PSPO training with Jitendra gave me hands-on confidence in backlog prioritization, GenAI PRD writing, and stakeholder management. Best career investment I have made.'
+            },
+            {
+                name: 'Sandeep Reddy',
+                city: 'Hyderabad',
+                prevRole: 'Project Coordinator',
+                newRole: 'Scrum Master & Delivery Lead',
+                hike: '130% Salary Hike',
+                category: 'Scrum Master',
+                quote: 'I was struggling to clear scenario-based interview rounds. Jitendra conducted 1-on-1 mock interviews with me, refined my resume, and helped me master JIRA JQL and sprint metrics.'
+            },
+            {
+                name: 'Priya Nair',
+                city: 'Chennai',
+                prevRole: 'Application Support Lead',
+                newRole: 'SAFe® POPM / Product Manager',
+                hike: '160% Salary Hike',
+                category: 'Product',
+                quote: 'Transitioning from support to a SAFe Product Owner role seemed tough until I joined SkillYantra. Jitendra broke down PI Planning, WSJF, and Agile Release Trains with real enterprise simulations.'
+            },
+            {
+                name: 'Rohan Malhotra',
+                city: 'Delhi NCR',
+                prevRole: 'Manual Tester',
+                newRole: 'Scrum Master (CSM® & PSM™)',
+                hike: '135% Salary Hike',
+                category: 'Scrum Master',
+                quote: 'The Scrum Master Job Oriented Training at SkillYantra is 100% practical. Every weekend session with Jitendra felt like working inside a real Agile project team.'
+            },
+            {
+                name: 'Meera Joshi',
+                city: 'Mumbai',
+                prevRole: 'Operations Executive',
+                newRole: 'Senior Business Analyst',
+                hike: '125% Salary Hike',
+                category: 'Product',
+                quote: 'Even coming from a non-coding background, Jitendra guided me step-by-step through BRD/FRD documentation, user stories, JIRA basics, and Agile BA interviews.'
+            }
+        ];
+
+        function renderTestimonials(filter = 'all') {
+            const grid = document.getElementById('testimonials-grid');
+            const list = filter === 'all' ? testimonialsData : testimonialsData.filter(t => t.category === filter);
+
+            grid.innerHTML = list.map(item => `
+                <div class="bg-[#F8FAFC] rounded-3xl border border-slate-200/90 p-6 sm:p-7 flex flex-col justify-between shadow-soft">
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-4">
+                            <span class="px-3 py-1 rounded-full bg-brand-redLight text-brand-red text-xs font-extrabold">
+                                ${item.hike}
+                            </span>
+                            <span class="text-xs font-bold text-slate-500 flex items-center gap-1">
+                                <i class="ph-fill ph-map-pin text-brand-blue"></i> ${item.city}
+                            </span>
+                        </div>
+
+                        <div class="p-3.5 rounded-2xl bg-white border border-slate-200/80 mb-4">
+                            <div class="text-[11px] font-bold uppercase text-slate-400">Career Transition</div>
+                            <div class="text-xs sm:text-sm font-extrabold text-brand-dark mt-0.5 flex items-center gap-1.5 flex-wrap">
+                                <span class="text-slate-600">${item.prevRole}</span>
+                                <i class="ph-bold ph-arrow-right text-brand-red"></i>
+                                <span class="text-brand-blue">${item.newRole}</span>
+                            </div>
+                        </div>
+
+                        <p class="text-sm text-brand-slate italic leading-relaxed mb-6">
+                            "${item.quote}"
+                        </p>
+                    </div>
+
+                    <div class="flex items-center justify-between pt-4 border-t border-slate-200/70">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-brand-blue text-white font-display font-bold text-sm flex items-center justify-center">
+                                ${item.name.charAt(0)}
+                            </div>
+                            <div>
+                                <div class="text-sm font-extrabold text-brand-dark">${item.name}</div>
+                                <div class="text-xs text-slate-500">Mentored by Jitendra</div>
+                            </div>
+                        </div>
+                        <div class="flex text-amber-400 text-sm">
+                            <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function filterTestimonials(category) {
+            const tabs = document.querySelectorAll('.testi-tab');
+            tabs.forEach(t => {
+                if (t.getAttribute('data-tfilter') === category) {
+                    t.className = 'testi-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-brand-dark text-white transition-all';
+                } else {
+                    t.className = 'testi-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-slate-100 text-slate-700 hover:border-brand-blue transition-all';
+                }
+            });
+            renderTestimonials(category);
+        }
+
+        // 8. Latest Blogs Section Data & Modal Reader
+        const blogsData = [
+            {
+                id: 'blog-1',
+                tag: 'AI Scrum Master',
+                readTime: '5 Min Read',
+                title: 'How AI-Powered Scrum Masters Are Commanding 140%+ Salary Hikes in 2026',
+                excerpt: 'Discover how combining PSM/CSM fundamentals with GenAI sprint forecasting and automated JIRA workflows sets you apart in interviews.',
+                content: `
+                    <p>Hiring managers across Bengaluru, Pune, Hyderabad, and global GCCs are no longer looking for Scrum Masters who merely schedule meetings. Today's top-paying roles demand <strong>AI-Powered Scrum Masters</strong> who leverage data and GenAI to accelerate team flow.</p>
+                    <h4 class="font-display font-bold text-brand-dark text-lg pt-2">3 Core Capabilities Jitendra Coaches You On:</h4>
+                    <ul class="list-disc pl-5 space-y-2">
+                        <li><strong>AI-Assisted Backlog Refinement:</strong> Using structured prompts to split epics into INVEST-compliant user stories with Gherkin acceptance criteria in seconds.</li>
+                        <li><strong>Predictive Sprint Analytics in JIRA:</strong> Identifying scope creep, capacity bottlenecks, and dependency risks before they derail the Sprint Goal.</li>
+                        <li><strong>Actionable Retrospectives:</strong> Synthesizing sprint metrics and team sentiment into measurable continuous improvement experiments.</li>
+                    </ul>
+                `
+            },
+            {
+                id: 'blog-2',
+                tag: 'Product & SAFe® Career',
+                readTime: '6 Min Read',
+                title: 'CSPO® vs PSPO™ vs SAFe® POPM: Which Product Track Should You Choose?',
+                excerpt: 'A practical breakdown by Jitendra on choosing the right Product Owner or Product Manager certification based on your background.',
+                content: `
+                    <p>One of the most frequent questions professionals ask <strong>Jitendra</strong> during 1:1 counseling calls is whether to pursue <strong>CSPO®, PSPO™, or SAFe® POPM</strong>.</p>
+                    <ul class="list-disc pl-5 space-y-2">
+                        <li><strong>CSPO® &amp; PSPO™:</strong> Ideal if you want deep mastery over product discovery, value maximization, Evidence-Based Management, and agile product ownership.</li>
+                        <li><strong>SAFe® 6.0 POPM:</strong> Highly recommended if you are targeting large enterprise GCCs, banking, or global IT consultancies running Agile Release Trains (ARTs) and PI Planning.</li>
+                    </ul>
+                    <p>At SkillYantra, our live cohorts blend both certification readiness and hands-on JIRA/Product backlog creation so you are ready for any panel interview.</p>
+                `
+            },
+            {
+                id: 'blog-3',
+                tag: 'JIRA & Business Analysis',
+                readTime: '4 Min Read',
+                title: 'Mastering JIRA, JQL & Agile Documentation for Scrum Masters and BAs',
+                excerpt: 'Why practical command over JIRA workflows, dashboards, and Confluence documentation is the fastest way to crack technical rounds.',
+                content: `
+                    <p>Over 80% of practical interview rounds for Scrum Masters, Product Owners, and Business Analysts include questions on <strong>JIRA configuration, JQL queries, and sprint reports</strong>.</p>
+                    <p>Inside SkillYantra's <strong>JIRA Basics &amp; Job-Oriented Labs</strong>, Jitendra walks you through live sandbox setups—creating custom workflows, configuring burndown/velocity gadgets, and linking Confluence BRDs/PRDs directly to JIRA epics.</p>
+                `
+            }
+        ];
+
+        function renderBlogs() {
+            const grid = document.getElementById('blogs-grid');
+            grid.innerHTML = blogsData.map(b => `
+                <article class="bg-white rounded-3xl border border-slate-200/90 p-6 sm:p-7 shadow-soft flex flex-col justify-between hover:border-brand-blue/40 transition-all">
+                    <div>
+                        <div class="flex items-center justify-between text-xs font-bold mb-3">
+                            <span class="px-3 py-1 rounded-full bg-brand-blueLight text-brand-blue">${b.tag}</span>
+                            <span class="text-slate-400">${b.readTime}</span>
+                        </div>
+                        <h3 class="font-display text-lg sm:text-xl font-extrabold text-brand-dark mb-3 leading-snug">
+                            ${b.title}
+                        </h3>
+                        <p class="text-xs sm:text-sm text-brand-slate leading-relaxed mb-5">
+                            ${b.excerpt}
+                        </p>
+                    </div>
+                    <button onclick="openBlogModal('${b.id}')" class="inline-flex items-center gap-1.5 text-xs sm:text-sm font-extrabold text-brand-red hover:text-brand-blue transition-colors">
+                        <span>Read Full Article</span>
+                        <i class="ph-bold ph-arrow-right"></i>
+                    </button>
+                </article>
+            `).join('');
+        }
+
+        function openBlogModal(blogId) {
+            const blog = blogsData.find(b => b.id === blogId);
+            if (!blog) return;
+            document.getElementById('info-modal-badge').textContent = `${blog.tag} • By Jitendra`;
+            document.getElementById('info-modal-title').textContent = blog.title;
+            document.getElementById('info-modal-body').innerHTML = blog.content + `
+                <div class="pt-4 border-t border-slate-100 flex justify-end">
+                    <button onclick="closeInfoModal(); openBookingModal('Free Career Discussion with Jitendra');" class="px-5 py-2.5 rounded-xl bg-brand-red text-white text-xs font-bold">
+                        Book Free 1:1 Session with Jitendra →
+                    </button>
+                </div>
+            `;
+            const modal = document.getElementById('info-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        // 9. FAQ Accordion Data & Logic
+        const faqItems = [
+            {
+                q: 'How is SkillYantra different from other certification training portals?',
+                a: 'At SkillYantra, we focus on "Practical Agile and Scrum training for real career growth." Beyond helping you pass global certifications (PSM, CSM, CSPO, PSPO, SAFe), Jitendra trains you on live JIRA setups, GenAI Agile workflows, real sprint ceremonies, ATS resume branding, and 1-on-1 mock interviews.'
+            },
+            {
+                q: 'Can I transition to Scrum Master, Product Owner, or Business Analyst from a QA, Developer, or Non-Tech role?',
+                a: 'Yes! Over 70% of our successful alumni transitioned from QA, Development, Support, Operations, or Coordinator backgrounds. Jitendra conducts a 1:1 diagnostic to reframe your past project experience into high-impact Agile/Product achievements.'
+            },
+            {
+                q: 'Are all sessions live and interactive with Jitendra?',
+                a: 'Yes, all cohorts are 100% live and interactive led by Jitendra. You also receive lifetime access to session recordings, JIRA/Confluence templates, AI prompt libraries, and mock exam simulators.'
+            },
+            {
+                q: 'What if I miss a live class due to office work or travel?',
+                a: 'Every live session is recorded and uploaded to your learner portal immediately. In addition, you can attend the missed module in the upcoming batch at no extra cost and clarify doubts directly with Jitendra.'
+            },
+            {
+                q: 'How can I contact SkillYantra for course counseling or corporate training?',
+                a: 'You can call or WhatsApp us directly at +91 9611796309, email connect@skillyantra.com, or submit the consultation form on this page to book your free 1:1 session with Jitendra.'
+            }
+        ];
+
+        function renderFaq() {
+            const container = document.getElementById('faq-container');
+            container.innerHTML = faqItems.map((item, idx) => `
+                <div class="rounded-2xl border border-slate-200/90 bg-[#F8FAFC] overflow-hidden">
+                    <button onclick="toggleFaq(${idx})" class="w-full px-6 py-4 text-left flex items-center justify-between gap-4 font-display font-bold text-sm sm:text-base text-brand-dark hover:text-brand-blue transition-colors">
+                        <span>${item.q}</span>
+                        <i id="faq-icon-${idx}" class="ph-bold ph-plus text-brand-red text-lg shrink-0 transition-transform"></i>
+                    </button>
+                    <div id="faq-ans-${idx}" class="${idx === 0 ? '' : 'hidden'} px-6 pb-5 text-xs sm:text-sm text-brand-slate leading-relaxed border-t border-slate-200/60 pt-3 bg-white">
+                        ${item.a}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function toggleFaq(idx) {
+            const ans = document.getElementById(`faq-ans-${idx}`);
+            const icon = document.getElementById(`faq-icon-${idx}`);
+            const isHidden = ans.classList.contains('hidden');
+            if (isHidden) {
+                ans.classList.remove('hidden');
+                icon.classList.replace('ph-plus', 'ph-minus');
+            } else {
+                ans.classList.add('hidden');
+                icon.classList.replace('ph-minus', 'ph-plus');
+            }
+        }
+
+        // 10. Legal Policy Modals (Privacy Policy, Term & Condition, Return & Refund Policy)
+        function openLegalModal(type) {
+            const titles = {
+                'privacy': 'Privacy Policy — SKILL YANTRA CONSULTING LLP',
+                'terms': 'Term & Condition — SKILL YANTRA CONSULTING LLP',
+                'refund': 'Return & Refund Policy — SKILL YANTRA CONSULTING LLP'
+            };
+            const bodies = {
+                'privacy': `
+                    <p><strong>SKILL YANTRA CONSULTING LLP</strong> ("SkillYantra", "we", "our") respects your privacy and is committed to protecting the personal information you share with us at <strong>www.skillyantra.com</strong>.</p>
+                    <p><strong>Information Collection &amp; Use:</strong> We collect your name, email address, phone number, and career preferences solely to provide training cohorts, certification assistance, mentorship sessions with Jitendra, and career support.</p>
+                    <p><strong>Data Protection:</strong> We never sell or rent your personal contact details to third-party marketers. For any privacy inquiries, contact us at <strong>connect@skillyantra.com</strong> or <strong>+91 9611796309</strong>.</p>
+                `,
+                'terms': `
+                    <p>Welcome to <strong>www.skillyantra.com</strong>, operated by <strong>SKILL YANTRA CONSULTING LLP</strong>.</p>
+                    <p>By enrolling in our courses (including AI Scrum Master Training, PSM, CSPO, CSM, PSPO, SAFe, JIRA Basics, Business Analyst, and Project Management Training), you agree to use course recordings, templates, and study materials strictly for your personal career advancement and not for commercial redistribution.</p>
+                    <p>All official certification trademarks (such as PSM™, PSPO™, CSM®, CSPO®, SAFe®) belong to their respective accrediting bodies.</p>
+                `,
+                'refund': `
+                    <p>At <strong>SKILL YANTRA CONSULTING LLP</strong>, we strive to ensure complete learner satisfaction with our practical Agile, Scrum, and Product training programs.</p>
+                    <p><strong>Batch Flexibility &amp; Support:</strong> Learners who face scheduling emergencies can request a free batch transfer to the next live cohort led by Jitendra. Refund or rescheduling requests must be submitted in writing to <strong>connect@skillyantra.com</strong> prior to cohort commencement/certification voucher issuance.</p>
+                    <p>For quick assistance, reach our support desk at <strong>+91 9611796309</strong>.</p>
+                `
+            };
+            document.getElementById('info-modal-badge').textContent = 'Official Policy';
+            document.getElementById('info-modal-title').textContent = titles[type];
+            document.getElementById('info-modal-body').innerHTML = bodies[type];
+            const modal = document.getElementById('info-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeInfoModal() {
+            const modal = document.getElementById('info-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // 11. Booking & Contact Form Handlers
+        function openBookingModal(contextText) {
+            document.getElementById('booking-modal-title').textContent = 'Book Your Free Demo & Career Call';
+            document.getElementById('modal-context-input').value = contextText || 'AI Scrum Master & Agile Training with Jitendra';
+            document.getElementById('modal-booking-form').classList.remove('hidden');
+            document.getElementById('modal-booking-success').classList.add('hidden');
+            const modal = document.getElementById('booking-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeBookingModal() {
+            const modal = document.getElementById('booking-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function handleModalBookingSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('modal-name').value;
+            const phone = document.getElementById('modal-phone').value;
+            const context = document.getElementById('modal-context-input').value;
+
+            document.getElementById('modal-booking-form').classList.add('hidden');
+            const successBox = document.getElementById('modal-booking-success');
+            document.getElementById('modal-booking-success-msg').textContent =
+                `Thank you, ${name}! Your request for "${context}" has been registered. Jitendra's team will reach out to you shortly at ${phone} (or you can WhatsApp us directly at +91 9611796309).`;
+            successBox.classList.remove('hidden');
+        }
+
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('fullName').value;
+            const track = document.getElementById('targetTrack').value;
+            const phone = document.getElementById('phoneNum').value;
+
+            const successDiv = document.getElementById('contact-success');
+            const successText = document.getElementById('contact-success-text');
+            successText.textContent = `Thank you, ${name}! We have scheduled your inquiry for "${track}". Our advisor and Jitendra's mentorship desk will contact you on ${phone} shortly.`;
+            successDiv.classList.remove('hidden');
+            e.target.reset();
+        }
+
+        // Initialize all interactive views on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+            calculateCareerProjection();
+            renderPrograms('all');
+            selectBlueprintPhase(0);
+            renderTestimonials('all');
+            renderBlogs();
+            renderFaq();
+        });
+    </script>
+</body>
+</html>
