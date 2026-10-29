@@ -100,22 +100,19 @@
         }
         input[type=range]::-webkit-slider-thumb:hover {
             transform: scale(1.12);
-        } 
+        }
     </style>
 </head>
 <body class="font-sans antialiased selection:bg-brand-blue selection:text-white">
 
-
-
-    <!-- Top Utility & Announcement Bar (Matched to skillyantra.com)  -->
+    <!-- Top Utility & Announcement Bar (Matched to skillyantra.com) -->
     <div class="bg-gradient-to-r from-brand-blue via-[#0074BD] to-brand-red text-white text-xs sm:text-sm py-2.5 px-4">
         <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-2 text-center lg:text-left">
             <div class="flex flex-wrap items-center justify-center lg:justify-start gap-2 sm:gap-3 font-medium">
                 <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-extrabold uppercase tracking-wider bg-white text-brand-red shadow-sm">
                     October Career Upgrade Offer
                 </span>
-                <span class="font-semibold">Get 10% OFF on Scrum Master Training
-                </span>
+                <span class="font-semibold">Get 10% OFF on Scrum Master Training — Practical Agile &amp; Product Mentorship with <strong>Jitendra Kumar</strong></span>
             </div>
             <div class="flex flex-wrap items-center justify-center gap-4 shrink-0">
                 <a href="mailto:connect@skillyantra.com" class="hidden sm:inline-flex items-center gap-1.5 font-semibold hover:underline">
@@ -2523,6 +2520,8 @@
                     </div>
                 </div>
             `;
+        }
+
         // 6. YouTube Video Story Switcher ("Corporate Scrum Master Training Success Stories")
         function loadYouTubeStory(videoId, title, badgeText, activeIdx) {
             const iframe = document.getElementById('main-yt-iframe');
@@ -2716,6 +2715,31 @@
                             ${b.title}
                         </h3>
                         <p class="text-xs sm:text-sm text-brand-slate leading-relaxed mb-5">
+                            ${b.excerpt}
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                        <span class="text-xs font-bold text-slate-500">By Jitendra</span>
+                        <button onclick="openBlogModal('${b.id}')" class="text-xs sm:text-sm font-extrabold text-brand-red hover:text-brand-blue transition-colors inline-flex items-center gap-1">
+                            <span>Read Full Article</span>
+                            <i class="ph-bold ph-arrow-right"></i>
+                        </button>
+                    </div>
+                </article>
+            `).join('');
+        }
+
+        function openBlogModal(blogId) {
+            const blog = blogsData.find(b => b.id === blogId);
+            if (!blog) return;
+            document.getElementById('info-modal-badge').textContent = `${blog.tag} • ${blog.readTime}`;
+            document.getElementById('info-modal-title').textContent = blog.title;
+            document.getElementById('info-modal-body').innerHTML = blog.content;
+            const modal = document.getElementById('info-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
         // 9. FAQ Accordion Data & Logic (All 12 Official FAQs from skillyantra.com)
         const faqItems = [
             {
